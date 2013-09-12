@@ -77,26 +77,3 @@
                         </div>
                     </div>
                 </div>
-                <footer>
-                    <div class="row">
-                        <div class="six columns">
-                            <div class="left_footer">
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/f.png" /></a>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/g.png" /></a>
-                                <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/t.png" /></a>
-                            </div>
-                        </div>
-                        <div class="six columns">
-                            <div class="right_footer">
-                                <p>copyright Obeid Machinery, all rights reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-            <div class="under_footer">
-                design &amp; developed by DTECH Systems.
-            </div>
-        </div>
-    </div>
-</div>

@@ -13,7 +13,7 @@ class Controller extends CController {
     public $layout = '//layouts/column1';
 
     /**
-     * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+     * @var array context menu items. This property will be assigned to {@link CMenus::items}.
      */
     public $menu = array();
 
@@ -148,7 +148,7 @@ class Controller extends CController {
      * @return int 
      */
     public function getRootParent() {
-        $model = Menu::model()->findByAttributes(array("controller" => $this->id, "is_assigned" => "Yes"));
+        $model = Menus::model()->findByAttributes(array("controller" => $this->id, "is_assigned" => "Yes"));
         if (count($model) == 1) {
             return $model->root_parent;
         } else {
@@ -166,7 +166,7 @@ class Controller extends CController {
      */
     public function getNavigation($pid = 0, $level = 0, $root_parent = 0, $pidArray = array()) {
         return "";
-        $model = Menu::model()->findAllByAttributes(array("pid" => $pid, "is_assigned" => "Yes"));
+        $model = Menus::model()->findAllByAttributes(array("pid" => $pid, "is_assigned" => "Yes"));
         $l = $level;
 
         if (count($model) > 0) {
@@ -180,7 +180,7 @@ class Controller extends CController {
             $foundAny = false;
 
             foreach ($model as $menu) {
-                $childCount = Menu::model()->count("pid = $menu->id");
+                $childCount = Menus::model()->count("pid = $menu->id");
                 //if ($menu->min_permission == "" || ($menu->min_permission != "" && $this->getPermission(ucfirst($menu->controller) . "." . ucfirst($menu->min_permission)))) {
                 $foundAny = true;
 

@@ -42,7 +42,7 @@ class UserIdentity extends CUserIdentity
             //$this->setState("id", $userinfo->id);
             $this->_id = $userinfo->id;
             $this->setState('form_key', uniqid());
-            $this->setState('name', $userinfo->name);
+            $this->setState('name', $userinfo->username);
             $this->setState('email', $userinfo->email);
             $this->setState("type", $userinfo->type);
             

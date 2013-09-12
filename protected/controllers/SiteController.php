@@ -75,6 +75,8 @@ class SiteController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
+        Yii::app()->controller->layout = "//layouts/login_admin";
+        Yii::app()->theme = "admin";
         $model = new LoginForm;
 
         // if it is ajax validation request
