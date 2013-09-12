@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body { margin: 0; padding: 0; }
+
+body { }
+
+#container { float:left; height:100%; width:100%; background:#f7f7f7; background:url(../images/bg.jpg) center center; background-size:cover; }
+
+@font-face { font-family:AkzidenzGroteskBQ SuperItalic; src:url(../fonts/AkzidenzGrotesk-SuperItalic.otf); }
+
+@font-face { font-family:AlbertaLight; src:url(../fonts/AlbertaLight_Regular.ttf); }
+
+@font-face { font-family:AkzidenzGroteskBQ XBoldAlt; src:url(../fonts/AkzidenzGrotesk-ExtraBoldAlt.otf); }
+
+header { width:100%; padding: 0; margin: 0; }
+
+#header { padding: 0; margin: 0 auto; }
+
+.logo { padding: 10px 0; margin: 0; width:100%; }
+
+.right_header { width:100%; float:right; padding: 0; margin: 0; }
+
+.right_header img { float:right; }
+
+.right_header p { float:right; width:100%; text-align:right; margin: 20px 0 0 0px; font-family:AkzidenzGroteskBQ SuperItalic; font-size:22px; color:#020001; }
+
+
+#navigation { padding: 0; margin: 0; width:100%; float:left; height:38px; }
+
+nav { padding: 0; margin: 0; }
+
+nav ul { list-style:none; padding: 0; margin: 0; }
+
+nav ul li { float:left; display:inline; padding: 0; margin: 7px 0 0 0; }
+
+nav ul li a { text-decoration:none; color:#FFF; padding: 0 15px; margin: 0; font-family:AlbertaLight; }
+
+/* Navigation Comment
+
+nav ul li a:hover { background:#f9ca22; padding: 9px 15px; }
+
+*/
+
+.nav_right { width:20%; float:left; }
+
+.banner { width:100%; background:url(../images/banner_bg_02.png) center no-repeat; float:left; height:340px; padding: 0; margin: 25px 0 0 0; }
+
+.banner_part { padding: 0; background:#f1f1f1; }
+
+.banner_main_part {  border-left:1px solid #dddddd; border-right:1px solid #dddddd; float:left; }
+
+.main_banner_img { width:100%; }
+
+.banner_text { float:left; padding: 0 0 0 20px; margin: 0; margin-top: -70px; }
+
+.banner_text h1 { font-style:italic; padding: 0; margin: 0; font-size:26.34px; color:#2c2c2c; font-family:AkzidenzGroteskBQ XBoldAlt; line-height:normal; }
+
+.banner_text p { font-weight:bold; padding: 0; margin: 0; color:#171717; font-family:Arial, Helvetica, sans-serif; font-size:11px; line-height:normal; }
+
+.big_hook { float:left; margin-top: -400px; margin-left:-70px; }
+
+.big_hook img { position:absolute; }
+
+.truck_images { padding: 0 0 15px 0; margin: 0 10px; margin-top:30px; border-bottom:1px solid #bbbbbb; width:93%; float:left; text-align:center; }
+
+.under_truck { width:100%; padding: 0; }
+
+.under_truck img { width:100%; height:auto; }
+
+.all_terrain { padding: 0; margin-top:30px; }
+
+.truck_mounted { padding: 0; margin-top: 30px; }
+
+.crawel_cranes { padding: 0; margin-top: 12px; }
+
+.truck_images h1 { font-style:italic; font-family:AkzidenzGroteskBQ XBoldAlt; font-size:16px; color:#000000; padding: 0; margin: 0; line-height:30px; }
+
+.index_services { padding: 0; margin: 0 30px 40px 30px; }
+
+.left_index_service { padding: 0; margin: 0; }
+
+.left_index_service h2 { font-family:AkzidenzGroteskBQ XBoldAlt; font-style:italic; color:#2c2c2c; font-size:26px; line-height:normal; }
+
+.left_index_service p { font-size:11px; font-style:italic; font-size:11px; color:#171717; font-weight:bold; font-family:Arial, Helvetica, sans-serif; line-height:normal; padding: 0 20px 0 0; margin: 0; }
+
+.division { padding: 0; margin: 0 0px 0 0; }
+
+.division img { width:100%; height:auto; }
+
+.division h3 { color:#f9ca22; font-style:italic; font-size:26px; font-family:AkzidenzGroteskBQ XBoldAlt; padding: 5px 0; margin: 0; }
+
+.right_index_service { width:100%; padding: 0; margin: 20px 0 0 0; background:#cfcecc; }
+
+.right_index_service h4 { font-family:AkzidenzGroteskBQ XBoldAlt; font-size:26px; font-style:italic; color:#2c2c2c; padding: 10px 10px; margin: 0; background:#f9ca22; }
+
+.ltm_tank { padding: 0; margin: 20px 0; text-align:center; }
+
+.ltm_tank img { width:100%; height:auto; padding: 0 15px; }
+
+.ltm_tank p { padding: 10px 35px; margin: 0; font-family:Arial, Helvetica, sans-serif; color:#2c2c2c; font-size:11px; }
+
+footer { padding: 0; margin:0; float:left; background:url(../images/footer_bg_03.jpg) repeat-x #070707; width:100%; min-height:50px; }
+
+.left_footer { padding: 0; margin: 7px 0 0 30px; }
+
+.right_footer { padding: 0 20px 0 0; margin: 12px 0 0 0; width:100%; }
+
+.right_footer p { color:#f9ca22; font-size:13px; font-family:Arial, Helvetica, sans-serif; text-align:right; }
+
+.under_footer { padding: 10px 0; margin: 0 20px 0 0; text-align:right; color:#737373; font-size:13px; font-family:Arial, Helvetica, sans-serif; }
+
+
+/*About Us*/
+
+.about_banner { width:100%; background:url(../images/about_us_banner_bg_02.png) center no-repeat; float:left; height:230px; padding: 0; margin: 25px 0 0 0; }
+
+.about_hook { float:right; margin-top: -400px; margin-right:-10px; }
+
+.about_hook img { position:absolute; }
+
+.about_services { padding: 20px 20px 20px 0px; float:left; }
+
+.center_about_service { padding: 0; margin: 0; }
+
+.about_list { padding: 0; margin: 0; float:left; width:100%; }
+
+.about_listing { background:#474747; padding: 10px; margin: 10px 0 0 0; border:1px solid #f9ca22; color:#f9ca22; font-family:AkzidenzGroteskBQ XBoldAlt; font-size:15px; }
+
+.about_upper_part { border-bottom:1px solid #bbbbbb; padding: 0 0 20px 0; margin: 0px 0 0 10px; }
+
+.center_about_part { border-bottom:1px solid #bbbbbb; padding: 10px 0 20px 0px; margin: 0 0 0 10px; }
+
+.center_about_service h2 { color:#2c2c2c; font-size:26px; font-family:AkzidenzGroteskBQ XBoldAlt; font-style:italic; }
+
+.center_about_service p { font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#171717; }
+
+.center_about_service section { font-size:14px; font-family:Arial, Helvetica, sans-serif; color:#171717; font-weight:bold; }
+
+.center_about_service article { font-size:14px; font-family:Arial, Helvetica, sans-serif; color:#171717; }
+
+.center_about_service h3 { font-size:24px; font-family:Arial, Helvetica, sans-serif; color:#171717; }
+
+.center_about_service h4 { font-size:18px; font-family:Arial, Helvetica, sans-serif; color:#171717; }
+
+.lower_about_part { padding: 10px 0 20px 10px; margin: 0; }
+
+
+
+/*Media Queries*/
+
+@media screen and (max-width:960px) { .about_hook { display:none; } .big_hook { display:none;} }
+
+@media screen and (max-width:855px) { .banner_text { margin-top: 0; } }
+
+@media screen and (max-width:499px) {  }
+
+@media screen and (max-width:766px) { .logo { margin-right:auto; margin-left:auto; float:none; width:auto; display:block; text-align:center; } .right_header img { display:none;} .right_header p { float:none; text-align:center; } }
