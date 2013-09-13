@@ -11,6 +11,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Categories', 'url'=>array('index')),
 	array('label'=>'Create Categories', 'url'=>array('create')),
+	array('label'=>'Create Parent Category', 'url'=>array('createParent')),
 	array('label'=>'View Categories', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Categories', 'url'=>array('admin')),
 );
@@ -18,4 +19,4 @@ $this->menu=array(
 
 <h1>Update Categories <?php echo $model->id; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'model_parent_cat' => $model_parent_cat)); ?>
