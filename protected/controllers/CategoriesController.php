@@ -64,18 +64,31 @@ class CategoriesController extends Controller {
      */
     public function actionCreate() {
         $model = new Categories;
-
+        // $model->attachCbehavour();
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
         if (isset($_POST['Categories'])) {
+
             $model->attributes = $_POST['Categories'];
-            if ($model->save())
+//ft
+//            if (empty($model->parent_id)) {
+//                $model->parent_id = 0;
+//            }
+            //making instance of the uploaded image 
+            $img_file = OMUploadFile::getInstance($model, 'category_image');
+            $model->category_image = $img_file;
+            if ($model->save()) {
+                $upload_path = OMUploadFile::creeatRecurSiveDirectories(array("category_images", $model->id));
+                if (!empty($img_file)) {
+                    $img_file->saveAs($upload_path . $img_file->name);
+                }
+
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(
             'model' => $model,
+            'model_parent_cat' => $model->parentCategories(),
         ));
     }
 
@@ -85,6 +98,8 @@ class CategoriesController extends Controller {
     public function actionCreateParent() {
 
         $model = new Categories;
+        $model_parent_cat = $model->parentCategories();
+
         // $model->attachCbehavour();
         // Uncomment the following line if AJAX validation is needed
         if (isset($_POST['Categories'])) {
@@ -106,6 +121,7 @@ class CategoriesController extends Controller {
 
         $this->render('create', array(
             'model' => $model,
+            'model_parent_cat' => $model_parent_cat,
         ));
     }
 
@@ -121,13 +137,25 @@ class CategoriesController extends Controller {
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Categories'])) {
+
             $model->attributes = $_POST['Categories'];
-            if ($model->save())
+
+            //making instance of the uploaded image 
+            $img_file = OMUploadFile::getInstance($model, 'category_image');
+            $model->category_image = $img_file;
+            if ($model->save()) {
+                $upload_path = OMUploadFile::creeatRecurSiveDirectories(array("category_images", $model->id));
+                if (!empty($img_file)) {
+                    $img_file->saveAs($upload_path . $img_file->name);
+                }
+
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('update', array(
             'model' => $model,
+            'model_parent_cat' => $model->parentCategories(),
         ));
     }
 

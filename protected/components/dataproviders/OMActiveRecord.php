@@ -65,7 +65,6 @@ class OMActiveRecord extends CActiveRecord {
     protected function beforeSave() {
 
         $update_time = date("Y-m-d") . " " . date("H:i:s");
-        $this->activity_log = $this->activity_log . 'Modified by ' . Yii::app()->user->name . ' on ' . $update_time . '\n';
 
         parent::beforeSave();
 
@@ -79,11 +78,11 @@ class OMActiveRecord extends CActiveRecord {
     public function saveViewerForLog() {
         $view_time = date("Y-m-d") . " " . date("H:i:s");
         $ip_address = Yii::app()->request->getUserHostAddress();
-        $this->activity_log = $this->activity_log . 'Viewed by ' . Yii::app()->user->name . ' on ' . $view_time . ' from ' . $ip_address . ' \n';
+        //$this->activity_log = $this->activity_log . 'Viewed by ' . Yii::app()->user->name . ' on ' . $view_time . ' from ' . $ip_address . ' \n';
 
         $modelName = get_class($this);
         $model = new $modelName;
-        $model->updateByPk($this->primaryKey, array('activity_log' => $this->activity_log));
+        //$model->updateByPk($this->primaryKey, array('activity_log' => $this->activity_log));
     }
 
     /**

@@ -30,10 +30,18 @@ class SiteController extends Controller {
      * when an action is not explicitly requested by users.
      */
     public function actionIndex() {
+
+        /*
+         * Getting Child Categories
+         */
+        $criteria = new CDbCriteria();
+        $criteria->select = 'id,category_name,category_description,category_image,parent_id';
+        $criteria->condition = 'parent_id != 0';
+        $child_categorie = Categories::model()->findAll($criteria);
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
         //$this->layout = "header";
-        $this->render('index');
+        $this->render('index', array('child_categorie' => $child_categorie));
     }
 
     /**
