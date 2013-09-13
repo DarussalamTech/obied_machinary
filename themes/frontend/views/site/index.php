@@ -24,8 +24,8 @@
                             <div class="three columns">
                                 <div class="under_truck">
                                     <?php
-                                   // CVarDumper::dump($child->category_image_path, 30, TRUE);
-                                    echo CHtml::link(CHtml::image($child->category_image, '', array('calss' => 'crawel_cranes')), $this->createUrl('/categories/listing'));
+                                    // CVarDumper::dump($child->category_image_path, 30, TRUE);
+                                    echo CHtml::link(CHtml::image($child->category_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/categories/listing'), array('title' => $child->category_name));
                                     ?>
                                     <h1>
                                         <i><?php echo $child->category_name; ?></i>
@@ -34,13 +34,13 @@
                             </div>
                         <?php endforeach; ?>
 
-<!--                        <div class="three columns">
-                            <div class="under_truck">
-                                <a href="#">
-                                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/crawler_cranes_03.png" class="crawel_cranes" /></a>
-                                <h1><i>Crawler Cranes</i></h1>
-                            </div>
-                        </div>-->
+                        <!--                        <div class="three columns">
+                                                    <div class="under_truck">
+                                                        <a href="#">
+                                                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/crawler_cranes_03.png" class="crawel_cranes" /></a>
+                                                        <h1><i>Crawler Cranes</i></h1>
+                                                    </div>
+                                                </div>-->
                     </div>
                 </div>
                 <div class="row">

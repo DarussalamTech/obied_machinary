@@ -42,7 +42,7 @@ body
 
 #content {
     padding: 10px;
-    background:#FFFFFF;
+    background:#E5E4E2;
     width:100%;
     min-height: 440px;
 
@@ -82,12 +82,12 @@ body
 }
 #logo img
 {
- /*   vertical-align:middle; */
- /*   padding-right:5px; */
+    /*   vertical-align:middle; */
+    /*   padding-right:5px; */
 }
 
 #afterLogo {
-/*    float: left;*/
+    /*    float: left;*/
 }
 #afterLogo h1
 {
@@ -125,7 +125,7 @@ body
 #profile_menu
 {
     float: left;
-/*    width:100%;*/
+    /*    width:100%;*/
     padding-left:5px;
     height: 32px;
 }
@@ -194,7 +194,7 @@ div.search-form
 div.search-form .textField{
     margin: 0 3px;
     padding: 3px;
-/*    width: 95px;*/
+    /*    width: 95px;*/
 }
 
 .portlet
@@ -383,10 +383,10 @@ div.subsection-links a {
 
 /* --------- Header Top Account Details --------- */
 .header-top-login-details {color: #FFFFFF;
-    float: right;
-    padding-right: 10px;
-    position: absolute;
-    right: 0;}
+                           float: right;
+                           padding-right: 10px;
+                           position: absolute;
+                           right: 0;}
 .header-top-login-details ul {
     margin:0px;
     padding:0px;
@@ -641,7 +641,7 @@ div.no_result {
 }
 .log-details{
     font-size:11px;
-     padding: 10px;display:none;
+    padding: 10px;display:none;
 }
 
 
@@ -649,17 +649,17 @@ div.no_result {
 div.parent-login div.logologin 
 {
     text-align: center;
-    
+
 }
 div.parent-login div.logologin img
 {
-  
-    
+
+
 }
 div.parent-login div.login-heading
 {
-      
-      float: left;
+
+    float: left;
 }
 div.parent-login
 {
@@ -674,7 +674,7 @@ div.parent-login
 }
 .autoloaderhidden_custom
 {
-     display: none;
+    display: none;
 }
 .dynamic_label
 {
@@ -718,7 +718,7 @@ div.parent-login
 .emergencyLink
 {
     margin-left: 90px;
-    
+
 }
 .emergencyLink a
 {
@@ -746,7 +746,7 @@ div.parent-login
 /*/ for serch pcm//*/
 .colorbox-search-area
 {
-   border-right: 1px dotted;
+    border-right: 1px dotted;
     float: left;
     width: 165px; margin-top: 5px;
 }
@@ -764,8 +764,8 @@ div.parent-login
 .child_container_new{
     width:755px !important;
     padding-left:10px !important; 
-    
-    
+
+
 }
 .child_container_new a{
     color:#555555 !important;
@@ -795,7 +795,7 @@ div.parent-login
     margin-top: 5px;
 }
 #tabs ul li{
-    
+
     float: left;
     list-style: none;
 }
@@ -837,8 +837,8 @@ div.parent-login
 
 
 .plus_rotate{
-/*    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);*/
+    /*    -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);*/
 }
 
 .plus_img {
@@ -861,55 +861,55 @@ div.parent-login
 /*====================================== View Table CSS=======================================*/
 
 #mytable {
-	
-	padding: 0;
-	margin: 0;
+
+    padding: 0;
+    margin: 0;
 }
 
 
 
 #mytable th {
-	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	color: #4f6b72;
-	border-right: 1px solid #C1DAD7;
-	border-bottom: 1px solid #C1DAD7;
-	border-top: 1px solid #C1DAD7;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	text-align: left;
-	padding: 6px 6px 6px 12px;
-	background: #CAE8EA url(../images/bg_header.jpg) no-repeat;
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #4f6b72;
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 6px 6px 6px 12px;
+    background: #CAE8EA url(../images/bg_header.jpg) no-repeat;
 }
 
 
 
 #mytable td {
-	border-right: 1px solid #C1DAD7;
-	border-bottom: 1px solid #C1DAD7;
-	background: #fff;
-	padding: 6px 6px 6px 12px;
-	color: #4f6b72;
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    background: #fff;
+    padding: 6px 6px 6px 12px;
+    color: #4f6b72;
 }
 
 
 #mytable td.alt {
-	background: #F5FAFA;
-	color: #797268;
+    background: #F5FAFA;
+    color: #797268;
 }
 
 #mytable th.spec {
-	border-left: 1px solid #C1DAD7;
-	border-top: 0;
-	background: #fff url(images/bullet1.gif) no-repeat;
-	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    border-left: 1px solid #C1DAD7;
+    border-top: 0;
+    background: #fff url(images/bullet1.gif) no-repeat;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 }
 
 #mytable th.specalt {
-	border-left: 1px solid #C1DAD7;
-	border-top: 0;
-	background: #f5fafa url(images/bullet2.gif) no-repeat;
-	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	color: #797268;
+    border-left: 1px solid #C1DAD7;
+    border-top: 0;
+    background: #f5fafa url(images/bullet2.gif) no-repeat;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #797268;
 }
 tr.row:hover{background-color:#038ECD} 
 
@@ -923,7 +923,7 @@ div.img_hover
 }
 div.img_hover:hover
 {
-   border:1px solid red;
+    border:1px solid red;
 }
 .image_radio
 {
