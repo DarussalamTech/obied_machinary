@@ -109,7 +109,21 @@ class Categories extends OMActiveRecord {
         $criteria = new CDbCriteria();
         $criteria->select = 'id, category_name';
         $criteria->condition = 'parent_id = 0';
-        return $model_parent = Categories::model()->findAll($criteria);
+        return Categories::model()->findAll($criteria);
+    }
+
+    /*
+     * Getting child Categories
+     * Whose parent_id != 0
+     * Auth:ubd
+     */
+
+    public function childCategories($limit = 20) {
+        $criteria = new CDbCriteria();
+        $criteria->select = 'id,category_name,category_description,category_image,parent_id';
+        $criteria->condition = 'parent_id != 0';
+        $criteria->limit = $limit;
+        return Categories::model()->findAll($criteria);
     }
 
     /*
@@ -120,7 +134,7 @@ class Categories extends OMActiveRecord {
 
     public function setCategoryImagePaths() {
         if (!empty($this->category_image)) {
-            $this->category_image = Yii::app()->baseUrl . "/uploads/category_images/" . $this->id . DIRECTORY_SEPARATOR.$this->category_image;
+            $this->category_image = Yii::app()->baseUrl . "/uploads/category_images/" . $this->id . DIRECTORY_SEPARATOR . $this->category_image;
         } else {
             $this->category_image = $this->no_image;
         }
