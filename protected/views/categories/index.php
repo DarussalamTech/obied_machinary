@@ -8,6 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Create Categories', 'url'=>array('create')),
+	array('label'=>'Create Parent Category', 'url'=>array('createParent')),
 	array('label'=>'Manage Categories', 'url'=>array('admin')),
 );
 ?>

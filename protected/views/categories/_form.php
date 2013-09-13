@@ -20,6 +20,13 @@
     <?php echo $form->errorSummary($model); ?>
 
     <div class="row">
+        <?php echo $form->labelEx($model, 'parent_id'); ?>
+
+        <?php $parent_cat_list = CHtml::listData($model_parent_cat, 'id', 'category_name') ?>
+        <?php echo $form->dropDownList($model, 'parent_id', $parent_cat_list, array('prompt' => 'Select Parent Category')) ?>
+        <?php echo $form->error($model, 'parent_id'); ?>
+    </div>
+    <div class="row">
         <?php echo $form->labelEx($model, 'category_name'); ?>
         <?php echo $form->textField($model, 'category_name', array('size' => 50, 'maxlength' => 50)); ?>
         <?php echo $form->error($model, 'category_name'); ?>
@@ -27,21 +34,17 @@
 
     <div class="row">
         <?php echo $form->labelEx($model, 'category_description'); ?>
-        <?php echo $form->textField($model, 'category_description', array('size' => 60, 'maxlength' => 255)); ?>
+        <?php echo $form->textArea($model, 'category_description', array('size' => 60, 'maxlength' => 255)); ?>
         <?php echo $form->error($model, 'category_description'); ?>
     </div>
 
     <div class="row">
         <?php echo $form->labelEx($model, 'category_image'); ?>
-        <?php echo $form->textField($model, 'category_image', array('size' => 60, 'maxlength' => 255)); ?>
+        <?php echo $form->fileField($model, 'category_image', array('maxlength' => 255)); ?>
         <?php echo $form->error($model, 'category_image'); ?>
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'parent_id'); ?>
-        <?php echo $form->textField($model, 'parent_id', array('size' => 11, 'maxlength' => 11)); ?>
-        <?php echo $form->error($model, 'parent_id'); ?>
-    </div>
+
 
 
     <div class="row buttons">

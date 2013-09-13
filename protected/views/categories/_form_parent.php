@@ -33,7 +33,7 @@
 
     <div class="row">
         <?php echo $form->labelEx($model, 'category_image'); ?>
-        <?php echo $form->fileField($model, 'category_image', array('size' => 60, 'maxlength' => 255)); ?>
+        <?php echo $form->fileField($model, 'category_image', array('maxlength' => 255)); ?>
         <?php echo $form->error($model, 'category_image'); ?>
     </div>
 
