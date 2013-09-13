@@ -18,7 +18,9 @@
  * The followings are the available model relations:
  * @property Products[] $products
  */
-class Categories extends CActiveRecord {
+class Categories extends OMActiveRecord {
+
+    public $no_image = "";
 
     /**
      * Returns the static model of the specified AR class.
@@ -27,6 +29,11 @@ class Categories extends CActiveRecord {
      */
     public static function model($className = __CLASS__) {
         return parent::model($className);
+    }
+
+    public function __construct($scenario = 'insert') {
+        $this->no_image = Yii::app()->baseUrl . "/images/no_image.jpg";
+        parent::__construct($scenario);
     }
 
     /**
@@ -84,6 +91,39 @@ class Categories extends CActiveRecord {
             'update_time' => 'Update Time',
             'update_user_id' => 'Update User',
         );
+    }
+
+    public function afterFind() {
+        $this->setCategoryImagePaths();
+
+        return parent::afterFind();
+    }
+
+    /*
+     * Getting Parents Categories
+     * Whose parent_id = 0
+     * Auth:ubd
+     */
+
+    public function parentCategories() {
+        $criteria = new CDbCriteria();
+        $criteria->select = 'id, category_name';
+        $criteria->condition = 'parent_id = 0';
+        return $model_parent = Categories::model()->findAll($criteria);
+    }
+
+    /*
+     * Getting Parents Categories
+     * Whose parent_id = 0
+     * Auth:ubd
+     */
+
+    public function setCategoryImagePaths() {
+        if (!empty($this->category_image)) {
+            $this->category_image = Yii::app()->baseUrl . "/uploads/category_images/" . $this->id . DIRECTORY_SEPARATOR.$this->category_image;
+        } else {
+            $this->category_image = $this->no_image;
+        }
     }
 
     /**

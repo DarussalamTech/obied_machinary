@@ -21,7 +21,7 @@
  * @property ProductImages[] $productImages
  * @property Categories $category
  */
-class Products extends CActiveRecord
+class Products extends OMActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

@@ -14,7 +14,7 @@
  * @property string $update_time
  * @property string $update_user_id
  */
-class ConfMisc extends CActiveRecord
+class ConfMisc extends OMActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.

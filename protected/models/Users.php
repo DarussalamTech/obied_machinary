@@ -17,7 +17,7 @@
  * @property string $update_time
  * @property string $update_user_id
  */
-class Users extends CActiveRecord
+class Users extends OMActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
