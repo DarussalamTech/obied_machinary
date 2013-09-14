@@ -34,6 +34,11 @@
     <div class="row">
         <?php echo $form->labelEx($model, 'category_image'); ?>
         <?php echo $form->fileField($model, 'category_image', array('maxlength' => 255)); ?>
+        <?php
+        if (!$model->isNewRecord) {
+           echo CHtml::link(CHtml::image($model->show_image, "", array('width' => '100')), $model->show_image, array("target" => "blank"));
+        }
+        ?>
         <?php echo $form->error($model, 'category_image'); ?>
     </div>
 
@@ -41,7 +46,7 @@
 
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class"=>"btn")); ?>
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array("class" => "btn")); ?>
     </div>
 
     <?php $this->endWidget(); ?>

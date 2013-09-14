@@ -23,7 +23,11 @@ $this->menu = array(
     <div class = "right_float">
         <span class="creatdate">
             <?php
-            echo CHtml::link("Edit", $this->createUrl("update", array("id" => $model->primaryKey)), array('class' => "print_link_btn"));
+            $url = "update";
+            if($model->parent_id == 0){
+                $url = "updateParent";
+            }
+            echo CHtml::link("Edit", $this->createUrl($url, array("id" => $model->primaryKey)), array('class' => "print_link_btn"));
             ?>
         </span>
     </div>

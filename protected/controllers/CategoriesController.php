@@ -31,7 +31,7 @@ class CategoriesController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('view', 'create', 'update'),
+                'actions' => array('view', 'create', 'update', 'updateParent'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -110,10 +110,24 @@ class CategoriesController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
+
+        $this->updateCategory($id);
+    }
+
+    public function actionUpdateParent($id) {
+        $this->updateCategory($id);
+    }
+
+    /**
+     * 
+     */
+    public function updateCategory($id) {
         $model = $this->loadModel($id);
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        if ($model->parent_id == 0) {
+            $model->parent_id = 0;
+        }
+        $old_img = $model->category_image;
 
         if (isset($_POST['Categories'])) {
 
@@ -121,7 +135,12 @@ class CategoriesController extends Controller {
 
             //making instance of the uploaded image 
             $img_file = OMUploadFile::getInstance($model, 'category_image');
-            $model->category_image = $img_file;
+            if (!empty($img_file)) {
+                $model->category_image = $img_file;
+            } else {
+                $model->category_image = $old_img;
+            }
+
             if ($model->save()) {
                 $upload_path = OMUploadFile::creeatRecurSiveDirectories(array("category_images", $model->id));
                 if (!empty($img_file)) {

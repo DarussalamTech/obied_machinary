@@ -10,6 +10,21 @@ $this->menu = array(
 );
 ?>
 
-<h1>Update Categories <?php echo $model->id; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model,'model_parent_cat' => $model_parent_cat)); ?>
+<?php
+/**
+ * for differntitating parent and childs
+ */
+if ($this->action->id != "updateParent") {
+    echo '<h1>update Category </h1>';
+    echo $this->renderPartial('_form', array('model' => $model,
+        'model_parent_cat' => $model_parent_cat,
+            // 'cityList' => $cityList
+    ));
+} else {
+    echo '<h1>update Parent Category</h1>';
+    echo $this->renderPartial('_form_parent', array('model' => $model,
+        'model_parent_cat' => $model_parent_cat,
+    ));
+}
+?>
