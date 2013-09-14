@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form wide">
 
     <?php
     $form = $this->beginWidget('CActiveForm', array(
@@ -58,7 +58,7 @@
 
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class"=>"btn")); ?>
     </div>
 
     <?php $this->endWidget(); ?>

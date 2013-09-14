@@ -93,8 +93,9 @@
                         <div class="clear"></div>
                     </div>
                     <?php
+            
                     //&& Yii::app()->user->type=="admin"
-                    if (empty(Yii::app()->user->id)):
+                    if (!empty(Yii::app()->user->id)):
                         $m = new ProDropDown();
                         $m->run();
                         ?>

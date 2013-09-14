@@ -243,15 +243,17 @@ class MenusController extends Controller {
         Menus::model()->deleteAll();
 
         $ary[] = array("id" => "1", "pid" => "0", "root_parent" => "1", "controller" => "site", "action" => "index", "default_title" => "Home", "user_title" => "Home", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
-        $ary[] = array("id" => "2", "pid" => "0", "root_parent" => "2", "controller" => "csvimporter", "action" => "index", "default_title" => "Csv Import", "user_title" => "Csv Import", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
+        
 
-        $ary[] = array("id" => "3", "pid" => "0", "root_parent" => "3", "controller" => "users", "action" => "admin", "default_title" => "Emails", "user_title" => "Emails", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
-        $ary[] = array("id" => "4", "pid" => "3", "root_parent" => "3", "controller" => "users", "action" => "admin", "default_title" => "List All", "user_title" => "List All", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
-        $ary[] = array("id" => "5", "pid" => "3", "root_parent" => "3", "controller" => "users", "action" => "create", "default_title" => "Create", "user_title" => "Create", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
+        $ary[] = array("id" => "2", "pid" => "0", "root_parent" => "2", "controller" => "categories", "action" => "index", "default_title" => "Category", "user_title" => "Category", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
+        $ary[] = array("id" => "3", "pid" => "2", "root_parent" => "2", "controller" => "categories", "action" => "index", "default_title" => "List All", "user_title" => "List All", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
+        $ary[] = array("id" => "4", "pid" => "2", "root_parent" => "2", "controller" => "categories", "action" => "create", "default_title" => "Create", "user_title" => "Create", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
+        $ary[] = array("id" => "5", "pid" => "2", "root_parent" => "2", "controller" => "categories", "action" => "createParent", "default_title" => "Create Parent", "user_title" => "Create Parent", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
+        $ary[] = array("id" => "6", "pid" => "2", "root_parent" => "2", "controller" => "categories", "action" => "indexParent", "default_title" => "List Parent", "user_title" => "List Parent", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
 
-        $ary[] = array("id" => "6", "pid" => "0", "root_parent" => "6", "controller" => "blockList", "action" => "admin", "default_title" => "Block List", "user_title" => "Block List", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
-        $ary[] = array("id" => "7", "pid" => "6", "root_parent" => "6", "controller" => "blockList", "action" => "admin", "default_title" => "List All", "user_title" => "List All", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
-        $ary[] = array("id" => "8", "pid" => "6", "root_parent" => "6", "controller" => "blockList", "action" => "create", "default_title" => "Create", "user_title" => "Create", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
+        $ary[] = array("id" => "7", "pid" => "0", "root_parent" => "7", "controller" => "products", "action" => "index", "default_title" => "Product", "user_title" => "Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
+        $ary[] = array("id" => "8", "pid" => "7", "root_parent" => "7", "controller" => "products", "action" => "index", "default_title" => "List All", "user_title" => "List All", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
+        $ary[] = array("id" => "8", "pid" => "7", "root_parent" => "7", "controller" => "products", "action" => "create", "default_title" => "Create", "user_title" => "Create", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
 
         foreach ($ary as $attr) {
             $model = new Menus();

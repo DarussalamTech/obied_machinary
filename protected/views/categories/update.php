@@ -2,18 +2,11 @@
 /* @var $this CategoriesController */
 /* @var $model Categories */
 
-$this->breadcrumbs=array(
-	'Categories'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Categories', 'url'=>array('index')),
-	array('label'=>'Create Categories', 'url'=>array('create')),
-	array('label'=>'Create Parent Category', 'url'=>array('createParent')),
-	array('label'=>'View Categories', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Categories', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'Create Parent', 'url' => array('createParent')),
+    array('label' => 'Create', 'url' => array('create')),
+    array('label' => 'List All', 'url' => array('index')),
+    array('label' => 'List Parent', 'url' => array('indexParent')),
 );
 ?>
 

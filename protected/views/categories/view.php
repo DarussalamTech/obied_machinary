@@ -7,12 +7,11 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
-$this->menu=array(
-	array('label'=>'List Categories', 'url'=>array('index')),
-	array('label'=>'Create Categories', 'url'=>array('create')),
-	array('label'=>'Update Categories', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Categories', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Categories', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'Create Parent', 'url' => array('createParent')),
+    array('label' => 'Create', 'url' => array('create')),
+    array('label' => 'List All', 'url' => array('index')),
+    array('label' => 'List Parent', 'url' => array('indexParent')),
 );
 ?>
 
@@ -26,10 +25,5 @@ $this->menu=array(
 		'category_description',
 		'category_image',
 		'parent_id',
-		'deleted',
-		'create_time',
-		'create_user_id',
-		'update_time',
-		'update_user_id',
 	),
 )); ?>

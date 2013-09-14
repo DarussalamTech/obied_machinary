@@ -165,7 +165,7 @@ class Controller extends CController {
      * @param type $pidArray 
      */
     public function getNavigation($pid = 0, $level = 0, $root_parent = 0, $pidArray = array()) {
-        return "";
+        
         $model = Menus::model()->findAllByAttributes(array("pid" => $pid, "is_assigned" => "Yes"));
         $l = $level;
 

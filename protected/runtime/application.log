@@ -2854,3 +2854,234 @@ Stack trace:
 REQUEST_URI=/om/index.php/categories/create
 HTTP_REFERER=http://localhost/om/index.php/categories/admin
 ---
+2013/09/14 19:37:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'om.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2013/09/14 19:38:21 [warning] [application] Failed to set unsafe attribute "route" of "LoginForm".
+in /var/www/obied/protected/controllers/SiteController.php (92)
+in /var/www/obied/index.php (13)
+2013/09/14 19:46:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "installMenu".' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(270): CController->missingAction('installMenu')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('installMenu')
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('menus/installMe...')
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/obied/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/obied/index.php/menus/installMenu
+---
+2013/09/14 19:46:35 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `menus` (`id`, `pid`, `root_parent`, `controller`, `action`, `default_title`, `user_title`, `is_assigned`, `min_permission`, `weight`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9).
+in /var/www/obied/protected/controllers/MenusController.php (263)
+in /var/www/obied/index.php (13)
+2013/09/14 19:46:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `menus` (`id`, `pid`, `root_parent`, `controller`, `action`, `default_title`, `user_title`, `is_assigned`, `min_permission`, `weight`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9)' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /var/www/obied/protected/controllers/MenusController.php(263): CActiveRecord->save()
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): MenusController->actionInstallMenus()
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('installMenus')
+#13 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('menus/installMe...')
+#14 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/obied/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/obied/index.php/menus/installMenus
+---
+2013/09/14 19:51:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `menus` (`id`, `pid`, `root_parent`, `controller`, `action`, `default_title`, `user_title`, `is_assigned`, `min_permission`, `weight`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9).
+in /var/www/obied/protected/controllers/MenusController.php (263)
+in /var/www/obied/index.php (13)
+2013/09/14 19:51:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `menus` (`id`, `pid`, `root_parent`, `controller`, `action`, `default_title`, `user_title`, `is_assigned`, `min_permission`, `weight`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9)' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /var/www/obied/protected/controllers/MenusController.php(263): CActiveRecord->save()
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): MenusController->actionInstallMenus()
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('installMenus')
+#13 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('menus/installMe...')
+#14 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/obied/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/obied/index.php/menus/installMenus
+---
+2013/09/14 19:51:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "product/index".' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('product/index')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/obied/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/obied/index.php/product/index
+HTTP_REFERER=http://localhost/obied/index.php/categories/index
+---
+2013/09/14 19:52:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `menus` (`id`, `pid`, `root_parent`, `controller`, `action`, `default_title`, `user_title`, `is_assigned`, `min_permission`, `weight`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9).
+in /var/www/obied/protected/controllers/MenusController.php (263)
+in /var/www/obied/index.php (13)
+2013/09/14 19:52:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `menus` (`id`, `pid`, `root_parent`, `controller`, `action`, `default_title`, `user_title`, `is_assigned`, `min_permission`, `weight`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9)' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /var/www/obied/protected/controllers/MenusController.php(263): CActiveRecord->save()
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): MenusController->actionInstallMenus()
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#11 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('installMenus')
+#13 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('menus/installMe...')
+#14 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/obied/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/obied/index.php/menus/installMenus
+---
+2013/09/14 20:02:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories/inde...')
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/obied/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/obied/index.php/categories/index
+HTTP_REFERER=http://localhost/obied/index.php/categories/create
+---
+2013/09/14 20:02:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories/inde...')
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/obied/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/obied/index.php/categories/index
+HTTP_REFERER=http://localhost/obied/index.php/categories/create
+---
+2013/09/14 20:03:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories/inde...')
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/obied/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/obied/index.php/categories/index
+HTTP_REFERER=http://localhost/obied/index.php/categories/create
+---
+2013/09/14 20:03:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories')
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/obied/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/obied/index.php/categories/
+---
+2013/09/14 20:06:52 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "dropDown".' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/obied/protected/views/categories/_search.php(38): CComponent->__call('dropDown', Array)
+#1 /var/www/obied/protected/views/categories/_search.php(38): CActiveForm->dropDown(Object(Categories), 'parent_id', Array)
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(126): require('/var/www/obied/...')
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/obied/...', Array, true)
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(869): CBaseController->renderFile('/var/www/obied/...', Array, true)
+#5 /var/www/obied/protected/views/categories/index.php(37): CController->renderPartial('_search', Array)
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(126): require('/var/www/obied/...')
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/obied/...', Array, true)
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(869): CBaseController->renderFile('/var/www/obied/...', Array, true)
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#10 /var/www/obied/protected/controllers/CategoriesController.php(179): CController->render('index', Array)
+#11 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CategoriesController->actionIndex()
+#12 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#21 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories')
+#22 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/obied/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/obied/index.php/categories/
+---
+2013/09/14 20:07:02 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "dropDownField".' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/obied/protected/views/categories/_search.php(38): CComponent->__call('dropDownField', Array)
+#1 /var/www/obied/protected/views/categories/_search.php(38): CActiveForm->dropDownField(Object(Categories), 'parent_id', Array)
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(126): require('/var/www/obied/...')
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/obied/...', Array, true)
+#4 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(869): CBaseController->renderFile('/var/www/obied/...', Array, true)
+#5 /var/www/obied/protected/views/categories/index.php(37): CController->renderPartial('_search', Array)
+#6 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(126): require('/var/www/obied/...')
+#7 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/obied/...', Array, true)
+#8 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(869): CBaseController->renderFile('/var/www/obied/...', Array, true)
+#9 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#10 /var/www/obied/protected/controllers/CategoriesController.php(179): CController->render('index', Array)
+#11 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/actions/CInlineAction.php(49): CategoriesController->actionIndex()
+#12 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(291): CFilterChain->run()
+#19 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('')
+#21 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories')
+#22 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /var/www/obied/index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/obied/index.php/categories/
+---
+2013/09/14 20:10:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "indexParent".' in /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CController.php(270): CController->missingAction('indexParent')
+#1 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(282): CController->run('indexParent')
+#2 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/web/CWebApplication.php(141): CWebApplication->runController('categories/inde...')
+#3 /var/www/frameworks/yii-1.1.13.e9e4a0/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/obied/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/obied/index.php/categories/indexParent
+HTTP_REFERER=http://localhost/obied/index.php/categories/index
+---

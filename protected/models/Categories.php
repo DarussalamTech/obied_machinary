@@ -72,6 +72,7 @@ class Categories extends OMActiveRecord {
         // class name for the relations automatically generated below.
         return array(
             'products' => array(self::HAS_MANY, 'Products', 'category_id'),
+            'parent_cat' => array(self::BELONGS_TO, 'Categories', 'id'),
         );
     }
 
@@ -81,9 +82,9 @@ class Categories extends OMActiveRecord {
     public function attributeLabels() {
         return array(
             'id' => 'ID',
-            'category_name' => 'Category Name',
-            'category_description' => 'Category Description',
-            'category_image' => 'Category Image',
+            'category_name' => 'Name',
+            'category_description' => 'Description',
+            'category_image' => 'Image',
             'parent_id' => 'Parent',
             'deleted' => 'Deleted',
             'create_time' => 'Create Time',

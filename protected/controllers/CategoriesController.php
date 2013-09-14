@@ -30,16 +30,12 @@ class CategoriesController extends Controller {
      */
     public function accessRules() {
         return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
-            ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('view', 'create', 'update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete', 'createParent'),
+                'actions' => array('index', 'delete', 'createParent','indexParent'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -69,11 +65,7 @@ class CategoriesController extends Controller {
         if (isset($_POST['Categories'])) {
 
             $model->attributes = $_POST['Categories'];
-//ft
-//            if (empty($model->parent_id)) {
-//                $model->parent_id = 0;
-//            }
-            //making instance of the uploaded image 
+
             $img_file = OMUploadFile::getInstance($model, 'category_image');
             $model->category_image = $img_file;
             if ($model->save()) {
@@ -172,26 +164,34 @@ class CategoriesController extends Controller {
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
 
+
     /**
-     * Lists all models.
+     * List all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('Categories');
+        $model = new Categories('search');
+        $model->unsetAttributes();  // clear any default values
+        
+        if (isset($_GET['Categories']))
+            $model->attributes = $_GET['Categories'];
+        
         $this->render('index', array(
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ));
     }
 
     /**
-     * Manages all models.
+    /**
+     * List all models.
      */
-    public function actionAdmin() {
+    public function actionIndexParent() {
         $model = new Categories('search');
         $model->unsetAttributes();  // clear any default values
+        $model->parent_id = 0;
         if (isset($_GET['Categories']))
             $model->attributes = $_GET['Categories'];
-
-        $this->render('admin', array(
+        
+        $this->render('index', array(
             'model' => $model,
         ));
     }
