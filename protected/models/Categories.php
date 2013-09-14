@@ -20,7 +20,7 @@
  */
 class Categories extends OMActiveRecord {
 
-    public $no_image = "";
+    public $no_image = "",$show_image;
 
     /**
      * Returns the static model of the specified AR class.
@@ -135,9 +135,9 @@ class Categories extends OMActiveRecord {
 
     public function setCategoryImagePaths() {
         if (!empty($this->category_image)) {
-            $this->category_image = Yii::app()->baseUrl . "/uploads/category_images/" . $this->id . DIRECTORY_SEPARATOR . $this->category_image;
+            $this->show_image = Yii::app()->baseUrl . "/uploads/category_images/" . $this->id . DIRECTORY_SEPARATOR . $this->category_image;
         } else {
-            $this->category_image = $this->no_image;
+            $this->show_image = $this->no_image;
         }
     }
 
