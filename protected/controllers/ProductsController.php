@@ -61,7 +61,7 @@ class ProductsController extends Controller {
      */
     public function actionCreate() {
         $model = new Products;
-        $model_child_cat = Categories::model()->childCategories(100);
+        
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
@@ -74,7 +74,7 @@ class ProductsController extends Controller {
 
         $this->render('create', array(
             'model' => $model,
-            'model_child_cat' => $model_child_cat,
+            'model_child_cat' => Categories::model()->childCategories(100),
         ));
     }
 
@@ -97,6 +97,7 @@ class ProductsController extends Controller {
 
         $this->render('update', array(
             'model' => $model,
+            'model_child_cat' => Categories::model()->childCategories(100),
         ));
     }
 
