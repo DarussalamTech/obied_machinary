@@ -91,6 +91,8 @@ class CategoriesController extends Controller {
 
         $model = new Categories;
         $model_parent_cat = $model->parentCategories();
+        
+        $model->parent_id = 0;
 
         // $model->attachCbehavour();
         // Uncomment the following line if AJAX validation is needed

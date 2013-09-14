@@ -40,6 +40,7 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php
+
 $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'categories-grid',
     'dataProvider' => $model->search(),
@@ -55,6 +56,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
         ),
         array(
             'class' => 'CButtonColumn',
+            'buttons' => array(
+                'update' => array(
+                    'url' => $model->_action != "index"?'Yii::app()->controller->createUrl("/categories/updateParent",array("id"=>$data->id))':'Yii::app()->controller->createUrl("/categories/update",array("id"=>$data->id))',
+                )
+            ),
         ),
     ),
 ));
