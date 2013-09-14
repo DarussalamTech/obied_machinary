@@ -20,16 +20,26 @@ class OMActiveRecord extends CActiveRecord {
      * update_time
      * update_user_id
      */
-    public $_action;
+    public $_action, $_cont_id;
+    
+    public function __construct($scenario = 'insert') {
+
+        $this->_action = Yii::app()->controller->action->id;
+        $this->_cont_id = Yii::app()->controller->id;
+   
+        return parent::__construct($scenario);
+    }
 
     public function afterFind() {
         $this->_action = Yii::app()->controller->action->id;
+        $this->_cont_id = Yii::app()->controller->id;
         parent::afterFind();
     }
 
     protected function beforeValidate() {
 
         $this->_action = Yii::app()->controller->action->id;
+        $this->_cont_id = Yii::app()->controller->id;
         if ($this->isNewRecord) {
 
             // set the create date, last updated date and the user doing the creating

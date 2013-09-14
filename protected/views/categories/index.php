@@ -47,7 +47,11 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array(
         'category_name',
         'category_description',
-        'parent_id',     
+        
+        array(
+           'name'=>'parent_id',
+           'value'=>'isset($data->parent_cat)?$data->parent_cat->category_name:""'
+        ),
         array(
             'class' => 'CButtonColumn',
         ),

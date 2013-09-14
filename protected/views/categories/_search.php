@@ -28,16 +28,22 @@
         <?php echo $form->label($model, 'category_image'); ?>
         <?php echo $form->textField($model, 'category_image', array('size' => 60, 'maxlength' => 255)); ?>
     </div>
-
-    <div class="row">
-        <?php echo $form->label($model, 'parent_id'); ?>
-        <?php
-        $criteria =new CDbCriteria();
-        $criteria->condition = "parent_id = 0";
-        $list = array(""=>"All")+CHtml::listData(Categories::model()->findAll($criteria),"id","category_name");
-        echo $form->dropDownList($model, 'parent_id',$list);
+    <?php
+    if ($this->action->id == "index"):
         ?>
-    </div>
+        <div class="row">
+            <?php echo $form->label($model, 'parent_id'); ?>
+            <?php
+            $criteria = new CDbCriteria();
+            $criteria->condition = "parent_id = 0";
+            $list = array("" => "All") + CHtml::listData(Categories::model()->findAll($criteria), "id", "category_name");
+            echo $form->dropDownList($model, 'parent_id', $list);
+            ?>
+        </div>
+
+        <?php
+    endif;
+    ?>
 
 
 

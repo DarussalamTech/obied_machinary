@@ -72,7 +72,7 @@ class Categories extends OMActiveRecord {
         // class name for the relations automatically generated below.
         return array(
             'products' => array(self::HAS_MANY, 'Products', 'category_id'),
-            'parent_cat' => array(self::BELONGS_TO, 'Categories', 'id'),
+            'parent_cat' => array(self::BELONGS_TO, 'Categories', 'parent_id'),
         );
     }
 
@@ -161,6 +161,12 @@ class Categories extends OMActiveRecord {
         $criteria->compare('create_user_id', $this->create_user_id, true);
         $criteria->compare('update_time', $this->update_time, true);
         $criteria->compare('update_user_id', $this->update_user_id, true);
+       
+    
+        if($this->_cont_id == "categories" && $this->_action=="index"){
+          
+            $criteria->addCondition("parent_id <>0");
+        }
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
