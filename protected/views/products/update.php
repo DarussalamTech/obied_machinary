@@ -8,11 +8,9 @@ $this->breadcrumbs=array(
 	'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List Products', 'url'=>array('index')),
-	array('label'=>'Create Products', 'url'=>array('create')),
-	array('label'=>'View Products', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Products', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'List Products', 'url' => array('index')),
+    array('label' => 'Create Products', 'url' => array('create')),
 );
 ?>
 

@@ -1,20 +1,60 @@
 <?php
 /* @var $this ProductsController */
-/* @var $dataProvider CActiveDataProvider */
+/* @var $model Products */
 
-$this->breadcrumbs=array(
-	'Products',
+$this->breadcrumbs = array(
+    'Products' => array('index'),
+    'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'Create Products', 'url'=>array('create')),
-	array('label'=>'Manage Products', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'List Products', 'url' => array('index')),
+    array('label' => 'Create Products', 'url' => array('create')),
 );
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#products-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 ?>
 
-<h1>Products</h1>
+<h1>Manage Products</h1>
 
-<?php $this->widget('zii.widgets.CListView', array(
-	'dataProvider'=>$dataProvider,
-	'itemView'=>'_view',
-)); ?>
+
+<?php echo CHtml::link('Advanced Search', '#', array('class' => 'search-button')); ?>
+<div class="search-form" style="display:none">
+    <?php
+    $this->renderPartial('_search', array(
+        'model' => $model,
+    ));
+    ?>
+</div><!-- search-form -->
+
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
+    'id' => 'products-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
+        array(
+            'name' => "category_id",
+            'value' => 'isset($data->category)?$data->category->category_name:""'
+        ),
+        'product_service_type',
+        'product_name',
+        'product_description',
+        'product_overview',
+        array(
+            'class' => 'CButtonColumn',
+        ),
+    ),
+));
+?>
