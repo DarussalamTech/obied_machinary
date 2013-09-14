@@ -35,7 +35,7 @@ class CategoriesController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('index', 'delete', 'createParent','indexParent'),
+                'actions' => array('index', 'delete', 'createParent', 'indexParent'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -59,8 +59,28 @@ class CategoriesController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+        $this->handlingSavingCategory();
+    }
+
+    /**
+     * Creating parent categories
+     */
+    public function actionCreateParent() {
+
+        $this->handlingSavingCategory(0);
+    }
+
+    public function handlingSavingCategory($parent_id = "") {
+
+
         $model = new Categories;
-        // $model->attachCbehavour();
+        /**
+         * when parent category
+         */
+        if ($parent_id == 0) {
+            $model->parent_id = $parent_id;
+        }
+
         // Uncomment the following line if AJAX validation is needed
         if (isset($_POST['Categories'])) {
 
@@ -81,41 +101,6 @@ class CategoriesController extends Controller {
         $this->render('create', array(
             'model' => $model,
             'model_parent_cat' => $model->parentCategories(),
-        ));
-    }
-
-    /**
-     * Creating parent categories
-     */
-    public function actionCreateParent() {
-
-        $model = new Categories;
-        $model_parent_cat = $model->parentCategories();
-        
-        $model->parent_id = 0;
-
-        // $model->attachCbehavour();
-        // Uncomment the following line if AJAX validation is needed
-        if (isset($_POST['Categories'])) {
-
-            $model->attributes = $_POST['Categories'];
-
-            //making instance of the uploaded image 
-            $img_file = OMUploadFile::getInstance($model, 'category_image');
-            $model->category_image = $img_file;
-            if ($model->save()) {
-                $upload_path = OMUploadFile::creeatRecurSiveDirectories(array("category_images", $model->id));
-                if (!empty($img_file)) {
-                    $img_file->saveAs($upload_path . $img_file->name);
-                }
-
-                $this->redirect(array('view', 'id' => $model->id));
-            }
-        }
-
-        $this->render('create', array(
-            'model' => $model,
-            'model_parent_cat' => $model_parent_cat,
         ));
     }
 
@@ -166,24 +151,23 @@ class CategoriesController extends Controller {
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
 
-
     /**
      * List all models.
      */
     public function actionIndex() {
         $model = new Categories('search');
         $model->unsetAttributes();  // clear any default values
-        
+
         if (isset($_GET['Categories']))
             $model->attributes = $_GET['Categories'];
-        
+
         $this->render('index', array(
             'model' => $model,
         ));
     }
 
     /**
-    /**
+      /**
      * List all models.
      */
     public function actionIndexParent() {
@@ -192,7 +176,7 @@ class CategoriesController extends Controller {
         $model->parent_id = 0;
         if (isset($_GET['Categories']))
             $model->attributes = $_GET['Categories'];
-        
+
         $this->render('index', array(
             'model' => $model,
         ));
