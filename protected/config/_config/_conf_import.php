@@ -10,10 +10,8 @@ $import = array(
     'application.models.*',
     'application.components.*',
     'application.components.core.db.*',
-	'application.components.core.classes.*',
+    'application.components.classes.*',
     'application.components.dataproviders.*',
-
     'application.extensions.ProDropDown.*',
-
-); 
+);
 ?>
