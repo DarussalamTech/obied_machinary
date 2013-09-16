@@ -2,6 +2,8 @@
 /* @var $this ProductsController */
 /* @var $model Products */
 /* @var $form CActiveForm */
+Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/gridform.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/functions.js');
 ?>
 
 <div class="form wide">
@@ -10,6 +12,7 @@
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'products-form',
         'enableAjaxValidation' => false,
+        'htmlOptions' => array('enctype' => 'multipart/form-data'),
     ));
     ?>
 
@@ -54,11 +57,16 @@
     </div>
 
 
-
+    <?php
+    if ($this->action->id != "update") {
+        $this->renderPartial('productImages/_container', array('model' => $model, "type" => "field"));
+        //$this->renderPartial('quranProfile/_container', array('model' => $model, "type" => "field"));
+    }
+    ?>
 
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array("class"=>"btn")); ?>
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array("class" => "btn")); ?>
     </div>
 
     <?php $this->endWidget(); ?>

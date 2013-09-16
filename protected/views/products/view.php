@@ -1,6 +1,8 @@
 <?php
 /* @var $this ProductsController */
 /* @var $model Products */
+Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/gridform.css');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/functions.js');
 
 $this->breadcrumbs = array(
     'Products' => array('index'),
@@ -16,14 +18,13 @@ $this->menu = array(
 
 <div class="pading-bottom-5">
     <div class="left_float">
-       <h1>View Products #<?php echo $model->id; ?></h1>
+        <h1>View Products #<?php echo $model->id; ?></h1>
     </div>
 
     <?php /* Convert to Monitoring Log Buttons */ ?>
     <div class = "right_float">
         <span class="creatdate">
             <?php
-           
             echo CHtml::link("Edit", $this->createUrl("update", array("id" => $model->primaryKey)), array('class' => "print_link_btn"));
             ?>
         </span>
@@ -35,7 +36,7 @@ $this->widget('zii.widgets.CDetailView', array(
     'attributes' => array(
         array(
             'name' => "category_id",
-            'value' => isset($model->category)?$model->category->category_name:""
+            'value' => isset($model->category) ? $model->category->category_name : ""
         ),
         'product_service_type',
         'product_name',
@@ -44,4 +45,5 @@ $this->widget('zii.widgets.CDetailView', array(
         'slug',
     ),
 ));
+$this->renderPartial('productImages/_container', array('model' => $model, "type" => "form"));
 ?>
