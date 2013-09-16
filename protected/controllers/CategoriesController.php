@@ -86,10 +86,10 @@ class CategoriesController extends Controller {
 
             $model->attributes = $_POST['Categories'];
 
-            $img_file = OMUploadFile::getInstance($model, 'category_image');
+            $img_file = DTUploadedFile::getInstance($model, 'category_image');
             $model->category_image = $img_file;
             if ($model->save()) {
-                $upload_path = OMUploadFile::creeatRecurSiveDirectories(array("category_images", $model->id));
+                $upload_path = DTUploadedFile::creeatRecurSiveDirectories(array("category_images", $model->id));
                 if (!empty($img_file)) {
                     $img_file->saveAs($upload_path . $img_file->name);
                 }
@@ -134,7 +134,7 @@ class CategoriesController extends Controller {
             $model->attributes = $_POST['Categories'];
 
             //making instance of the uploaded image 
-            $img_file = OMUploadFile::getInstance($model, 'category_image');
+            $img_file = DTUploadedFile::getInstance($model, 'category_image');
             if (!empty($img_file)) {
                 $model->category_image = $img_file;
             } else {
@@ -142,7 +142,7 @@ class CategoriesController extends Controller {
             }
 
             if ($model->save()) {
-                $upload_path = OMUploadFile::creeatRecurSiveDirectories(array("category_images", $model->id));
+                $upload_path = DTUploadedFile::creeatRecurSiveDirectories(array("category_images", $model->id));
                 if (!empty($img_file)) {
                     $img_file->saveAs($upload_path . $img_file->name);
                 }
