@@ -174,8 +174,8 @@ class ProductImages extends OMActiveRecord {
      * set image variable before save
      */
     public function setUploadVars() {
-        $large_img = OMUploadedFile::getInstance($this, '[' . $this->upload_key . ']image_large');
-        $its_t = new OMFunctions();
+        $large_img = DTUploadedFile::getInstance($this, '[' . $this->upload_key . ']image_large');
+        $its_t = new DTFunctions();
         if (!empty($large_img)) {
 
             $this->image_large = $its_t->getRanddomeNo(10) . "." . $large_img->extensionName;
@@ -193,18 +193,18 @@ class ProductImages extends OMActiveRecord {
      * upload images
      */
     public function uploadImages() {
-        $large_img = OMUploadedFile::getInstance($this, '[' . $this->upload_key . ']image_large');
+        $large_img = DTUploadedFile::getInstance($this, '[' . $this->upload_key . ']image_large');
         if (!empty($large_img)) {
 
 
             $folder_array = array("product", $this->product->id, "product_images", $this->id);
 
 
-            $upload_path = OMUploadedFile::creeatRecurSiveDirectories($folder_array);
+            $upload_path = DTUploadedFile::creeatRecurSiveDirectories($folder_array);
             $large_img->saveAs($upload_path . str_replace(" ", "_", $this->image_large));
 
-            OMUploadedFile::createThumbs($upload_path . $this->image_large, $upload_path, 130, str_replace(" ", "_", "small_" . $this->image_large));
-            OMUploadedFile::createThumbs($upload_path . $this->image_large, $upload_path, 180, str_replace(" ", "_", "detail_" . $this->image_large));
+            DTUploadedFile::createThumbs($upload_path . $this->image_large, $upload_path, 130, str_replace(" ", "_", "small_" . $this->image_large));
+            DTUploadedFile::createThumbs($upload_path . $this->image_large, $upload_path, 180, str_replace(" ", "_", "detail_" . $this->image_large));
             //$this->deleteldImage();
         }
     }
