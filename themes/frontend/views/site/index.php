@@ -25,7 +25,7 @@
                                 <div class="under_truck">
                                     <?php
                                     // CVarDumper::dump($child->category_image_path, 30, TRUE);
-                                    echo CHtml::link(CHtml::image($child->category_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/categories/listing'), array('title' => $child->category_name));
+                                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/categories/listing'), array('title' => $child->category_name));
                                     ?>
                                     <h1>
                                         <i><?php echo $child->category_name; ?></i>
