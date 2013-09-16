@@ -30,13 +30,12 @@ class ProductsController extends Controller {
      */
     public function accessRules() {
         return array(
-   
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'view'),
+                'actions' => array('create', 'update', 'view','loadChildByAjax','checkCilds','manageChildrens','deleteChildByAjax','editChild'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('index','delete'),
+                'actions' => array('index', 'delete'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -61,13 +60,15 @@ class ProductsController extends Controller {
      */
     public function actionCreate() {
         $model = new Products;
-        
+
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
         if (isset($_POST['Products'])) {
             $model->attributes = $_POST['Products'];
+            $this->checkCilds($model);
+            //CVarDumper::dump($model,10,TRUE);die;
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
@@ -76,6 +77,102 @@ class ProductsController extends Controller {
             'model' => $model,
             'model_child_cat' => Categories::model()->childCategories(100),
         ));
+    }
+    
+
+    /**
+     *
+     * @param <type> $mName
+     * @param <type> $index
+     */
+    public function actionLoadChildByAjax($mName, $dir, $load_for, $index, $upload_index = "") {
+        /* Get regarding model */
+        $model = new $mName;
+
+        $this->renderPartial($dir . '/_fields_row', array(
+            'index' => $index,
+            'model' => $model,
+            "load_for" => $load_for,
+            'dir' => $dir,
+            'upload_index' => isset($_REQUEST['upload_index']) ? $_REQUEST['upload_index'] : "",
+            'fields_div_id' => $dir . '_fields'), false, true);
+    }
+
+    /**
+     *
+     * @param <type> $id
+     * @param <type> $mName
+     * @param <type> $dir 
+     */
+    public function actionEditChild($id, $mName, $dir) {
+        /* Get regarding model */
+        $model = new $mName;
+        $render_view = $dir . '/_fields_row';
+        $model = $model->findByPk($id);
+
+
+        $this->renderPartial($render_view, array('index' => 1, 'model' => $model,
+            "load_for" => "view", 'dir' => $dir, "displayd" => "block",
+            'fields_div_id' => $dir . '_fields',
+                ), false, true);
+    }
+
+    /**
+     * delete child by ajax
+     * @param type $id
+     * @param type $mName
+     * @throws CHttpException 
+     */
+    public function actionDeleteChildByAjax($id, $mName) {
+
+
+
+
+
+        if (Yii::app()->request->isAjaxRequest) {
+            /* Get regarding model */
+            $model = new $mName;
+
+            $model = $model->findByPk($id);
+
+            $model->deleteByPk($id);
+        }
+        else
+            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+    }
+
+    /*
+     * managing recrods
+     * at create
+     */
+
+    private function checkCilds($model) {
+        /*
+          if (isset($_POST['ProductImage'])) {
+          $model->setRelationRecords('productImages', is_array($_POST['ProductImage']) ? $_POST['ProductImage'] : array());
+          }
+         */
+        if (isset($_POST['ProductImages'])) {
+            
+            $model->setRelationRecords('productImages', is_array($_POST['ProductImages']) ? $_POST['ProductImages'] : array());
+        }
+
+//        if (isset($_POST['ProductDiscount'])) {
+//            $model->setRelationRecords('discount', is_array($_POST['ProductDiscount']) ? $_POST['ProductDiscount'] : array());
+//        }
+
+        return true;
+    }
+
+    /**
+     * will be used to manage child at 
+     * view mode
+     * @param type $model 
+     */
+    private function manageChildrens($model) {
+
+        $this->manageChild($model, "productImages", "product");
+        //$this->manageChild($model, "productCategories", "product");
     }
 
     /**
@@ -113,7 +210,6 @@ class ProductsController extends Controller {
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
     }
-
 
     /**
      * Manages all models.
