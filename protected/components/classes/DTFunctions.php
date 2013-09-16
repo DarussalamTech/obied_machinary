@@ -4,7 +4,7 @@
  *
  */
 //PCM: Date format conversion can be in PActiveRecord, as it will be appplied application wide --- discuss with Ayaz before working on it
-class OMFunctions
+class DTFunctions
 {
 
     /**
