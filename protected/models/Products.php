@@ -175,6 +175,31 @@ class Products extends OMActiveRecord {
     }
 
     /**
+     *  get product images for some code
+     * @return type 
+     */
+    public function getImage() {
+        $images = array();
+        foreach ($this->productImages as $img) {
+            if ($img->is_default == 1) {
+                $images[] = array('id' => $img->id,
+                    'image_large' => $img->image_url['image_large'],
+                    'image_small' => $img->image_url['image_small'],
+                );
+                break;
+            } else {
+                $images[] = array('id' => $img->id,
+                    'image_large' => $img->image_url['image_large'],
+                    'image_small' => $img->image_url['image_small'],
+                );
+                break;
+            }
+        }
+
+        return $images;
+    }
+
+    /**
      * slag filling
      */
     public function beforeSave() {

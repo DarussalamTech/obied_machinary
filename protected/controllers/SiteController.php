@@ -26,8 +26,7 @@ class SiteController extends Controller {
     }
 
     /**
-     * This is the default 'index' action that is invoked
-     * when an action is not explicitly requested by users.
+     * it is our home page
      */
     public function actionIndex() {
 
@@ -51,20 +50,65 @@ class SiteController extends Controller {
         }
     }
 
-    /*
+    /**
+     * 
      * For displaying all products on based on product
      * categories
      * These actions used 
      * front end theme.
-     */
 
-    public function actionAllProducts($category_id) {
+     * @param String $slug
+     */
+    public function actionAllProducts($slug) {
 
         /*
          * Getting lists of product based on category_id
          */
-        $category_products = Products::model()->categoryProducts($category_id);
-        $this->render('/site/all_products', array('category_products' => $category_products));
+        $cat_id = $this->getRequestIDFromSlug($slug);
+        $category_products = Products::model()->categoryProducts($cat_id);
+        $this->render('/site/all_products', array('category_products' => $category_products, "cat_id" => $cat_id));
+    }
+
+    /*
+     * product Detail for 
+     * Displaying single product details
+     * author:ubd
+     */
+
+    public function actionProductDetail($slug) {
+        /*
+         * Getting product id from slug
+         */
+        $product_id = $this->getRequestIDFromSlug($slug);
+        $product_detail = Products::model()->findByPk($product_id);
+        $pro_cat_id = $product_detail->category->id;
+        $this->render('/site/productDetail', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
+    }
+
+    /*
+     * Rendering the service type 
+     * either it is trade or rental
+     * author:ubd
+     */
+
+    public function actionDivision() {
+
+        $product_service_type = $_REQUEST['type'];
+        $criteria = new CDbCriteria();
+        $criteria->select = '*';
+        $criteria->condition = 'product_service_type ="' . $product_service_type . '"';
+        $division_product = Products::model()->findAll($criteria);
+
+        $this->render('/site/all_products', array('category_products' => $division_product, "cat_id" => ""));
+    }
+
+    /*
+     * Rendering static client page
+     * auth:ubd
+     */
+
+    public function actionClients() {
+        $this->render('/site/clients');
     }
 
     /*
@@ -75,6 +119,8 @@ class SiteController extends Controller {
     public function actionServices() {
         $this->render('/site/services', array());
     }
+
+    /*     * *************************** System Generated code ****************************** */
 
     /**
      * Displays the contact page

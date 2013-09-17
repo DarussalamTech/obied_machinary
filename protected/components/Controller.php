@@ -165,7 +165,7 @@ class Controller extends CController {
      * @param type $pidArray 
      */
     public function getNavigation($pid = 0, $level = 0, $root_parent = 0, $pidArray = array()) {
-        
+
         $model = Menus::model()->findAllByAttributes(array("pid" => $pid, "is_assigned" => "Yes"));
         $l = $level;
 
@@ -205,6 +205,16 @@ class Controller extends CController {
         if ($foundAny == false)
             $this->menuHtml .='<span class="noItemFound"></span>';
         $this->menuHtml .='</ul>';
+    }
+
+    /**
+     * get the request id from slug
+     * it is string we have to decompsed
+     * @param type $slug
+     */
+    public function getRequestIDFromSlug($slug) {
+        $slug_arr = explode("-", $slug);
+        return $slug_arr[count($slug_arr) - 1];
     }
 
     /**

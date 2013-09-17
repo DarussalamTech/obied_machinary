@@ -181,7 +181,7 @@ class Categories extends OMActiveRecord {
      */
     public function setSlug() {
 
-        $this->slug = trim($this->slug) . "-" . $this->primaryKey;
+        $this->slug = trim($this->category_name).'-' . "-" . $this->primaryKey;
         $this->slug = str_replace(" ", "-", $this->slug);
         $this->slug = str_replace(Yii::app()->params['notallowdCharactorsUrl'], '', $this->slug);
     }
