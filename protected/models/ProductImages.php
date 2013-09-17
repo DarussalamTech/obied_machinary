@@ -45,6 +45,11 @@ class ProductImages extends OMActiveRecord {
         return parent::model($className);
     }
 
+    public function __construct($scenario = 'insert') {
+        $this->no_image = Yii::app()->baseUrl . "/images/no_image.jpg";
+        parent::__construct($scenario);
+    }
+
     /**
      * @return string the associated database table name
      */
@@ -182,6 +187,12 @@ class ProductImages extends OMActiveRecord {
 
         $this->setUploadVars();
         return parent::beforeSave();
+    }
+
+    public function beforeFind() {
+        //$this->image_detail = $this->no_image;
+        //die($this->image_detail);
+        parent::beforeFind();
     }
 
     public function afterSave() {
