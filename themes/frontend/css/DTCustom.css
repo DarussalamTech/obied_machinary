@@ -15,4 +15,17 @@
 .truck_images{
     margin: 30px 32px 0;
 }
+.about_listing a{
+    color:#F9CA22;
+}
+.terrain_list a{
+    color: #474747;
+}
+
+.ltm_tank p {
+    height: 50px;
+}
+.ltm_tank img{
+    height: 114px
+}
 
