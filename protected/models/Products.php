@@ -149,4 +149,48 @@ class Products extends OMActiveRecord {
         ));
     }
 
+    /**
+     * setting slug
+     * for url
+     */
+    public function saveSlug() {
+        if (!empty($this->slug)) {
+            $this->slug = str_replace(" ", "-", $this->slug);
+        } else {
+            $this->slug = str_replace(" ", "-", $this->product_name);
+        }
+    }
+
+    /**
+     * setting slug
+     * for url
+     */
+    public function setSlug() {
+
+        if (Yii::app()->controller->id == "site") {
+            $this->slug = trim($this->slug) . "-" . $this->primaryKey;
+            $this->slug = str_replace(" ", "-", $this->slug);
+            $this->slug = str_replace(Yii::app()->params['notallowdCharactorsUrl'], '', $this->slug);
+        }
+    }
+
+    /**
+     * slag filling
+     */
+    public function beforeSave() {
+        $this->saveSlug();
+        parent::beforeSave();
+        return true;
+    }
+
+    /**
+     * setting slug
+     * for url
+     */
+    public function afterFind() {
+        $this->setSlug();
+
+        parent::afterFind();
+    }
+
 }

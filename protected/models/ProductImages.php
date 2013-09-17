@@ -143,10 +143,30 @@ class ProductImages extends OMActiveRecord {
     }
 
     public function afterFind() {
-//        $this->oldLargeImg = $this->image_large;
-//        $this->oldSmallImg = $this->image_small;
-//        $this->oldDetailImg = $this->image_detail;
+        $this->oldLargeImg = $this->image_large;
+        $this->oldSmallImg = $this->image_small;
 
+
+
+        /**
+         *  setting path  for front end images
+         */
+        if (!empty($this->image_large)) {
+
+
+            $this->image_url['image_large'] = Yii::app()->baseUrl . "/uploads/product/" . $this->product->primaryKey;
+            $this->image_url['image_large'].= "/product_images/" . $this->id . "/" . $this->image_large;
+        } else {
+            $this->image_url['image_large'] = Yii::app()->baseUrl . "/images/product_images/noimages.jpeg";
+        }
+
+        if (!empty($this->image_small)) {
+
+            $this->image_url['image_small'] = Yii::app()->baseUrl . "/uploads/product/" . $this->product->primaryKey;
+            $this->image_url['image_small'].= "/product_images/" . $this->id . "/" . $this->image_small;
+        } else {
+            $this->image_url['image_small'] = Yii::app()->baseUrl . "/images/product_images/noimages.jpeg";
+        }
 
 
         parent::afterFind();

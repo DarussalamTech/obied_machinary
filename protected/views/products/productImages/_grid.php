@@ -19,7 +19,7 @@ $mName="ProductImages";
         'columns' => array(
             array(
                 'name' => 'image_small',
-                'value' => 'CHtml::link($data->image_small,$data->image_large,array("rel" => "lightbox[_default]"))',
+                'value' => 'CHtml::link($data->image_small,$data->image_url["image_large"],array("rel" => "lightbox[_default]"))',
                 "type" => "raw",
             ),
            array(

@@ -53,8 +53,10 @@ class ProductsController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $model = $this->loadModel($id);
+        $this->manageChildrens($model);
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $model,
         ));
     }
 
@@ -141,12 +143,14 @@ class ProductsController extends Controller {
         /* Get regarding model */
         $model = new $mName;
         $render_view = $dir . '/_fields_row';
+       
         $model = $model->findByPk($id);
 
 
         $this->renderPartial($render_view, array('index' => 1, 'model' => $model,
             "load_for" => "view", 'dir' => $dir, "displayd" => "block",
             'fields_div_id' => $dir . '_fields',
+            'upload_index' => isset($_REQUEST['upload_index']) ? $_REQUEST['upload_index'] : "",
                 ), false, true);
     }
 
@@ -180,19 +184,12 @@ class ProductsController extends Controller {
      */
 
     private function checkCilds($model) {
-        /*
-          if (isset($_POST['ProductImage'])) {
-          $model->setRelationRecords('productImages', is_array($_POST['ProductImage']) ? $_POST['ProductImage'] : array());
-          }
-         */
+
         if (isset($_POST['ProductImages'])) {
 
             $model->setRelationRecords('productImages', is_array($_POST['ProductImages']) ? $_POST['ProductImages'] : array());
         }
 
-//        if (isset($_POST['ProductDiscount'])) {
-//            $model->setRelationRecords('discount', is_array($_POST['ProductDiscount']) ? $_POST['ProductDiscount'] : array());
-//        }
 
         return true;
     }
@@ -205,7 +202,6 @@ class ProductsController extends Controller {
     private function manageChildrens($model) {
 
         $this->manageChild($model, "productImages", "product");
-        //$this->manageChild($model, "productCategories", "product");
     }
 
     /**
