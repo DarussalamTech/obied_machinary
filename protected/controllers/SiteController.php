@@ -31,6 +31,7 @@ class SiteController extends Controller {
      */
     public function actionIndex() {
 
+        $this->layout = 'frontend';
         /*
          * Getting Child Categories
          */
@@ -92,7 +93,8 @@ class SiteController extends Controller {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
-                $this->redirect(Yii::app()->user->returnUrl);
+                $this->redirect($this->createUrl('/products/index'));
+            //$this->redirect(Yii::app()->user->returnUrl);
         }
         // display the login form
         $this->render('login', array('model' => $model));

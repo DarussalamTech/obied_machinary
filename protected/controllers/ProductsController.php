@@ -31,7 +31,11 @@ class ProductsController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'view','loadChildByAjax','checkCilds','manageChildrens','deleteChildByAjax','editChild'),
+                'actions' => array('allProducts', 'services'),
+                'users' => array('*'),
+            ),
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array('create', 'update', 'view', 'loadChildByAjax', 'checkCilds', 'manageChildrens', 'editChild'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -78,7 +82,36 @@ class ProductsController extends Controller {
             'model_child_cat' => Categories::model()->childCategories(100),
         ));
     }
-    
+
+    /*
+     * For displaying all products on based on product
+     * categories
+     * These actions used 
+     * front end theme.
+     */
+
+    public function actionAllProducts($category_id) {
+
+        $this->layout = 'column1';
+        Yii::app()->theme = 'frontend';
+
+        /*
+         * Getting lists of product based on category_id
+         */
+        $category_products = Products::model()->categoryProducts($category_id);
+        $this->render('/products/all_products', array('category_products' => $category_products));
+    }
+
+    /*
+     * Methods for Rendering the service page
+     * it is an static page
+     */
+
+    public function actionServices() {
+        $this->layout = 'column1';
+        Yii::app()->theme = 'frontend';
+        $this->render('/products/services', array());
+    }
 
     /**
      *
@@ -153,7 +186,7 @@ class ProductsController extends Controller {
           }
          */
         if (isset($_POST['ProductImages'])) {
-            
+
             $model->setRelationRecords('productImages', is_array($_POST['ProductImages']) ? $_POST['ProductImages'] : array());
         }
 
