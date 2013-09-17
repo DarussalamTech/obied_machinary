@@ -22,9 +22,11 @@
                 <article>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</article>
                 <article>We started our operations in 1985 by trading used equipment all over Middle East and Asia.</article>
                 <?php $serial = 1;
-                foreach ($category_products as $product): ?>
+                foreach ($category_products as $product):
+                    ?>
                     <div class="four columns">
                         <div class="right_index_service">
+    <?php //CVarDumper::dump($product->productImages[0]->image_detail,10,TRUE);die;  ?>
                             <h4>Product <?php echo $serial; ?></h4>
                             <div class="ltm_tank">
                                 <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/ltm_tank_img_03.jpg" />
@@ -36,16 +38,6 @@
                     $serial++;
                 endforeach;
                 ?>
-                <div class="four columns">
-                    <div class="right_index_service">
-                        <h4>Product 1</h4>
-                        <div class="ltm_tank">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/ltm_tank_img_03.jpg" />
-                            <p><i>LTM1500 with 84m Boom LTM1300</i></p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
