@@ -31,7 +31,7 @@ class ProductsController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('allProducts', 'services'),
+                'actions' => array('allProducts'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -85,36 +85,6 @@ class ProductsController extends Controller {
         ));
     }
 
-    /*
-     * For displaying all products on based on product
-     * categories
-     * These actions used 
-     * front end theme.
-     */
-
-    public function actionAllProducts($category_id) {
-
-        $this->layout = 'column1';
-        Yii::app()->theme = 'frontend';
-
-        /*
-         * Getting lists of product based on category_id
-         */
-        $category_products = Products::model()->categoryProducts($category_id);
-        $this->render('/products/all_products', array('category_products' => $category_products));
-    }
-
-    /*
-     * Methods for Rendering the service page
-     * it is an static page
-     */
-
-    public function actionServices() {
-        $this->layout = 'column1';
-        Yii::app()->theme = 'frontend';
-        $this->render('/products/services', array());
-    }
-
     /**
      *
      * @param <type> $mName
@@ -143,7 +113,7 @@ class ProductsController extends Controller {
         /* Get regarding model */
         $model = new $mName;
         $render_view = $dir . '/_fields_row';
-       
+
         $model = $model->findByPk($id);
 
 

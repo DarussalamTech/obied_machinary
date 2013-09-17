@@ -51,6 +51,31 @@ class SiteController extends Controller {
         }
     }
 
+    /*
+     * For displaying all products on based on product
+     * categories
+     * These actions used 
+     * front end theme.
+     */
+
+    public function actionAllProducts($category_id) {
+
+        /*
+         * Getting lists of product based on category_id
+         */
+        $category_products = Products::model()->categoryProducts($category_id);
+        $this->render('/site/all_products', array('category_products' => $category_products));
+    }
+
+    /*
+     * Methods for Rendering the service page
+     * it is an static page
+     */
+
+    public function actionServices() {
+        $this->render('/site/services', array());
+    }
+
     /**
      * Displays the contact page
      */
