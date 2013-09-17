@@ -75,7 +75,7 @@ class Products extends OMActiveRecord {
      * Behaviour
      *
      */
-     public function behaviors() {
+    public function behaviors() {
         return array(
             'CSaveRelationsBehavior' => array(
                 'class' => 'CSaveRelationsBehavior',
@@ -87,6 +87,18 @@ class Products extends OMActiveRecord {
                 'class' => 'CMultipleRecords'
             ),
         );
+    }
+
+    /*
+     * returning the product lists on based of
+     * product category product_categories
+     */
+
+    public function categoryProducts($category_id) {
+        $criteria = new CDbCriteria();
+        $criteria->select = '*';
+        $criteria->condition = 'category_id=' . $category_id;
+        return $this->findAll($criteria);
     }
 
     /**
