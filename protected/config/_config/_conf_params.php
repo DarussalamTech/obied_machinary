@@ -24,6 +24,7 @@ $params = array(
     'mailUsername' => 'testservice733@gmail.com',
     'mailPassword' => 'abc123AB1',
     'mailSecuity' => 'ssl',
+    'notallowdCharactorsUrl' => array('[',']','@','!','$','&','(',')','*','+',';',"'",","),
 
 );
 ?>

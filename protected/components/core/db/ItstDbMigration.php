@@ -239,7 +239,7 @@ class ItstDbMigration extends CDbMigration
             "create_user_id" => $user_row['id'],
             "update_time" => date("Y-m-d H:i:s"),
             "update_user_id" => $user_row['id'],
-            "activity_log" => "inserted by " . $user_row['username'],
+       
         );
         $columns = array_merge($columns, $common_column);
         $this->insert($table, $columns);

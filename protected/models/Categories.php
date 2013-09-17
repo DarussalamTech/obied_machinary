@@ -20,7 +20,7 @@
  */
 class Categories extends OMActiveRecord {
 
-    public $no_image = "",$show_image;
+    public $no_image = "", $show_image ,$slug;
 
     /**
      * Returns the static model of the specified AR class.
@@ -96,6 +96,8 @@ class Categories extends OMActiveRecord {
 
     public function afterFind() {
         $this->setCategoryImagePaths();
+        
+        $this->setSlug();
 
         return parent::afterFind();
     }
@@ -161,16 +163,27 @@ class Categories extends OMActiveRecord {
         $criteria->compare('create_user_id', $this->create_user_id, true);
         $criteria->compare('update_time', $this->update_time, true);
         $criteria->compare('update_user_id', $this->update_user_id, true);
-       
-    
-        if($this->_cont_id == "categories" && $this->_action=="index"){
-          
+
+
+        if ($this->_cont_id == "categories" && $this->_action == "index") {
+
             $criteria->addCondition("parent_id <>0");
         }
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
+    }
+
+    /**
+     * setting slug
+     * for url
+     */
+    public function setSlug() {
+
+        $this->slug = trim($this->slug) . "-" . $this->primaryKey;
+        $this->slug = str_replace(" ", "-", $this->slug);
+        $this->slug = str_replace(Yii::app()->params['notallowdCharactorsUrl'], '', $this->slug);
     }
 
 }
