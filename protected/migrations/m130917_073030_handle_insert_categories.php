@@ -3,6 +3,12 @@
 class m130917_073030_handle_insert_categories extends ItstDbMigration {
 
     public function up() {
+        $table = "product_images";
+        $this->delete($table);
+        
+        $table = "products";
+        $this->delete($table);
+        
         $table = "categories";
         $this->delete($table);
         
