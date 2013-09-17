@@ -39,16 +39,24 @@
         </div>
     </div>
 </header>
-<div class="about_banner">
+<div class="banner">
     <div class="row">
         <div class="banner_part">
             <div class="banner_main_part">
                 <div class="twelve columns">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/inner-banner.png" class="main_banner_img" />
+                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.png" class="main_banner_img" />
                 </div>
-                <div class="seven columns">
-                    <div class="about_hook">
-                        <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/truck_hook_03.png" />
+                <div class="row">
+                    <div class="eight columns">
+                        <div class="banner_text">
+                            <h1>ABOUT OBEID MACHINERY</h1>
+                            <p><i>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</i></p>
+                        </div>
+                    </div>
+                    <div class="four columns">
+                        <div class="big_hook">
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/truck_hook_03.png" />
+                        </div>
                     </div>
                 </div>
                 <?php echo $content; ?>

@@ -1,26 +1,9 @@
-
 <div class="row">
-    <div class="about_services">
-        <div class="three columns">
-            <div class="about_list">
-                <div class="about_listing">
-                    All Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Truck Mounted Cranes
-                </div>
-                <div class="about_listing">
-                    Rough Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Crawler Cranes
-                </div>
-            </div>
-        </div>
-        <div class="six columns">
+    <div class="our_services">
+        <div class="nine columns">
             <div class="center_about_service">
                 <div class="about_upper_part">
-                    <h2>ABOUT OBEID MACHINERY</h2>
+                    <h2>SERVICES OBEID MACHINERY</h2>
                     <p>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</p>
                     <p>We started our operations in 1985 by trading used equipment all over Middle East and Asia.</p>
                     <p>Today, in response to the growing demand, we have established Affiliated Offices, such that we cover the globe, to provide a wide range of services and supply specialized equipment to meet the exact requirements of customers within the time frame.</p>
