@@ -30,7 +30,7 @@
                             <li><?php echo CHtml::link('About Us', Yii::app()->createUrl('/site/page?view=about')); ?></li>
                             <li><?php echo CHtml::link('Our Services', Yii::app()->createUrl('/site/services')); ?></li>
                             <li><a href="#">Cranes Wanted</a></li>
-                            <li><a href="#">Clients</a></li>
+                            <li><?php echo CHtml::link('Clients', Yii::app()->createUrl('/site/clients')); ?></li>
                             <li><?php echo CHtml::link('Contact Us', Yii::app()->createUrl('/site/contact')); ?></li>
                         </ul>
                     </nav>

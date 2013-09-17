@@ -17,6 +17,15 @@
 
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
+
+        <script>
+            // defining js base path
+            var js_basePath = '<?php echo Yii::app()->theme->baseUrl; ?>';
+
+            var yii_base_url = "<?php echo Yii::app()->baseUrl; ?>";
+
+        </script>
+
         <!-- Facebook Metadata /-->
         <meta property="fb:page_id" content="" />
         <meta property="og:image" content="" />

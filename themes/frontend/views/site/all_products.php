@@ -2,18 +2,19 @@
     <div class="terrain_services">
         <div class="three columns">
             <div class="about_list">
-                <div class="about_listing terrain_list">
-                    All Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Truck Mounted Cranes
-                </div>
-                <div class="about_listing">
-                    Rough Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Crawler Cranes
-                </div>
+                <?php
+                $allSubCats = Categories::model()->childCategories();
+                foreach ($allSubCats as $cat):
+                    ?>
+                    <div class="about_listing <?php echo ($cat->id == $cat_id) ? "terrain_list" : "" ?>">
+                        <?php
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('slug' => $cat->slug)), array('title' => $cat->category_name));
+                        ?>
+                    </div>
+
+                    <?php
+                endforeach;
+                ?>
             </div>
         </div>
         <div class="nine columns">
@@ -21,15 +22,19 @@
                 <h2>We specialize in Trading Products</h2>
                 <article>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</article>
                 <article>We started our operations in 1985 by trading used equipment all over Middle East and Asia.</article>
-                <?php $serial = 1;
+                <?php
+                $serial = 1;
                 foreach ($category_products as $product):
+                    $p_images = $product->getImage();
                     ?>
                     <div class="four columns">
                         <div class="right_index_service">
-    <?php //CVarDumper::dump($product->productImages[0]->image_detail,10,TRUE);die;  ?>
+
                             <h4>Product <?php echo $serial; ?></h4>
                             <div class="ltm_tank">
-                                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/ltm_tank_img_03.jpg" />
+                                <?php
+                                echo isset($p_images[0]) ? CHtml::link(CHtml::image($p_images[0]['image_small']), $this->createUrl('/site/productDetail', array('slug' => $product->slug))) : "";
+                                ?>
                                 <p><i><?php echo $product->product_name; ?></i></p>
                             </div>
                         </div>

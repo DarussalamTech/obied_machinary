@@ -1,20 +1,20 @@
-
 <div class="row">
     <div class="about_services">
         <div class="three columns">
             <div class="about_list">
-                <div class="about_listing">
-                    All Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Truck Mounted Cranes
-                </div>
-                <div class="about_listing">
-                    Rough Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Crawler Cranes
-                </div>
+                <?php
+                $allSubCats = Categories::model()->childCategories();
+                foreach ($allSubCats as $cat):
+                    ?>
+                    <div class="about_listing">
+                        <?php
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('slug' => $cat->slug)), array('title' => $cat->category_name));
+                        ?>
+                    </div>
+
+                    <?php
+                endforeach;
+                ?>
             </div>
         </div>
         <div class="six columns">

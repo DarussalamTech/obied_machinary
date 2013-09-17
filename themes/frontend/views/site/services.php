@@ -2,18 +2,19 @@
     <div class="our_services">
         <div class="three columns">
             <div class="about_list">
-                <div class="about_listing">
-                    All Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Truck Mounted Cranes
-                </div>
-                <div class="about_listing">
-                    Rough Terrain Cranes
-                </div>
-                <div class="about_listing">
-                    Crawler Cranes
-                </div>
+                <?php
+                $allSubCats = Categories::model()->childCategories();
+                foreach ($allSubCats as $cat):
+                    ?>
+                    <div class="about_listing">
+                        <?php
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('slug' => $cat->slug)), array('title' => $cat->category_name));
+                        ?>
+                    </div>
+
+                    <?php
+                endforeach;
+                ?>
             </div>
         </div>
         <div class="six columns">
@@ -60,7 +61,7 @@
             <div class="right_index_service">
                 <h4>NEW ARRIVALS</h4>
                 <div class="ltm_tank">
-                    <img src="<?php echo Yii::app()->theme->baseUrl;?>/images/ltm_tank_img_03.jpg" />
+                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/ltm_tank_img_03.jpg" />
                     <p><i>LTM1500 with 84m Boom LTM1300</i></p>
                 </div>
             </div>
