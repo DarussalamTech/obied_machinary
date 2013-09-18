@@ -37,6 +37,7 @@ class Controller extends CController {
      * @var type 
      */
     public $PcmWidget;
+    public $newArrivalWidget;
 
     public function beforeAction($action) {
 
