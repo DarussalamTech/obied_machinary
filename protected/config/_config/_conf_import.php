@@ -13,5 +13,6 @@ $import = array(
     'application.components.classes.*',
     'application.components.dataproviders.*',
     'application.extensions.ProDropDown.*',
+    'application.components.widgets.*',
 );
 ?>
