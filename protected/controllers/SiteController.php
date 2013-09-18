@@ -10,7 +10,8 @@ class SiteController extends Controller {
             // captcha action renders the CAPTCHA image displayed on the contact page
             'captcha' => array(
                 'class' => 'CCaptchaAction',
-                'backColor' => 0xFFFFFF,
+                'backColor' => 0xEDEDED,
+                'foreColor' => 0x2f251c,
             ),
             // page action renders "static" pages stored under 'protected/views/site/pages'
             // They can be accessed via: index.php?r=site/page&view=FileName
@@ -59,12 +60,12 @@ class SiteController extends Controller {
 
      * @param String $slug
      */
-    public function actionAllProducts($slug) {
+    public function actionAllProducts($cat_slug) {
 
         /*
          * Getting lists of product based on category_id
          */
-        $cat_id = $this->getRequestIDFromSlug($slug);
+        $cat_id = $this->getRequestIDFromSlug($cat_slug);
         $category_products = Products::model()->categoryProducts($cat_id);
         $this->render('/site/all_products', array('category_products' => $category_products, "cat_id" => $cat_id));
     }
@@ -118,6 +119,15 @@ class SiteController extends Controller {
 
     public function actionServices() {
         $this->render('/site/services', array());
+    }
+
+    /*
+     * Methods for Rendering the about page
+     * it is an static page
+     */
+
+    public function actionAbout() {
+        $this->render('/site/about', array());
     }
 
     /*     * *************************** System Generated code ****************************** */
