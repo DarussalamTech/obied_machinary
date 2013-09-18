@@ -24,36 +24,65 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
         <?php echo $form->labelEx($model, 'category_id'); ?>
         <?php $child_cat_list = CHtml::listData($model_child_cat, 'id', 'category_name') ?>
         <?php echo $form->dropDownList($model, 'category_id', $child_cat_list, array('prompt' => 'Select Parent Category')) ?>
-        <?php echo $form->error($model, 'category_id'); ?>
     </div>
 
     <div class="row">
         <?php echo $form->labelEx($model, 'product_name'); ?>
         <?php echo $form->textField($model, 'product_name', array('size' => 50, 'maxlength' => 50)); ?>
-        <?php echo $form->error($model, 'product_name'); ?>
     </div>
+
+
+    <div class="row">
+        <?php echo $form->labelEx($model, 'serial_number'); ?>
+        <?php echo $form->textField($model, 'serial_number', array('size' => 50, 'maxlength' => 50)); ?>
+    </div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'capacity'); ?>
+        <?php echo $form->textField($model, 'capacity', array('size' => 50, 'maxlength' => 50)); ?>
+    </div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'status'); ?>
+        <?php echo $form->dropDownList($model, 'status', array('available' => 'Available', 'sold' => 'Sold', 'comming soon' => 'Comming Soon'));
+        ?>
+    </div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'year'); ?>
+        <?php $years = array("1999" => "1999", "2000" => "2000", "2001" => "2001", 2002 => 2002, 2003 => 2003, 2004 => 2004, 2005 => 2005, 2006 => 2006, 2007 => 2007, 2008 => 2008, 2009 => 2009, 2010 => 2010, 2011 => 2011, 2012 => 2012, 2013 => 2013); ?>
+        <?php echo $form->dropDownList($model, 'year', $years); ?>
+    </div>
+
 
     <div class="row">
         <?php echo $form->labelEx($model, 'product_overview'); ?>
         <?php echo $form->textArea($model, 'product_overview', array('size' => 60, 'maxlength' => 255, 'style' => "width: 200px; height: 90px")); ?>
-        <?php echo $form->error($model, 'product_overview'); ?>
     </div>
 
+    <div class="row">
+        <?php echo $form->labelEx($model, 'crane_boom'); ?>
+        <?php echo $form->textField($model, 'crane_boom', array('size' => 50, 'maxlength' => 50)); ?>
+    </div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'crane_jib'); ?>
+        <?php echo $form->textField($model, 'crane_jib', array('size' => 50, 'maxlength' => 50)); ?>
+    </div>
     <div class="row">
         <?php echo $form->labelEx($model, 'product_service_type'); ?>
         <?php echo $form->dropDownList($model, 'product_service_type', array('trade' => 'Trade', 'rented' => 'Rented')); ?>
-        <?php echo $form->error($model, 'product_service_type'); ?>
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'slug'); ?>
-        <?php echo $form->textField($model, 'slug', array('size' => 50, 'maxlength' => 50)); ?>
-        <?php echo $form->error($model, 'slug'); ?>
-    </div>
+    <!--    <div class="row">
+    <?php //echo $form->labelEx($model, 'slug'); ?>
+    <?php //echo $form->textField($model, 'slug', array('size' => 50, 'maxlength' => 50)); ?>
+        </div>-->
+
+
+
+
+
+
     <div class="row">
         <?php echo $form->labelEx($model, 'product_description'); ?>
         <?php echo $form->textArea($model, 'product_description', array('rows' => 6, 'cols' => 50)); ?>
-        <?php echo $form->error($model, 'product_description'); ?>
     </div>
 
 
