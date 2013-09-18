@@ -8,7 +8,7 @@
                     ?>
                     <div class="about_listing <?php echo ($cat->id == $cat_id) ? "terrain_list" : "" ?>">
                         <?php
-                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('slug' => $cat->slug)), array('title' => $cat->category_name));
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
                         ?>
                     </div>
 
@@ -26,6 +26,7 @@
                 $serial = 1;
                 foreach ($category_products as $product):
                     $p_images = $product->getImage();
+                    $category_url = str_replace(" ", "-", $product->category->category_name);
                     ?>
                     <div class="four columns">
                         <div class="right_index_service">
@@ -33,7 +34,7 @@
                             <h4>Product <?php echo $serial; ?></h4>
                             <div class="ltm_tank">
                                 <?php
-                                echo isset($p_images[0]) ? CHtml::link(CHtml::image($p_images[0]['image_small']), $this->createUrl('/site/productDetail', array('slug' => $product->slug))) : "";
+                                echo isset($p_images[0]) ? CHtml::link(CHtml::image($p_images[0]['image_small']), $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug))) : "";
                                 ?>
                                 <p><i><?php echo $product->product_name; ?></i></p>
                             </div>

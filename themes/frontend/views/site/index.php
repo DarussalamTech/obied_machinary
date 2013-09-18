@@ -5,7 +5,7 @@
             <div class="three columns">
                 <div class="under_truck">
                     <?php
-                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/site/allProducts', array('slug' => $child->slug)), array('title' => $child->category_name));
+                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/site/allProducts', array('cat_slug' => $child->slug)), array('title' => $child->category_name));
                     ?>
                     <h1>
                         <i><?php echo $child->category_name; ?></i>
@@ -42,13 +42,16 @@
             </div>
         </div>
         <div class="three columns">
-            <div class="right_index_service">
-                <h4>NEW ARRIVALS</h4>
-                <div class="ltm_tank">
-                    <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/ltm_tank_img_03.jpg" /></a>
-                    <p><i>LTM1500 with 84m Boom LTM1300</i></p>
-                </div>
-            </div>
+            <?php
+            $this->newArrivalWidget['newArrivals'] = array('name' => 'OMNewArrivals',
+                'attributes' => array('cObj' => $this,
+                //'cssFile' => Yii::app()->theme->baseUrl . "/css/side_bar.css",'is_cat_filter' => 0,
+            ));
+            if (isset($this->newArrivalWidget['newArrivals'])) {
+
+                $this->widget($this->newArrivalWidget['newArrivals']['name'], $this->newArrivalWidget['newArrivals']['attributes']);
+            }
+            ?>
         </div>
     </div>
 </div>

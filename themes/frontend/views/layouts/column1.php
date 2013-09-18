@@ -27,7 +27,7 @@
                     <nav>
                         <ul class="ten columns">
                             <li><?php echo CHtml::link('Home', Yii::app()->createUrl('/site/index')); ?></li>
-                            <li><?php echo CHtml::link('About Us', Yii::app()->createUrl('/site/page?view=about')); ?></li>
+                            <li><?php echo CHtml::link('About Us', Yii::app()->createUrl('/site/about')); ?></li>
                             <li><?php echo CHtml::link('Our Services', Yii::app()->createUrl('/site/services')); ?></li>
                             <li><a href="#">Cranes Wanted</a></li>
                             <li><?php echo CHtml::link('Clients', Yii::app()->createUrl('/site/clients')); ?></li>

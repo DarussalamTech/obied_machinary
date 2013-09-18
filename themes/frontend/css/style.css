@@ -149,7 +149,7 @@ footer { padding: 0; margin:0; float:left; background:url(../images/footer_bg_03
 
 /* Our Services */
 
-.our_services { padding: 0 20px 0 0; float:left; }
+.our_services { width:100%; padding: 0 20px 0 0; float:left; }
 
 .about_upper_part li { font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#171717; margin-left:35px; }
 
@@ -157,6 +157,35 @@ footer { padding: 0; margin:0; float:left; background:url(../images/footer_bg_03
 
 .clients_img { margin:20px 0; }
 
+/* Contact Us */
+
+.contact_about_upper_part { float:left; width:120%; padding: 0 0 20px 0; margin: 0px 0 0 10px; }
+
+.contact_us_contact { float:left; width:100%; }
+
+.contact_us_contact h1 { font-style:italic; font-family:AkzidenzGroteskBQ XBoldAlt; font-size:16px; color:#000000; padding: 0; margin: 0; line-height:30px; }
+
+.contact_us_contact p  { font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#171717; }
+
+.contact_us_contact table { background:none; border:none; padding: 0; margin-top: 20px; width:100%; }
+
+.contact_us table tr { border:none; width:100%; }
+
+.contact_us_contact table td { border:none; padding: 0; margin: 0; color:#414740; font-family:Arial, Helvetica, sans-serif; font-size:15px; }
+
+.contact_us_contact input[type='text'] { font-family:Myraid Pro; font-size:15px; width:100%; border: none; border: 1px solid #414740; height:30px; margin-top:8px; }
+
+.contact_us_contact textarea { width:100%; border: none; border: 1px solid #414740; margin-top:8px; font-size:15px; font-family:Myraid Pro; }
+
+.left_contact { width:30%; padding-top:10px !important; }
+
+.right_contact { width:70%; }
+
+.send_btn { color:#F9CA22; font-size:17px; font-family:Arial, Helvetica, sans-serif; margin: 0; background:none; border:none; background:#474747; border: 1px solid #F9CA22; width:71px; padding: 5px 0; }
+
+.send_btn:hover { border:none; color:#474747; background:#F9CA22; border: 1px solid #F9CA22; }
+
+@media (max-width: 480px) { .contact_us_contact textarea, .contact_us_contact input[type='text'] { width:100%; margin-left:6px; } }
 
 
 /*Media Queries*/

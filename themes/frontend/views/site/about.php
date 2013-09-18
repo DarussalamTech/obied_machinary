@@ -8,7 +8,7 @@
                     ?>
                     <div class="about_listing">
                         <?php
-                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('slug' => $cat->slug)), array('title' => $cat->category_name));
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
                         ?>
                     </div>
 
@@ -48,13 +48,16 @@
             </div>
         </div>
         <div class="three columns">
-            <div class="right_index_service">
-                <h4>NEW ARRIVALS</h4>
-                <div class="ltm_tank">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/ltm_tank_img_03.jpg" />
-                    <p><i>LTM1500 with 84m Boom LTM1300</i></p>
-                </div>
-            </div>
+            <?php
+            $this->newArrivalWidget['newArrivals'] = array('name' => 'OMNewArrivals',
+                'attributes' => array('cObj' => $this,
+                //'cssFile' => Yii::app()->theme->baseUrl . "/css/side_bar.css",'is_cat_filter' => 0,
+            ));
+            if (isset($this->newArrivalWidget['newArrivals'])) {
+
+                $this->widget($this->newArrivalWidget['newArrivals']['name'], $this->newArrivalWidget['newArrivals']['attributes']);
+            }
+            ?>
         </div>
     </div>
 </div>

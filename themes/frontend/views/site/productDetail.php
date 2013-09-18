@@ -8,7 +8,7 @@
                     ?>
                     <div class="about_listing <?php echo ($cat->id == $cat_id) ? "terrain_list" : "" ?>">
                         <?php
-                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('slug' => $cat->slug)), array('title' => $cat->category_name));
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
                         ?>
                     </div>
 
