@@ -26,12 +26,29 @@
                     <a class="toggle" gumby-trigger="#nav4 > ul" href="#"><i class="icon-menu"></i></a>
                     <nav>
                         <ul class="ten columns">
-                            <li><?php echo CHtml::link('Home', Yii::app()->createUrl('/site/index')); ?></li>
-                            <li><?php echo CHtml::link('About Us', Yii::app()->createUrl('/site/about')); ?></li>
-                            <li><?php echo CHtml::link('Our Services', Yii::app()->createUrl('/site/services')); ?></li>
-                            <li><a href="#">Cranes Wanted</a></li>
-                            <li><?php echo CHtml::link('Clients', Yii::app()->createUrl('/site/clients')); ?></li>
-                            <li><?php echo CHtml::link('Contact Us', Yii::app()->createUrl('/site/contact')); ?></li>
+                            <?php
+                            $dt_menu_array = array(
+                                "index" => "Home",
+                                "about" => "About Us",
+                                "services" => "Our Services",
+                                "wanted" => "Cranes Wanted",
+                                "clients" => "Clients",
+                                "contact" => "Contact Us",
+                            );
+
+                            foreach ($dt_menu_array as $key => $text) {
+                                echo "<li>";
+                                if ($this->action->id == $key) {
+                                    echo CHtml::link($text, Yii::app()->createUrl("/site/" . $key), array("class" => "active"));
+                                } else {
+                                    echo CHtml::link($text, Yii::app()->createUrl("/site/" . $key));
+                                }
+
+                                echo "</li>";
+                            }
+                            ?>
+
+
                         </ul>
                     </nav>
                 </div>

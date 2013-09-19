@@ -6,7 +6,7 @@
                 $allSubCats = Categories::model()->childCategories();
                 foreach ($allSubCats as $cat):
                     ?>
-                    <div class="about_listing <?php echo ($cat->id == $cat_id) ? "terrain_list" : "" ?>">
+                    <div class="about_listing">
                         <?php
                         echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
                         ?>
@@ -18,18 +18,30 @@
             </div>
         </div>
         <div class="nine columns">
-            <div style='clear:both'></div>
             <div class="terrain_images">
+                <h2>We specialize in <?php echo $product_service_type; ?> Products</h2>
                 <?php
-                $criteria = new CDbCriteria;
-                $criteria->select = 'category_name,category_description';
-                $criteria->condition = 'id=' . $cat_id;
-                $category_name = Categories::model()->findByPk($cat_id, $criteria)->category_name;
-                ?>
-                <h2>We specialize in <?php echo $category_name; ?></h2>
-                <article>
-                    <?php echo Categories::model()->findByPk($cat_id, $criteria)->category_description; ?> 
-                </article>
+                if ($product_service_type == "Rental") {
+                    ?>
+                    <article>
+                        Our Rental division can provide you any equipment you are looking for, within a short period of time. With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines.
+                        We specialize in the following equipment:
+                        - Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag)
+                        - Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)
+                        - Loaders (JCB, FURUKAWA, KAWASAKi, CAT)
+                        - Forklifts (TCM, ETC)
+                    </article>
+                    <?php
+                } else {
+                    ?>
+                    <article>
+                        We also have a trading division for construction equipment.
+                        We have been selling used construction machinery for the past 30 Years in The Kingdom Of Saudi Arabia and this is what we love doing.
+                        All our machines are inspected thoroughly on arrival & departure to make sure you get the quality you deserve.
+                    </article>
+                    <?php
+                }
+                ?> 
                 <div class='pagination'>
                     <?php
                     /**
@@ -52,9 +64,8 @@
                     <div class="kbox"> 
                         <?php
                         //echo isset($p_images[0]) ? CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug))) : "";
-                        echo CHtml::link(CHtml::image($p_images[0]['image_large'],'',array('class' => 'productimage')), $p_images[0]['image_large'], array("rel" => 'lightbox[_default]'));
+                        echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $p_images[0]['image_large'], array("rel" => 'lightbox[_default]'));
                         ?>
-                        
                         <?php
                         echo "<div style='font-weight:bold'>";
                         echo CHtml::link($product->product_name, $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug)));

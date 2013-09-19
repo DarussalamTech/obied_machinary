@@ -7,12 +7,12 @@
 
 .terrain_images { padding: 0px; margin: 15px 0 0 0; width:90%; }
 
-.terrain_images h2 { padding-left:20px; color:#2c2c2c; font-size:26px; font-family:Arial, Helvetica, sans-serif; }
+.terrain_images h2 { color:#2c2c2c; font-size:26px; font-family:Arial, Helvetica, sans-serif; }
 
 .terrain_imgs { text-align:center; width:100%; padding: 10px 10px 0 10px; margin: 10px 0; border-radius:5px; border:1px solid #bbbbbb; }
 
 .terrain_imgs p { color:#474747; font-family:AlbertaLight; text-align:center; }
 
-.terrain_images article { padding-left:20px; margin: 0; font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#171717; line-height:17px; }
+.terrain_images article {  margin: 0; font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#171717; line-height:17px; }
 
 .right_index_service h4 { font-family:AkzidenzGroteskBQ XBoldAlt; font-size:26px; font-style:italic; color:#2c2c2c; padding: 10px 10px; margin: 0; background:#f9ca22; text-align:center; }
