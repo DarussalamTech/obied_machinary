@@ -46,9 +46,9 @@ class Products extends OMActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('category_id, product_name, product_description', 'required'),
+            array('category_id, product_name, product_description,price,serial_number', 'required'),
             array('category_id, deleted', 'numerical', 'integerOnly' => true),
-            array('product_service_type', 'length', 'max' => 6),
+            array('product_service_type', 'length', 'max' => 20),
             array('product_name, slug', 'length', 'max' => 50),
             array('product_overview', 'length', 'max' => 255),
             array('crane_boom,crane_jib', 'numerical'),
@@ -92,15 +92,22 @@ class Products extends OMActiveRecord {
     }
 
     /*
-     * returning the product lists on based of
-     * product category product_categories
+     * returning the product data provider based on categories
+     * also setting the pagination attributes
+     * author:ubaid
      */
 
-    public function categoryProducts($category_id) {
+    public function productDataProvider($category_id) {
         $criteria = new CDbCriteria();
         $criteria->select = '*';
         $criteria->condition = 'category_id=' . $category_id;
-        return $this->findAll($criteria);
+        $dataProvider = new CActiveDataProvider($this, array(
+            'pagination' => array(
+                'pageSize' => 6,
+            ),
+            'criteria' => $criteria,
+        ));
+        return $dataProvider;
     }
 
     /**
@@ -121,6 +128,7 @@ class Products extends OMActiveRecord {
             'crane_boom' => 'Boom Height (Meters)',
             'crane_jib' => 'Jib Height (Meters)',
             'slug' => 'Slug',
+            'price' => 'Price',
             'deleted' => 'Deleted',
             'create_time' => 'Create Time',
             'create_user_id' => 'Create User',

@@ -35,7 +35,7 @@ class ProductsController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'view', 'loadChildByAjax', 'checkCilds', 'manageChildrens', 'editChild'),
+                'actions' => array('create', 'update', 'view', 'loadChildByAjax', 'checkCilds', 'indexTrading', 'CreateTrading'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -65,6 +65,30 @@ class ProductsController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+        $model = new Products;
+
+
+        // Uncomment the following line if AJAX validation is needed
+        // $this->performAjaxValidation($model);
+
+        if (isset($_POST['Products'])) {
+            $model->attributes = $_POST['Products'];
+            $this->checkCilds($model);
+            //CVarDumper::dump($model,10,TRUE);die;
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
+        }
+
+        $this->render('create', array(
+            'model' => $model,
+            'model_child_cat' => Categories::model()->childCategories(100),
+        ));
+    }
+    /**
+     * Creates a new model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     */
+    public function actionCreateTrading() {
         $model = new Products;
 
 
@@ -220,6 +244,19 @@ class ProductsController extends Controller {
             $model->attributes = $_GET['Products'];
 
         $this->render('index', array(
+            'model' => $model,
+        ));
+    }
+    /**
+     * Manages all models.
+     */
+    public function actionIndexTrading() {
+        $model = new Products('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Products']))
+            $model->attributes = $_GET['Products'];
+
+        $this->render('indexTrading', array(
             'model' => $model,
         ));
     }

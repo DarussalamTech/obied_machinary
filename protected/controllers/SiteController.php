@@ -66,8 +66,9 @@ class SiteController extends Controller {
          * Getting lists of product based on category_id
          */
         $cat_id = $this->getRequestIDFromSlug($cat_slug);
-        $category_products = Products::model()->categoryProducts($cat_id);
-        $this->render('/site/all_products', array('category_products' => $category_products, "cat_id" => $cat_id));
+        $dataProvider = Products::model()->productDataProvider($cat_id);
+        $category_products = $dataProvider->getData();
+        $this->render('/site/all_products', array('category_products' => $category_products, 'dataProvider' => $dataProvider, "cat_id" => $cat_id));
     }
 
     /*
@@ -98,9 +99,15 @@ class SiteController extends Controller {
         $criteria = new CDbCriteria();
         $criteria->select = '*';
         $criteria->condition = 'product_service_type ="' . $product_service_type . '"';
-        $division_product = Products::model()->findAll($criteria);
 
-        $this->render('/site/all_products', array('category_products' => $division_product, "cat_id" => ""));
+        $dataProvider = new CActiveDataProvider(Products::model(), array(
+            'pagination' => array(
+                'pageSize' => 6,
+            ),
+            'criteria' => $criteria,
+        ));
+        $division_product = $dataProvider->getData();
+        $this->render('/site/division', array('category_products' => $division_product, "product_service_type" => $product_service_type, 'dataProvider' => $dataProvider));
     }
 
     /*
