@@ -19,9 +19,10 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
-    <?php echo $form->hiddenField($model, 'product_service_type', array("value" => "Trading")); ?>
-    <div class="row">
-        <?php echo $form->labelEx($model, 'category_id'); ?>
+<?php echo $form->hiddenField($model, 'product_service_type', array("value" => "Trading")); ?>
+    <div class = "row">
+        <?php echo $form->labelEx($model, 'category_id');
+        ?>
         <?php $child_cat_list = CHtml::listData($model_child_cat, 'id', 'category_name') ?>
         <?php echo $form->dropDownList($model, 'category_id', $child_cat_list, array('prompt' => 'Select Parent Category')) ?>
     </div>
@@ -69,17 +70,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
         <?php echo $form->labelEx($model, 'crane_jib'); ?>
         <?php echo $form->textField($model, 'crane_jib', array('size' => 50, 'maxlength' => 50)); ?>
     </div>
-
-
-    <!--    <div class="row">
-    <?php //echo $form->labelEx($model, 'slug'); ?>
-    <?php //echo $form->textField($model, 'slug', array('size' => 50, 'maxlength' => 50)); ?>
-        </div>-->
-
-
-
-
-
 
     <div class="row">
         <?php echo $form->labelEx($model, 'product_description'); ?>

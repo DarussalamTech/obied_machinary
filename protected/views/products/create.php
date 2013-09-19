@@ -8,11 +8,22 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'List Products', 'url' => array('index')),
-    array('label' => 'Manage Products', 'url' => array('admin')),
+    array('label' => 'List Rental', 'url' => array('index')),
+    array('label' => 'Create Rental', 'url' => array('create')),
 );
 ?>
 
-<h1>Create Products</h1>
+<?php
+echo $this->action->id;
+if ($this->action->id == "createTrading") {
+    ?><h1>Create Trading</h1>
+    <?php echo $this->renderPartial('_form_trading', array('model' => $model, 'model_child_cat' => $model_child_cat)); ?>
 
-<?php echo $this->renderPartial('_form', array('model' => $model, 'model_child_cat' => $model_child_cat)); ?>
+    <?php
+} else {
+    ?><h1>Create Rental</h1>
+    <?php echo $this->renderPartial('_form', array('model' => $model, 'model_child_cat' => $model_child_cat)); ?>
+    <?php
+}
+?>
+
