@@ -9,8 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu = array(
-    array('label' => 'List Rental', 'url' => array('index')),
-    array('label' => 'Create Rental', 'url' => array('create')),
+    array('label' => 'List Products', 'url' => array('index')),
+    array('label' => 'List Rental Products', 'url' => array('indexRental')),
+    array('label' => 'List Trading Products', 'url' => array('indexTrading')),
+    array('label' => 'Create Products', 'url' => array('create')),
 );
 ?>
 

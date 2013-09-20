@@ -8,10 +8,10 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'Create Parent', 'url' => array('createParent')),
-    array('label' => 'Create', 'url' => array('create')),
-    array('label' => 'List All', 'url' => array('index')),
-    array('label' => 'List Parent', 'url' => array('indexParent')),
+    array('label' => 'Create Sub Categories', 'url' => array('create')),
+    array('label' => 'List Sub Categories', 'url' => array('index')),
+    array('label' => 'Create Categories', 'url' => array('createParent')),
+    array('label' => 'List Categories', 'url' => array('indexParent')),
 );
 ?>
 <div class="pading-bottom-5">

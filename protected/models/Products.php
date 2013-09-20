@@ -23,6 +23,7 @@
  */
 class Products extends OMActiveRecord {
 
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -54,7 +55,7 @@ class Products extends OMActiveRecord {
             array('crane_boom,crane_jib', 'numerical'),
             array('create_user_id, update_user_id', 'length', 'max' => 11),
             array('slug, create_time, create_user_id, update_time, update_user_id, product_overview', 'safe'),
-            array('serial_number,capacity,status,year,crane_boom,crane_jib', 'safe'),
+            array('serial_number,capacity,status,year,crane_boom,crane_jib,price_per_variable', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, category_id, product_service_type, product_name, product_description, product_overview, slug, deleted, create_time, create_user_id, update_time, update_user_id', 'safe', 'on' => 'search'),
@@ -129,6 +130,7 @@ class Products extends OMActiveRecord {
             'crane_jib' => 'Jib Height (Meters)',
             'slug' => 'Slug',
             'price' => 'Price',
+            'price_per_variable' => 'Per',
             'deleted' => 'Deleted',
             'create_time' => 'Create Time',
             'create_user_id' => 'Create User',
@@ -219,6 +221,11 @@ class Products extends OMActiveRecord {
      * slag filling
      */
     public function beforeSave() {
+//        if (!empty($this->per_variable)) {
+//            $this->price = $this->price . "&nbspP/" . $this->per_variable;
+//        } else {
+//            $this->price = $this->price;
+//        }
         $this->saveSlug();
         parent::beforeSave();
         return true;

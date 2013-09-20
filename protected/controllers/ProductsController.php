@@ -35,7 +35,7 @@ class ProductsController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'view', 'loadChildByAjax', 'checkCilds', 'indexTrading', 'CreateTrading'),
+                'actions' => array('create', 'update', 'view', 'loadChildByAjax', 'checkCilds', 'indexTrading', 'indexRental'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -84,6 +84,7 @@ class ProductsController extends Controller {
             'model_child_cat' => Categories::model()->childCategories(100),
         ));
     }
+
     /**
      * Creates a new model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -247,16 +248,33 @@ class ProductsController extends Controller {
             'model' => $model,
         ));
     }
+
+    /**
+     * Manages all models.
+     */
+    public function actionIndexRental() {
+        $model = new Products('search');
+        $model->unsetAttributes();  // clear any default values
+        $model->product_service_type = "Rental";
+        if (isset($_GET['Products']))
+            $model->attributes = $_GET['Products'];
+
+        $this->render('index', array(
+            'model' => $model,
+        ));
+    }
+
     /**
      * Manages all models.
      */
     public function actionIndexTrading() {
         $model = new Products('search');
         $model->unsetAttributes();  // clear any default values
+        $model->product_service_type = "Trading";
         if (isset($_GET['Products']))
             $model->attributes = $_GET['Products'];
 
-        $this->render('indexTrading', array(
+        $this->render('index', array(
             'model' => $model,
         ));
     }

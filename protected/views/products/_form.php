@@ -19,7 +19,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
-    <?php echo $form->hiddenField($model, 'product_service_type', array("value" => "Trading")); ?>
+
     <div class="row">
         <?php echo $form->labelEx($model, 'category_id'); ?>
         <?php $child_cat_list = CHtml::listData($model_child_cat, 'id', 'category_name') ?>
@@ -30,16 +30,30 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
         <?php echo $form->labelEx($model, 'product_name'); ?>
         <?php echo $form->textField($model, 'product_name', array('size' => 50, 'maxlength' => 50)); ?>
     </div>
-    <div class="row">
-        <?php echo $form->labelEx($model, 'price'); ?>
-        <?php echo $form->textField($model, 'price', array('size' => 50, 'maxlength' => 50)); ?>
-    </div>
 
 
     <div class="row">
         <?php echo $form->labelEx($model, 'serial_number'); ?>
         <?php echo $form->textField($model, 'serial_number', array('size' => 50, 'maxlength' => 50)); ?>
     </div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'product_service_type'); ?>
+        <?php
+        echo $form->dropDownList($model, 'product_service_type', array('Trading' => 'Trading', 'Rental' => 'Rental'));
+        ?>
+
+    </div>
+    <div class="row">
+        <?php echo $form->labelEx($model, 'price'); ?>
+        <?php echo $form->textField($model, 'price', array('size' => 50, 'maxlength' => 50, 'style' => 'width:100px')); ?>
+        <span id="Products_per_variable" style="display: none;">
+            <?php
+            echo "Per&nbsp&nbsp" . $form->dropDownList($model, 'price_per_variable', array('Day' => 'Day', 'Month' => 'Month','Year'=>'Year'), 
+                    array('prompt' => 'Select', 'style' => 'width:74px;'));
+            ?>
+        </span>
+    </div>
+
     <div class="row">
         <?php echo $form->labelEx($model, 'capacity'); ?>
         <?php echo $form->textField($model, 'capacity', array('size' => 50, 'maxlength' => 50)); ?>
@@ -71,16 +85,6 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
     </div>
 
 
-    <!--    <div class="row">
-    <?php //echo $form->labelEx($model, 'slug'); ?>
-    <?php //echo $form->textField($model, 'slug', array('size' => 50, 'maxlength' => 50)); ?>
-        </div>-->
-
-
-
-
-
-
     <div class="row">
         <?php echo $form->labelEx($model, 'product_description'); ?>
         <?php echo $form->textArea($model, 'product_description', array('rows' => 6, 'cols' => 50)); ?>
@@ -102,3 +106,19 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
     <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<script>
+    jQuery('#Products_product_service_type').change(function() {
+
+        if (jQuery('#Products_product_service_type').val() == 'Rental')
+        {
+            console.log(jQuery('#Products_product_service_type').val());
+            jQuery('#Products_per_variable').show();
+        }
+        else
+        {
+            jQuery('#Products_per_variable').find('option:first').attr('selected', 'selected');
+            jQuery('#Products_per_variable').hide();
+        }
+
+    })
+</script>

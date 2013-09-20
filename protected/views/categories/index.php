@@ -8,10 +8,10 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'Create Parent', 'url' => array('createParent')),
-    array('label' => 'Create', 'url' => array('create')),
-    array('label' => 'List All', 'url' => array('index')),
-    array('label' => 'List Parent', 'url' => array('indexParent')),
+    array('label' => 'Create Sub Categories', 'url' => array('create')),
+    array('label' => 'List Sub Categories', 'url' => array('index')),
+    array('label' => 'Create Categories', 'url' => array('createParent')),
+    array('label' => 'List Categories', 'url' => array('indexParent')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -40,7 +40,6 @@ $('.search-form form').submit(function(){
 </div><!-- search-form -->
 
 <?php
-
 $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'categories-grid',
     'dataProvider' => $model->search(),
@@ -48,17 +47,16 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array(
         'category_name',
         'category_description',
-        
         array(
-           'name'=>'parent_id',
-           'value'=>'isset($data->parent_cat)?$data->parent_cat->category_name:""',
-           'visible'=>$model->_action == "index"?true:false,
+            'name' => 'parent_id',
+            'value' => 'isset($data->parent_cat)?$data->parent_cat->category_name:""',
+            'visible' => $model->_action == "index" ? true : false,
         ),
         array(
             'class' => 'CButtonColumn',
             'buttons' => array(
                 'update' => array(
-                    'url' => $model->_action != "index"?'Yii::app()->controller->createUrl("/categories/updateParent",array("id"=>$data->id))':'Yii::app()->controller->createUrl("/categories/update",array("id"=>$data->id))',
+                    'url' => $model->_action != "index" ? 'Yii::app()->controller->createUrl("/categories/updateParent",array("id"=>$data->id))' : 'Yii::app()->controller->createUrl("/categories/update",array("id"=>$data->id))',
                 )
             ),
         ),

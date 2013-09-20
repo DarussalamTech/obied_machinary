@@ -118,6 +118,9 @@ class SiteController extends Controller {
     public function actionClients() {
         $this->render('/site/clients');
     }
+    public function actionWanted() {
+        $this->render('/site/about');
+    }
 
     /*
      * Methods for Rendering the service page

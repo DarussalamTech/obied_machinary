@@ -35,7 +35,7 @@ class UsersController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update', 'changePass'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -46,6 +46,29 @@ class UsersController extends Controller {
                 'users' => array('*'),
             ),
         );
+    }
+
+    /*
+     * 
+     * @return method for change user password.
+     */
+
+    public function actionChangePass() {
+        $model = new ChangePassword;
+        if (Yii::app()->user->id) {
+            if (isset($_POST['ChangePassword'])) {
+                $model->attributes = $_POST['ChangePassword'];
+                if ($model->validate()) {
+                    if ($model->updatePassword()) {
+                        /*
+                         * here we will add sending email module to inform user for password change..
+                         */
+                        $this->redirect($this->createUrl('/users/changePass'));
+                    }
+                }
+            }
+            $this->render('/users/change_password', array('model' => $model));
+        }
     }
 
     /**
