@@ -84,7 +84,7 @@ div.kbox div.productdescript {
     width: 194px;
 }
 
-div.kbox div.productprice {
+div.kbox div.rental_price {
     background-color: #336600;
     color: white;
     font-family: Arial,Helvetica,sans-serif;
@@ -99,9 +99,31 @@ div.kbox div.productprice {
     width: 198px;
     border-radius: 0 0 3px 3px;
 }
-.price{
-    margin: -19px 0px 0px 124px;
+div.kbox div.trading_price {
+    background-color: #680000;
+    color: white;
+    font-family: Arial,Helvetica,sans-serif;
+    height: 39px;
+    position: absolute;
+    text-align: center;
+    top: 249px;
+    display: block;
+    font-size: 19px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 198px;
+    border-radius: 0 0 3px 3px;
+}
+.trading_tag_price{
+    margin: -19px 0px 0px 121px;
     font-size: 14px;
+    color: yellow;
+}
+.rental_tag_price{
+    text-transform:none;
+    margin: -29px 0 0 117px;
+    font-size: 14px;
+    line-height: 16px;
     color: yellow;
 }
 .division_type{
