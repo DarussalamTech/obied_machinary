@@ -77,8 +77,11 @@
                                 </div>
                                 <div class="rental_tag_price">
                                     <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
-                                    <?php echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : ""; ?> 
-
+                                    <?php
+                                    if (!empty($product->price) && $product->price != 0) {
+                                        echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
+                                    }
+                                    ?>
                                 </div>
                             </div> 
                             <?php
