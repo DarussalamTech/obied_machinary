@@ -43,7 +43,11 @@ foreach ($new_arrivals as $new) {
                     </div>
                     <div class="rental_tag_price">
                         <?php echo!empty($new->price) ? round($new->price) : ""; ?> USD
-                        <?php echo!empty($new->price_per_variable) ? "P&nbsp/&nbsp" . $new->price_per_variable : ""; ?>
+                        <?php 
+                        if(!empty($new->price) && $new->price != 0){
+                        echo!empty($new->price_per_variable) ? "P&nbsp/&nbsp" . $new->price_per_variable : "";
+                        }
+                        ?>
                     </div>
                 </div> 
                 <?php
