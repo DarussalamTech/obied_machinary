@@ -87,9 +87,13 @@
                                     <?php echo $product->product_service_type; ?>
                                 </div>
                                 <div class="rental_tag_price">
-                                    <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
-                                    <?php echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : ""; ?>
-                                </div>
+                        <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
+                        <?php 
+                        if(!empty($product->price) && $product->price != 0){
+                        echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
+                        }
+                        ?>
+                    </div>
                             </div> 
                             <?php
                         } else {
