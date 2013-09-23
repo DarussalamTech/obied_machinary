@@ -33,9 +33,8 @@
     padding: 0 20px 20px 0;
 }
 
-.error{
-    font-size: 16px;
-    margin: 13px 5px 83px 83px;
+.contact_us_contact input.error[type="text"] {
+    border:1px solid #FF0000;
 }
 .error_code{
     font-size: 35px;
@@ -150,5 +149,40 @@ div.kbox div.trading_price {
     margin:9px 0px 2px 91px;
 
 }
+.contact_us_contact p{
+     line-height: 12px;
+}
+.division h3{
+   color:#2C2C2C;
+}
 
+
+
+
+
+.banner_dots a {
+    background: -moz-linear-gradient(center top , #CCCCCC, #F3F3F3) repeat scroll 0 0 transparent;
+    border-radius: 50% 50% 50% 50%;
+    cursor: pointer;
+}
+.banner_dots a {
+    border: 1px solid #F0B919;
+    color: #B8C4CF;
+    float: left;
+    height: 10px;
+    margin-left: 5px;
+    text-indent: -1000px;
+    width: 10px;
+}
+
+.banner_dots {
+    clear: left;
+    font-size: 0;
+    padding: 10px;
+}
+.banner_dots {
+    margin: 45px 0 0 130px;
+    overflow: hidden;
+    position: relative;
+}
 
