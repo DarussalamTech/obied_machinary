@@ -47,7 +47,7 @@ class Products extends OMActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('category_id, product_name, product_description,price,serial_number', 'required'),
+            array('category_id, product_name, product_description,serial_number', 'required'),
             array('category_id, deleted', 'numerical', 'integerOnly' => true),
             array('product_service_type', 'length', 'max' => 20),
             array('product_name, slug', 'length', 'max' => 50),
@@ -55,7 +55,7 @@ class Products extends OMActiveRecord {
             array('crane_boom,crane_jib', 'numerical'),
             array('create_user_id, update_user_id', 'length', 'max' => 11),
             array('slug, create_time, create_user_id, update_time, update_user_id, product_overview', 'safe'),
-            array('serial_number,capacity,status,year,crane_boom,crane_jib,price_per_variable', 'safe'),
+            array('serial_number,capacity,status,year,crane_boom,crane_jib,price_per_variable,price', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, category_id, product_service_type, product_name, product_description, product_overview, slug, deleted, create_time, create_user_id, update_time, update_user_id', 'safe', 'on' => 'search'),
