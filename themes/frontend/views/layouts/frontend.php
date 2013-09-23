@@ -1,5 +1,23 @@
 <?php $this->beginContent('//layouts/main'); ?>
+<script type="text/javascript">
 
+    /**
+     * slider timings
+     * @type undefined
+     */
+    var slider_timings = <?php echo!empty(Yii::app()->params['slider_time']) ? Yii::app()->params['slider_time'] : 3; ?>;
+    jQuery(document).ready(function() {
+        dtech.makeSlider();
+
+//            jQuery(".ten columns, li").children().each(function() {
+//                jQuery('.ten columns, li').children().hover(function(){
+//                jQuery('.ten columns, li').children().removeClass('active');
+//                        })
+//
+//                    })
+
+    });
+</script>
 <header>
     <div class="row">
         <div id="header">
@@ -61,7 +79,25 @@
         <div class="banner_part">
             <div class="banner_main_part">
                 <div class="twelve columns">
-                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.png" class="main_banner_img" />
+                    <div id="banner" style="display:block;height: 343px">
+<!--                        <div class="banner_dots" style='position: absolute'>
+
+                            <a id="cs-button-coin-1" class="cs-button-coin cs-active" href="javascript:void(0)">1</a>
+                            <a id="cs-button-coin-2" class="cs-button-coin" href="javascript:void(0)">2</a>
+                            <a id="cs-button-coin-3" class="cs-button-coin" href="javascript:void(0)">3</a>
+
+                        </div>-->
+                        <div id="banner_slider_1" class="banner_slider">
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.png" class="main_banner_img" />
+                        </div>
+                        <div id="banner_slider_2" class="banner_slider" style="display:none">
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.jpg" class="main_banner_img" />
+                        </div>
+                        <div id="banner_slider_3" class="banner_slider" style="display:none">
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.png" class="main_banner_img" />
+                        </div>
+
+                    </div>
                 </div>
                 <div class="row">
                     <div class="eight columns">
@@ -79,3 +115,4 @@
                 <?php echo $content; ?>
 
                 <?php $this->endContent(); ?>
+                
