@@ -545,5 +545,52 @@ var dtech = {
         var str = "height=" + height + ",scrollbars=yes,width=" + width + ",status=yes,";
         str += "toolbar=no,menubar=no,location=no,resizable=false,left=" + left + ",top=" + top + "";
         window.open($(obj).attr("href"), "popup", str);
+    },
+    /**
+     * slider js code for home page of website
+     */
+    makeSlider: function() {
+        jQuery(".banner_dots a").click(function() {
+            elem_id = jQuery(this).attr("id").replace("cs-button-coin-", "");
+            jQuery(".banner_slider").hide();
+            jQuery(".banner_dots a").attr("class", "cs-button-coin");
+            jQuery("#banner_slider_" + elem_id).show('slow');
+            jQuery("#banner_slider_" + elem_id + " #cs-button-coin-" + elem_id).attr("class", "cs-button-coin cs-active");
+        });
+
+        setInterval(function() {
+            var visible_id = "";
+            var counter_id = 1;
+            jQuery(".banner_slider").each(function() {
+                // console.log(jQuery(this).is(":visible"));
+                if (jQuery(this).is(":visible")) {
+                    visible_id = jQuery(this).attr("id");
+                }
+            })
+
+            if (jQuery("#" + visible_id).next().length != 0) {
+
+                jQuery("#" + visible_id).hide();
+                jQuery("#" + visible_id).next().show("slow");
+                counter_id = visible_id.replace("banner_slider_", "");
+                next_counter_id = jQuery("#" + visible_id).next().attr("id").replace("banner_slider_", "");
+                current_vis = jQuery("#" + visible_id).next().attr("id");
+                jQuery(".banner_dots a").attr("class", "cs-button-coin");
+                jQuery("#" + current_vis + " #cs-button-coin-" + counter_id).attr("class", "cs-button-coin");
+                jQuery("#" + current_vis + " #cs-button-coin-" + next_counter_id).attr("class", "cs-button-coin cs-active");
+            }
+            else {
+                jQuery("#" + visible_id).hide();
+                jQuery("#banner").children().eq(0).show('slow');
+                counter_id = visible_id.replace("banner_slider_", "");
+                next_counter_id = jQuery("#banner").children().eq(0).attr("id").replace("banner_slider_", "");
+                current_vis = jQuery("#banner").children().eq(0).attr("id");
+                jQuery(".banner_dots a").attr("class", "cs-button-coin");
+                jQuery("#" + current_vis + " #cs-button-coin-" + counter_id).attr("class", "cs-button-coin");
+                jQuery("#" + current_vis + " #cs-button-coin-" + next_counter_id).attr("class", "cs-button-coin cs-active");
+            }
+
+        }, slider_timings * 1000);
     }
+
 }
