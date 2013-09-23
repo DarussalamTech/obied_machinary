@@ -21,13 +21,7 @@
             <div class="center_about_service">
                 <div class="contact_about_upper_part">
                     <div class="contact_us_contact">
-                        <?php if (Yii::app()->user->hasFlash('contact')): ?>
 
-                            <div class="flash-success">
-                                <?php echo Yii::app()->user->getFlash('contact'); ?>
-                            </div>
-
-                        <?php endif; ?>
                         <h2>CONTACT US</h2>
                         <h3>Office</h3>
                         <p>P.O. Box 61140,</p>
@@ -46,7 +40,7 @@
                         <table>
                             <?php
                             $form = $this->beginWidget('CActiveForm', array(
-                                'id' => 'contact-form',
+                                'id' => 'contact-formf',
                                 'enableClientValidation' => FALSE,
                                 'clientOptions' => array(
                                     'validateOnSubmit' => FALSE,
@@ -54,8 +48,20 @@
                             ));
                             ?>
                             <tr>
-                            <span style="color: red; font-size: 11px">
-                                <?php echo $form->errorSummary($model); ?>
+                            <span style="color: red; font-size: 12px">
+                                <?php
+                                if ($model->hasErrors()):
+
+                                    echo "* These fields cannot be empty";
+                                endif;
+                                ?>
+                                <?php if (Yii::app()->user->hasFlash('contact')): ?>
+
+                                    <div class="flash-success" style="color:green">
+                                        <?php echo '<br/>' . Yii::app()->user->getFlash('contact'); ?>
+                                    </div>
+
+                                <?php endif; ?>
                             </span>
                             </tr>
                             <tr>
@@ -98,6 +104,7 @@
                                     </td>
                                     <td class="right_contact">
                                         <?php $this->widget('CCaptcha', array('buttonLabel' => 'Refresh Code', 'buttonType' => 'link')); ?>
+
                                         <p style="font-size: 9px">Please enter the letters  shown in the above image</p>
                                         <?php echo $form->textField($model, 'verifyCode', array('class' => 'form_name')); ?>
                                     </td>
@@ -105,11 +112,20 @@
                             <?php endif; ?>
                             <tr>
                                 <td class="left_contact">
-                                    <?php echo CHtml::submitButton('Send', array('class' => 'send_btn')); ?>
+                                    <?php echo $form->labelEx($model, 'customer_copy_check'); ?>
                                 </td>
-                                <td class="right_contact">
-                                    <?php echo CHtml::submitButton('Send', array('class' => 'send_btn')); ?>
+                                <td class="right_contact" style='padding-top:11px'>
+                                    <?php echo $form->checkBox($model, 'customer_copy_check'); ?>
                                 </td>
+
+                            </tr>
+                            <tr>
+                                <td class="left_contact">
+                                    <?php //echo CHtml::submitButton('Send', array('class' => 'send_btn')); ?>
+                                </td><br>
+                            <td class="right_contact"  style='padding-top:7px'>
+                                <?php echo CHtml::submitButton('Send', array('class' => 'send_btn')); ?>
+                            </td>
 
                             </tr>
                             <?php $this->endWidget(); ?>
@@ -134,3 +150,19 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        /*
+         * snippet to clear the 
+         * captcha value when 
+         * validation failed..ubd
+         */
+        jQuery("#ContactForm_verifyCode").val("");
+    })
+    window.onload = function() {
+        /*
+         * code to change the captcha value on each page refresh after page load
+         */
+        jQuery('#yw0_button').trigger('click');
+    }
+</script>

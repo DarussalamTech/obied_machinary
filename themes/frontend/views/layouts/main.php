@@ -6,6 +6,7 @@
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/DTCustom.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/terrain.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl ?>/packages/jui/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->baseUrl ?>/media/js/dtech.js"></script>
         <meta charset="utf-8">
 
         <!-- Use the .htaccess and remove these lines to avoid edge case issues.
@@ -113,7 +114,7 @@ Or concatenate and minify into a single file
 <script src="js/libs/ui/jquery.validation.js"></script>
 <script src="js/libs/gumby.init.js"></script>-->
 
-<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/libs/gumby.min.js"></script>
+<!--<script src="<?php //echo Yii::app()->theme->baseUrl;  ?>/js/libs/gumby.min.js"></script> //Disabled becx captcha was not working-->
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/main.js"></script>
 
