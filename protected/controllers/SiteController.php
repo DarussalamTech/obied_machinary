@@ -118,6 +118,7 @@ class SiteController extends Controller {
     public function actionClients() {
         $this->render('/site/clients');
     }
+
     public function actionWanted() {
         $this->render('/site/about');
     }
@@ -150,19 +151,33 @@ class SiteController extends Controller {
         if (isset($_POST['ContactForm'])) {
             $model->attributes = $_POST['ContactForm'];
             if ($model->validate()) {
-                $name = '=?UTF-8?B?' . base64_encode($model->name) . '?=';
-                $subject = '=?UTF-8?B?' . base64_encode($model->subject) . '?=';
-                $headers = "From: $name <{$model->email}>\r\n" .
-                        "Reply-To: {$model->email}\r\n" .
-                        "MIME-Version: 1.0\r\n" .
-                        "Content-type: text/plain; charset=UTF-8";
+                if ($model->customer_copy_check == 1) {
+                    /*
+                     * module to send 
+                     * email copy to customer itself
+                     * if the button is checked
+                     */
+                    $email['To'] = $model->email;
+                    $email['From'] = Yii::app()->params['adminEmail'];
+                    $email['Subject'] = 'Contact Notification From ' . Yii::app()->name;
+                    $email['Body'] = $model->body;
+                    $email['Body'] = $this->renderPartial('/common/_email_template', array('email' => $email), true, false);
+                    $this->sendEmail2($email);
+                }
 
-                mail(Yii::app()->params['adminEmail'], $subject, $model->body, $headers);
-                Yii::app()->user->setFlash('contact', 'Thank you for contacting us. We will respond to you as soon as possible.');
-                $this->refresh();
+                $email['To'] = Yii::app()->params['adminEmail'];
+                $email['From'] = $model->email;
+                $email['Subject'] = $model->subject . 'From Mr/Mrs: ' . $model->name;
+                $email['Body'] = $model->body;
+                $email['Body'] = $this->renderPartial('/common/_email_template', array('email' => $email), true, false);
+
+                $this->sendEmail2($email);
+                //die($this->sendEmail2($email).'sent');
+                Yii::app()->user->setFlash('contact', 'Thank you ! for your feedback ');
+                $this->redirect($this->createUrl('/site/contact'));
             }
         }
-        $this->render('contact', array('model' => $model));
+        $this->render('/site/contact', array('model' => $model));
     }
 
     /**
