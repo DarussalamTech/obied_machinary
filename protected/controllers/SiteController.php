@@ -60,15 +60,29 @@ class SiteController extends Controller {
 
      * @param String $slug
      */
-    public function actionAllProducts($cat_slug) {
+    public function actionCategoryProducts($cat_slug) {
 
         /*
          * Getting lists of product based on category_id
          */
         $cat_id = $this->getRequestIDFromSlug($cat_slug);
-        $dataProvider = Products::model()->productDataProvider($cat_id);
+        $dataProvider = Products::model()->categoryProductDataProvider($cat_id);
         $category_products = $dataProvider->getData();
-        $this->render('/site/all_products', array('category_products' => $category_products, 'dataProvider' => $dataProvider, "cat_id" => $cat_id));
+        $this->render('/site/category_products', array('category_products' => $category_products, 'dataProvider' => $dataProvider, "cat_id" => $cat_id));
+    }
+    /**
+     * 
+     * For displaying all products 
+     * These actions used 
+     * front end theme.
+
+     * @param String $slug
+     */
+    public function actionAllProducts() {
+
+        $dataProvider = Products::model()->allProductDataProvider();
+        $all_products = $dataProvider->getData();
+        $this->render('/site/all_products', array('category_products' => $all_products, 'dataProvider' => $dataProvider));
     }
 
     /*
@@ -85,6 +99,19 @@ class SiteController extends Controller {
         $product_detail = Products::model()->findByPk($product_id);
         $pro_cat_id = $product_detail->category->id;
         $this->render('/site/productDetail', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
+    }
+    public function actionProductDetailBox($slug) {
+        /*
+         * Getting product id from slug
+         */
+        $product_id = $this->getRequestIDFromSlug($slug);
+        $product_detail = Products::model()->findByPk($product_id);
+        $pro_cat_id = $product_detail->category->id;
+       // $this->render('/site/productDetailBox', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
+        $this->renderPartial("_productDetailBox", array(
+            "product_detail" => $product_detail,
+            'cat_id' => $pro_cat_id,
+                ), false, true);
     }
 
     /*
