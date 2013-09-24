@@ -13,7 +13,7 @@
     font-size: 14px;
 }
 .truck_images{
-    margin: 30px 32px 0;
+    margin: 30px 48px 0px;
 }
 .about_listing a{
     color:#F9CA22;
@@ -99,7 +99,7 @@ div.kbox div.rental_price {
     border-radius: 0 0 3px 3px;
 }
 div.kbox div.trading_price {
-    background-color: #680000;
+    background-color: #A68563;
     color: white;
     font-family: Arial,Helvetica,sans-serif;
     height: 39px;
@@ -155,6 +155,21 @@ div.kbox div.trading_price {
 .division h3{
    color:#2C2C2C;
 }
+
+.banner_text h1{
+    position: relative;
+}
+.banner_text p{
+    position: relative;
+}
+.about_listing a:hover {
+    color:#2C2C2C;
+}
+
+
+
+
+
 
 
 
