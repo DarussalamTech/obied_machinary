@@ -63,8 +63,8 @@ class ColorBox extends CWidget
     {
         $cs = Yii::app()->clientScript;
 
-        $cs->registerScriptFile(Yii::app()->request->baseUrl . '/protected/extensions/colorbox/resources/jquery.colorbox.js');
-        $cs->registerCssFile(Yii::app()->request->baseUrl . '/protected/extensions/colorbox/resources/colorbox.css');
+        $cs->registerScriptFile(Yii::app()->request->baseUrl . '/media/colorbox/jquery.colorbox.js');
+        $cs->registerCssFile(Yii::app()->request->baseUrl . '/media/colorbox/colorbox.css');
     }
 
     /**
@@ -78,9 +78,10 @@ class ColorBox extends CWidget
         if (!empty($class_name))
         {
             Yii::app()->clientScript->registerScript($class_name, '
-            $(document).ready(function(){
-                $(".' . $class_name . '").colorbox(' . CJSON::encode($colorBoxOptions) . ');
-            });');
+            jQuery.noConflict();
+            jQuery(document).ready(function(){
+                jQuery(".' . $class_name . '").colorbox(' . CJSON::encode($colorBoxOptions) . ');
+            });',CClientScript::POS_END);
         }
     }
 

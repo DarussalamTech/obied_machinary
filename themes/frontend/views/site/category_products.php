@@ -48,6 +48,7 @@
                     ?>
                 </div>
                 <?php
+                 ColorBox::generate("product_detail");
                 foreach ($category_products as $product):
                     $p_images = $product->getImage();
                     $category_url = str_replace(" ", "-", $product->category->category_name);
@@ -62,7 +63,7 @@
 
                         <?php
                         echo "<div style='font-weight:bold'>";
-                        echo CHtml::link((strlen($product->product_name) > 20) ? substr($product->product_name, 0, 20) . '...' : $product->product_name, $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug)));
+                        echo CHtml::link((strlen($product->product_name) > 20) ? substr($product->product_name, 0, 20) . '...' : $product->product_name, $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug)),array("class"=>"product_detail"));
                         echo "</div>";
                         ?>
                         <?php
@@ -125,7 +126,7 @@
         </div>
     </div>
 </div>
-<?php
-$this->widget('ext.lyiightbox.LyiightBox2', array(
-));
+//<?php
+//$this->widget('ext.lyiightbox.LyiightBox2', array(
+//));
 ?>

@@ -80,7 +80,7 @@
 
 <!-- Grab Google CDN's jQuery, fall back to local if offline -->
 <!-- 2.0 for modern browsers, 1.10 for .oldie -->
-<script>
+<!--<script>
     var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
     if (!oldieCheck) {
         document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
@@ -96,7 +96,7 @@
             document.write('<script src="js/libs/jquery-1.10.1.min.js"><\/script>');
         }
     }
-</script>
+</script>-->
 
 <!--
 Include gumby.js followed by UI modules.
@@ -114,7 +114,7 @@ Or concatenate and minify into a single file
 <script src="js/libs/ui/jquery.validation.js"></script>
 <script src="js/libs/gumby.init.js"></script>-->
 
-<!--<script src="<?php //echo Yii::app()->theme->baseUrl;  ?>/js/libs/gumby.min.js"></script> //Disabled becx captcha was not working-->
+<script src="<?php //echo Yii::app()->theme->baseUrl;  ?>/js/libs/gumby.min.js"></script> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/main.js"></script>
 
