@@ -23,7 +23,6 @@
  */
 class Products extends OMActiveRecord {
 
-
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -98,10 +97,29 @@ class Products extends OMActiveRecord {
      * author:ubaid
      */
 
-    public function productDataProvider($category_id) {
+    public function categoryProductDataProvider($category_id) {
         $criteria = new CDbCriteria();
         $criteria->select = '*';
         $criteria->condition = 'category_id=' . $category_id;
+        $dataProvider = new CActiveDataProvider($this, array(
+            'pagination' => array(
+                'pageSize' => 6,
+            ),
+            'criteria' => $criteria,
+        ));
+        return $dataProvider;
+    }
+
+    /*
+     * returning all data from product 
+     * all data no limits
+     * author:ubaid
+     */
+
+    public function allProductDataProvider() {
+        $criteria = new CDbCriteria();
+        $criteria->select = '*';
+        $criteria->order = 'id DESC';
         $dataProvider = new CActiveDataProvider($this, array(
             'pagination' => array(
                 'pageSize' => 6,
