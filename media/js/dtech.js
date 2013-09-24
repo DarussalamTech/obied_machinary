@@ -571,7 +571,7 @@ var dtech = {
             if (jQuery("#" + visible_id).next().length != 0) {
 
                 jQuery("#" + visible_id).hide();
-                jQuery("#" + visible_id).next().show("slow");
+                jQuery("#" + visible_id).next().fadeIn('slow', "linear");
                 counter_id = visible_id.replace("banner_slider_", "");
                 next_counter_id = jQuery("#" + visible_id).next().attr("id").replace("banner_slider_", "");
                 current_vis = jQuery("#" + visible_id).next().attr("id");
@@ -581,7 +581,7 @@ var dtech = {
             }
             else {
                 jQuery("#" + visible_id).hide();
-                jQuery("#banner").children().eq(0).show('slow');
+                jQuery("#banner").children().eq(0).fadeIn('slow', "linear");
                 counter_id = visible_id.replace("banner_slider_", "");
                 next_counter_id = jQuery("#banner").children().eq(0).attr("id").replace("banner_slider_", "");
                 current_vis = jQuery("#banner").children().eq(0).attr("id");
