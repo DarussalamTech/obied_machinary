@@ -270,7 +270,7 @@ class ProductsController extends Controller {
     public function actionIndexTrading() {
         $model = new Products('search');
         $model->unsetAttributes();  // clear any default values
-        $model->product_service_type = "Trading";
+        $model->product_service_type = "Sales";
         if (isset($_GET['Products']))
             $model->attributes = $_GET['Products'];
 
