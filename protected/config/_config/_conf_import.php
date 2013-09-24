@@ -14,5 +14,6 @@ $import = array(
     'application.components.dataproviders.*',
     'application.extensions.ProDropDown.*',
     'application.components.widgets.*',
+    'application.extensions.colorbox.*',
 );
 ?>
