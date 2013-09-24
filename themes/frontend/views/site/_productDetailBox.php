@@ -1,47 +1,38 @@
-<div class="row">
-    <div class="terrain_services">
-        <div class="three columns">
-            <div class="about_list">
-                <div class="about_listing">
-                    <?php
-                    echo CHtml::link('All Products', $this->createUrl('/site/allProducts'));
-                    ?>
-                </div>
-                <?php
-                $allSubCats = Categories::model()->childCategories();
-                foreach ($allSubCats as $cat):
-                    ?>
-                    <div class="about_listing <?php echo ($cat->id == $cat_id) ? "terrain_list" : "" ?>">
-                        <?php
-                        echo CHtml::link($cat->category_name, $this->createUrl('/site/categoryProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
-                        ?>
-                    </div>
-
-                    <?php
-                endforeach;
-                ?>
-            </div>
-        </div>
-        <div class="nine columns">
-            <div class="terrain_images">
-                <h2><?php echo $product_detail->product_name ?></h2>
-                <div class="four columns">
-                    <div class="terrain_imgs">
-
-                        <?php
-                        $p_images = $product_detail->getImage();
-                        echo CHtml::link(CHtml::image($p_images[0]['image_small']), $p_images[0]['image_large'], array("rel" => 'lightbox[_default]'));
-                        ?>
-                        <p>Description : <?php echo $product_detail->product_description ?></p>
-                        <p>Overview : <?php echo ucfirst($product_detail->product_overview); ?></p>
-                        <p>Trade : <?php echo ucfirst($product_detail->product_service_type); ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php
+Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl . '/css/custome_colorbox.css');
+//Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/packages/jui/js/jquery.js');
+?>
 <?php
 $this->widget('ext.lyiightbox.LyiightBox2', array(
 ));
 ?>
+<div class="popup_container">
+    <div class='product_name' style='width: 500px'>
+        <h3><?php echo $product_detail->product_name ?></h3>
+    </div>
+    <div class='product_image' style='width: 637px;height: 345px;margin:0px 0px 0px 48px'>
+        <?php
+        $p_images = $product_detail->getImage();
+        echo CHtml::image($p_images[0]['image_large'], '', array('width' => '637px', 'height' => '345px'));
+        ?>
+        <?php
+//        $p_images = $product_detail->getImage();
+//        echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('width' => '637px', 'height' => '350px')), $p_images[0]['image_large'], array("rel" => 'lightbox[_default]'));
+        ?>
+    </div>
+
+    <div class="product_detail">
+        <div class="small_detal">
+            <p><b>Model</b> : <?php echo $product_detail->product_name ?></p>
+            <p><b>Category</b> : <?php echo $product_detail->category->category_name ?></p>
+            <p><b>Service Type</b> : <?php echo ucfirst($product_detail->product_service_type); ?></p> 
+            <p><b>Status</b> : <?php echo ucfirst($product_detail->status); ?></p>
+        </div>
+        <div class="large_detal">
+            <p><b>Description</b> : <?php echo $product_detail->product_description ?></p>
+
+
+        </div>
+    </div>
+</div>
+

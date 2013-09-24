@@ -1,0 +1,20 @@
+/*for color box*/
+
+
+@font-face { font-family:AkzidenzGroteskBQ SuperItalic; src:url(../fonts/AkzidenzGrotesk-SuperItalic.otf); }
+
+@font-face { font-family:AlbertaLight; src:url(../fonts/AlbertaLight_Regular.ttf); }
+
+@font-face { font-family:AkzidenzGroteskBQ XBoldAlt; src:url(../fonts/AkzidenzGrotesk-ExtraBoldAlt.otf); }
+.popup_container{
+    color: #2C2C2C;
+    font-family: Arial,Helvetica,sans-serif;
+}
+.product_image img{
+    border:1px solid #2C2C2C;
+    border-radius: 5px 5px 5px 5px;
+    margin: -11px 0px 0px 0px ;
+}
+.product_detail p{
+    margin: 2px 0px 0px 21px;
+}
