@@ -2,13 +2,22 @@
     <div class="terrain_services">
         <div class="three columns">
             <div class="about_list">
-                <?php
+                <?php if ($this->action->id == "allProducts"): ?>
+
+                    <div class="about_listing terrain_list">
+                        <?php
+                        echo CHtml::link('All Products', $this->createUrl('/site/allProducts'));
+                        ?>
+                    </div>
+                    <?php
+                endif;
+
                 $allSubCats = Categories::model()->childCategories();
                 foreach ($allSubCats as $cat):
                     ?>
-                    <div class="about_listing <?php echo ($cat->id == $cat_id) ? "terrain_list" : "" ?>">
+                    <div class="about_listing">
                         <?php
-                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/categoryProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
                         ?>
                     </div>
 
@@ -21,14 +30,15 @@
             <div style='clear:both'></div>
             <div class="terrain_images">
                 <?php
-                $criteria = new CDbCriteria;
-                $criteria->select = 'category_name,category_description';
-                $criteria->condition = 'id=' . $cat_id;
-                $category_name = Categories::model()->findByPk($cat_id, $criteria)->category_name;
+//                $criteria = new CDbCriteria;
+//                $criteria->select = 'category_name,category_description';
+//                $criteria->condition = 'id=' . $cat_id;
+//                $category_name = Categories::model()->findByPk($cat_id, $criteria)->category_name;
                 ?>
-                <h2>We specialize in <?php echo $category_name; ?></h2>
+                <h2>Listing of Our All Products</h2>
                 <article>
-                    <?php echo Categories::model()->findByPk($cat_id, $criteria)->category_description; ?> 
+                    <?php //echo Categories::model()->findByPk($cat_id, $criteria)->category_description;  ?> 
+                    Listing of Our All ProductListing of Our All Product Listing of Our All Product
                 </article>
                 <div class='pagination'>
                     <?php
@@ -110,6 +120,5 @@
     </div>
 </div>
 <?php
-$this->widget('ext.lyiightbox.LyiightBox2', array(
-));
+$this->widget('ext.lyiightbox.LyiightBox2', array());
 ?>

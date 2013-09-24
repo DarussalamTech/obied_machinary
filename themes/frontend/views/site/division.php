@@ -2,13 +2,18 @@
     <div class="terrain_services">
         <div class="three columns">
             <div class="about_list">
+                <div class="about_listing">
+                    <?php
+                    echo CHtml::link('All Products', $this->createUrl('/site/allProducts'));
+                    ?>
+                </div>
                 <?php
                 $allSubCats = Categories::model()->childCategories();
                 foreach ($allSubCats as $cat):
                     ?>
                     <div class="about_listing">
                         <?php
-                        echo CHtml::link($cat->category_name, $this->createUrl('/site/allProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
+                        echo CHtml::link($cat->category_name, $this->createUrl('/site/categoryProducts', array('cat_slug' => $cat->slug)), array('title' => $cat->category_name));
                         ?>
                     </div>
 
@@ -87,13 +92,13 @@
                                     <?php echo $product->product_service_type; ?>
                                 </div>
                                 <div class="rental_tag_price">
-                        <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
-                        <?php 
-                        if(!empty($product->price) && $product->price != 0){
-                        echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
-                        }
-                        ?>
-                    </div>
+                                    <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
+                                    <?php
+                                    if (!empty($product->price) && $product->price != 0) {
+                                        echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
+                                    }
+                                    ?>
+                                </div>
                             </div> 
                             <?php
                         } else {

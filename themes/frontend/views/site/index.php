@@ -5,7 +5,7 @@
             <div class="three columns">
                 <div class="under_truck">
                     <?php
-                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/site/allProducts', array('cat_slug' => $child->slug)), array('title' => $child->category_name));
+                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/site/categoryProducts', array('cat_slug' => $child->slug)), array('title' => $child->category_name));
                     ?>
                     <h1>
                         <i><?php echo $child->category_name; ?></i>
@@ -22,7 +22,7 @@
         <div class="nine columns">
             <div class="left_index_service">
                 <h2>OUR SERVICES</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                <p>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</p>
                 <div class="four columns">
                     <div class="division">
                         <h3>Rental Division</h3>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="three columns">
+        <div class="three columns" style="width: 23.4%;">
             <?php
             $this->newArrivalWidget['newArrivals'] = array('name' => 'OMNewArrivals',
                 'attributes' => array('cObj' => $this,

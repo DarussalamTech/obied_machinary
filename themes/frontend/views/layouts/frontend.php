@@ -80,21 +80,21 @@
             <div class="banner_main_part">
                 <div class="twelve columns">
                     <div id="banner" style="display:block;height: 343px">
-<!--                        <div class="banner_dots" style='position: absolute'>
-
-                            <a id="cs-button-coin-1" class="cs-button-coin cs-active" href="javascript:void(0)">1</a>
-                            <a id="cs-button-coin-2" class="cs-button-coin" href="javascript:void(0)">2</a>
-                            <a id="cs-button-coin-3" class="cs-button-coin" href="javascript:void(0)">3</a>
-
-                        </div>-->
+                        <!--                        <div class="banner_dots" style='position: absolute'>
+                        
+                                                    <a id="cs-button-coin-1" class="cs-button-coin cs-active" href="javascript:void(0)">1</a>
+                                                    <a id="cs-button-coin-2" class="cs-button-coin" href="javascript:void(0)">2</a>
+                                                    <a id="cs-button-coin-3" class="cs-button-coin" href="javascript:void(0)">3</a>
+                        
+                                                </div>-->
                         <div id="banner_slider_1" class="banner_slider">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.png" class="main_banner_img" />
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_1.jpg" class="main_banner_img" />
                         </div>
                         <div id="banner_slider_2" class="banner_slider" style="display:none">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.jpg" class="main_banner_img" />
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_2.jpg" class="main_banner_img" />
                         </div>
                         <div id="banner_slider_3" class="banner_slider" style="display:none">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/banner_1_03.png" class="main_banner_img" />
+                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_1.jpg" class="main_banner_img" />
                         </div>
 
                     </div>
