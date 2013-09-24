@@ -39,7 +39,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
     <div class="row">
         <?php echo $form->labelEx($model, 'product_service_type'); ?>
         <?php
-        echo $form->dropDownList($model, 'product_service_type', array('Trading' => 'Trading', 'Rental' => 'Rental'));
+        echo $form->dropDownList($model, 'product_service_type', array('Sales' => 'Sales', 'Rental' => 'Rental'));
         ?>
 
     </div>
