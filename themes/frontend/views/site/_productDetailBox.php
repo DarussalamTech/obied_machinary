@@ -44,7 +44,7 @@ $this->widget('ext.lyiightbox.LyiightBox2', array(
                 <div class="div_data" style=" float: left;padding-left: 3px;"><?php echo ucfirst($product_detail->status); ?></div>
             </div><br>
             <div class="div_row" style="width:99%;padding-bottom: 5px">
-                <div class="div_data" style=" float: left"><b>Description :</b><?php echo $product_detail->product_description ?></div>
+                <div class="div_data" style=" float: left"><b>Description :</b><span><?php echo $product_detail->product_description ?></span></div>
             </div>
         </div>
     </div>

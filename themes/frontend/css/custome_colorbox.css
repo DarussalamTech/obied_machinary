@@ -15,6 +15,18 @@
     border-radius: 5px 5px 5px 5px;
     margin: -11px 0px 0px 0px ;
 }
+.product_detail {
+    margin-left: 48px;
+       font-size: 14px;
+}
 .product_detail p{
     margin: 2px 0px 0px 21px;
+ 
+
+}
+.product_name {
+    margin-left: 48px;
+}
+.div_data span {
+    text-align: justify;
 }
