@@ -42,7 +42,7 @@ $this->widget('zii.widgets.CDetailView', array(
         'category_description',
         array(
             'name' => 'category_image',
-            'value' => CHtml::link(CHtml::image($model->show_image,"",array('width'=>'100')),$model->show_image,array("target"=>"blank")),
+            'value' => CHtml::link(CHtml::image($model->show_image,"",array('width'=>'100')),$model->show_image,array("target" => "blank", "rel" => 'lightbox[_default]')),
             "type" => "raw"
         ),
         array(
@@ -51,5 +51,9 @@ $this->widget('zii.widgets.CDetailView', array(
             'visible'=> isset($model->parent_cat)?true:false,
         ),
     ),
+));
+?>
+<?php
+$this->widget('ext.lyiightbox.LyiightBox2', array(
 ));
 ?>

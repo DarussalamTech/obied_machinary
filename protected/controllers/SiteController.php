@@ -70,6 +70,7 @@ class SiteController extends Controller {
         $category_products = $dataProvider->getData();
         $this->render('/site/category_products', array('category_products' => $category_products, 'dataProvider' => $dataProvider, "cat_id" => $cat_id));
     }
+
     /**
      * 
      * For displaying all products 
@@ -100,11 +101,12 @@ class SiteController extends Controller {
         $pro_cat_id = $product_detail->category->id;
         $this->render('/site/productDetail', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
     }
+
     public function actionProductDetailBox($product_id) {
 
         $product_detail = Products::model()->findByPk($product_id);
         $pro_cat_id = $product_detail->category->id;
-       // $this->render('/site/productDetailBox', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
+        // $this->render('/site/productDetailBox', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
         $this->renderPartial("_productDetailBox", array(
             "product_detail" => $product_detail,
             'cat_id' => $pro_cat_id,
@@ -120,16 +122,7 @@ class SiteController extends Controller {
     public function actionDivision() {
 
         $product_service_type = $_REQUEST['type'];
-        $criteria = new CDbCriteria();
-        $criteria->select = '*';
-        $criteria->condition = 'product_service_type ="' . $product_service_type . '"';
-
-        $dataProvider = new CActiveDataProvider(Products::model(), array(
-            'pagination' => array(
-                'pageSize' => 6,
-            ),
-            'criteria' => $criteria,
-        ));
+        $dataProvider = Products::model()->divisionDataProviderr($product_service_type);
         $division_product = $dataProvider->getData();
         $this->render('/site/division', array('category_products' => $division_product, "product_service_type" => $product_service_type, 'dataProvider' => $dataProvider));
     }
@@ -144,7 +137,9 @@ class SiteController extends Controller {
     }
 
     public function actionWanted() {
-        $this->render('/site/about');
+        $datProvider = ProductWanted::model()->wantedDataProvider();
+        $product_wanted = $datProvider->getData();
+        $this->render('/site/wanted', array('product_wanted' => $product_wanted));
     }
 
     /*
@@ -210,6 +205,9 @@ class SiteController extends Controller {
     public function actionLogin() {
         Yii::app()->controller->layout = "//layouts/login_admin";
         Yii::app()->theme = "admin";
+        if (!Yii::app()->user->isGuest) {
+            $this->redirect($this->createUrl('/products/index'));
+        }
         $model = new LoginForm;
 
         // if it is ajax validation request

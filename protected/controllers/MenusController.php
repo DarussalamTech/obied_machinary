@@ -251,16 +251,16 @@ class MenusController extends Controller {
         $ary[] = array("id" => "5", "pid" => "2", "root_parent" => "2", "controller" => "categories", "action" => "indexParent", "default_title" => "List Category", "user_title" => "List Category", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
         $ary[] = array("id" => "6", "pid" => "2", "root_parent" => "2", "controller" => "categories", "action" => "createParent", "default_title" => "Create Category", "user_title" => "Create Category", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
 
-        /*         * ************************** for Rental Product Menu ********************************** */
+        /*         * ************************** for Rental/Sale Product Menu ********************************** */
         $ary[] = array("id" => "7", "pid" => "0", "root_parent" => "7", "controller" => "products", "action" => "index", "default_title" => "Product", "user_title" => "Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
         $ary[] = array("id" => "8", "pid" => "7", "root_parent" => "7", "controller" => "products", "action" => "create", "default_title" => "Create Product", "user_title" => "Create Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
         $ary[] = array("id" => "9", "pid" => "7", "root_parent" => "7", "controller" => "products", "action" => "indexRental", "default_title" => "List Rental Product", "user_title" => "List Rental Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
         $ary[] = array("id" => "10", "pid" => "7", "root_parent" => "7", "controller" => "products", "action" => "indexTrading", "default_title" => "List Sales Product", "user_title" => "List Sales Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
 
-        /*         * ************************** for Trading Product Menu ********************************** */
-//        $ary[] = array("id" => "10", "pid" => "0", "root_parent" => "10", "controller" => "products", "action" => "indexTrading", "default_title" => "Trading Product", "user_title" => "Trading Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
-//        $ary[] = array("id" => "11", "pid" => "10", "root_parent" => "10", "controller" => "products", "action" => "indexTrading", "default_title" => "List Trading Product", "user_title" => "List Trading Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
-//        $ary[] = array("id" => "12", "pid" => "10", "root_parent" => "10", "controller" => "products", "action" => "createTrading", "default_title" => "Create Trading Product", "user_title" => "Create Trading Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
+        /*         * ************************** for wanted Product Menu ********************************** */
+        $ary[] = array("id" => "11", "pid" => "0", "root_parent" => "10", "controller" => "productWanted", "action" => "index", "default_title" => "Wanted Product", "user_title" => "Wanted Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "3");
+        $ary[] = array("id" => "12", "pid" => "11", "root_parent" => "10", "controller" => "productWanted", "action" => "index", "default_title" => "List Wanted Product", "user_title" => "List Wanted Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "0");
+        $ary[] = array("id" => "13", "pid" => "11", "root_parent" => "10", "controller" => "productWanted", "action" => "create", "default_title" => "Create Wanted Product", "user_title" => "Create Wanted Product", "is_assigned" => "Yes", "min_permission" => "View", "weight" => "2");
 
         foreach ($ary as $attr) {
             $model = new Menus();

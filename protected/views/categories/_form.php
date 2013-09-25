@@ -39,13 +39,16 @@
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($model, 'category_image'); ?>
-        <?php echo $form->fileField($model, 'category_image', array('maxlength' => 255)); ?>
+
         <?php
         if (!$model->isNewRecord) {
-            echo CHtml::link(CHtml::image($model->show_image, "", array('width' => '100')), $model->show_image, array("target" => "blank"));
+            echo CHtml::openTag('div', array('style' => 'width:100px;margin:4px 130px 4px'));
+            echo CHtml::link(CHtml::image($model->show_image, "", array('width' => '150px', 'height' => '100px')), $model->show_image, array("target" => "blank", "rel" => 'lightbox[_default]'));
+            echo CHtml::closeTag('div');
         }
         ?>
+        <?php echo $form->labelEx($model, 'category_image'); ?>
+        <?php echo $form->fileField($model, 'category_image', array('maxlength' => 255)); ?>
         <?php echo $form->error($model, 'category_image'); ?>
     </div>
 
@@ -59,3 +62,7 @@
     <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php
+$this->widget('ext.lyiightbox.LyiightBox2', array(
+));
+?>

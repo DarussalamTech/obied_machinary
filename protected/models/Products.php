@@ -129,6 +129,24 @@ class Products extends OMActiveRecord {
         return $dataProvider;
     }
 
+    /*
+     * division type dataprovider
+     * Auth:ubad
+     */
+
+    public function divisionDataProviderr($product_service_type) {
+        $criteria = new CDbCriteria();
+        $criteria->select = '*';
+        $criteria->condition = 'product_service_type ="' . $product_service_type . '"';
+
+        return $dataProvider = new CActiveDataProvider(Products::model(), array(
+            'pagination' => array(
+                'pageSize' => 6,
+            ),
+            'criteria' => $criteria,
+        ));
+    }
+
     /**
      * @return array customized attribute labels (name=>label)
      */
