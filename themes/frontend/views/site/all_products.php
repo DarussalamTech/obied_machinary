@@ -35,10 +35,10 @@
 //                $criteria->condition = 'id=' . $cat_id;
 //                $category_name = Categories::model()->findByPk($cat_id, $criteria)->category_name;
                 ?>
-                <h2>Listing of Our All Products</h2>
+                <h2>List of Our All Products</h2>
                 <article>
                     <?php //echo Categories::model()->findByPk($cat_id, $criteria)->category_description;  ?> 
-                    Listing of Our All ProductListing of Our All Product Listing of Our All Product
+                    We have  two divisions, Rental and Sales division. We also have a Sales division for construction equipment.Our Rental division can provide you any equipment you are looking for, within a short period of time. With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines. 
                 </article>
                 <div class='pagination'>
                     <?php

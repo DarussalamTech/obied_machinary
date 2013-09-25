@@ -22,7 +22,7 @@
         <div class="nine columns">
             <div class="left_index_service">
                 <h2>OUR SERVICES</h2>
-                <p>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</p>
+                <p>We never compromise on the quality of our products and services. Customer preference is our top priority, along with maximum customer satisfaction, and relationship-building.</p>
                 <div class="four columns">
                     <div class="division">
                         <h3>Rental Division</h3>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="four columns">
                     <div class="division">
-                        <h3>Trading Division</h3>
+                        <h3>Sales Division</h3>
                         <?php
                         echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/trading_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Sales')));
                         ?>

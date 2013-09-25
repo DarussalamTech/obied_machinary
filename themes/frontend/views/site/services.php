@@ -23,10 +23,30 @@
             </div>
         </div>
         <div class="six columns">
+
             <div class="center_about_service">
                 <div class="about_upper_part">
                     <h2>OUR SERVICES</h2>
                     <p>We never compromise on the quality of our products and services. Customer preference is our top priority, along with maximum customer satisfaction, and relationship-building.</p>
+                    <div class="left_index_service" style="width: 154%;">
+
+                        <div class="four columns">
+                            <div class="division">
+                                <h3 style="font-style:normal">Rental Division</h3>
+                                <?php
+                                echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/rental_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Rental')));
+                                ?>
+                            </div>
+                        </div>
+                        <div class="four columns">
+                            <div class="division">
+                                <h3 style="font-style:normal">Sales Division</h3>
+                                <?php
+                                echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/trading_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Sales')));
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                     <p>Our services include:</p>
                     <p>Trading of used construction equipment</p>
                     <p>Rental facility of any equipment required</p>
@@ -39,7 +59,7 @@
                     <p>- Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)</p>
                     <p>- Loaders (JCB, FURUKAWA, KAWASAKi, CAT)</p>
                     <p>- Forklifts (TCM, ETC)</p>
-                    <h3>Trading Division</h3>
+                    <h3>Sales Division</h3>
                     <p>We also have a trading division for construction equipment.</p>
                     <p>We have been selling used construction machinery for the past 30 Years in The Kingdom Of Saudi Arabia and this is what we love doing.</p>
                     <p>All our machines are inspected thoroughly on arrival &amp; departure to make sure you get the quality you deserve.</p>

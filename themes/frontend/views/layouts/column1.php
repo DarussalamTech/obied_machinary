@@ -17,7 +17,7 @@
                                 <?php echo CHtml::link("Admin Logout", $this->createUrl('/site/logout')); ?>
                             </div>
                         <?php endif; ?>
-                        <p>call:+971 0 111 2222</p>
+                        <p>call:+971 4 8817541</p>
                     </div>
                 </div>
             </div>

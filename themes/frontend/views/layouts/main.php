@@ -56,9 +56,25 @@
                 <div class="row">
                     <div class="six columns">
                         <div class="left_footer">
-                            <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/f.png" /></a>
-                            <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/g.png" /></a>
-                            <a href="#"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/t.png" /></a>
+                            <?php
+                            echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/images/f.png', '', array(
+                                        "unhover" => Yii::app()->theme->baseUrl . "/images/f.png",
+                                        "hover" => Yii::app()->theme->baseUrl . "/images/fa.png",
+                                        "id" => "f_click",
+                                    )), "http://www.facebook.com/obiedmachinery");
+                            echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/images/g.png', '', array(
+                                        'style' => 'margin:0px 2px 0px 3px',
+                                        "unhover" => Yii::app()->theme->baseUrl . "/images/g.png",
+                                        "hover" => Yii::app()->theme->baseUrl . "/images/ga.png",
+                                        "id" => "g_click",
+                                    )), "http://www.twitter.com/obiedmachinery");
+                            echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/images/t.png', '', array(
+                                        "unhover" => Yii::app()->theme->baseUrl . "/images/t.png",
+                                        "hover" => Yii::app()->theme->baseUrl . "/images/ta.png",
+                                        "id" => "t_click",
+                                    )), "http://www.twitter.com/obiedmachinery");
+                            ?>
+
                         </div>
                     </div>
                     <div class="six columns">
@@ -114,7 +130,7 @@ Or concatenate and minify into a single file
 <script src="js/libs/ui/jquery.validation.js"></script>
 <script src="js/libs/gumby.init.js"></script>-->
 
-<script src="<?php //echo Yii::app()->theme->baseUrl;  ?>/js/libs/gumby.min.js"></script> 
+<script src="<?php //echo Yii::app()->theme->baseUrl;                  ?>/js/libs/gumby.min.js"></script> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/main.js"></script>
 
@@ -134,3 +150,13 @@ Modernizr.load({
 <![endif]-->
 </body>
 </html>
+<script type="text/javascript">
+    var img_path = "<?php echo Yii::app()->theme->baseUrl; ?>";
+    jQuery('.left_footer a img')
+            .mouseover(function() {
+        jQuery(this).attr('src', jQuery(this).attr("hover"));
+    })
+            .mouseout(function() {
+        jQuery(this).attr('src', jQuery(this).attr("unhover"));
+    });
+</script>

@@ -35,7 +35,7 @@
                                 <?php echo CHtml::link("Admin Logout", $this->createUrl('/site/logout')); ?>
                             </div>
                         <?php endif; ?>
-                        <p>call:+971 0 111 2222</p>
+                        <p>call:+ 971 4 8817541</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     <div class="eight columns">
                         <div class="banner_text">
                             <h1>ABOUT OBEID MACHINERY</h1>
-                            <p><i>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</i></p>
+                            <p><i>Obeid Machinery is a name synonymous to quality, trust and result. You will realize that Obeid Machinery is a bondthat is furthernurtured and nourished after each transaction.</i></p>
                         </div>
                     </div>
                     <div class="four columns">

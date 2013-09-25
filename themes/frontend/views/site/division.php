@@ -29,20 +29,18 @@
                 if ($product_service_type == "Rental") {
                     ?>
                     <article>
-                        Our Rental division can provide you any equipment you are looking for, within a short period of time. With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines.
-                        We specialize in the following equipment:
-                        - Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag)
-                        - Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)
-                        - Loaders (JCB, FURUKAWA, KAWASAKi, CAT)
-                        - Forklifts (TCM, ETC)
+                        Our Rental division can provide you any equipment you are looking for, within a short period of time. With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines. 
+                        We specialize in the following equipment:<br>
+                        - Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag), Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)<br>
+                        - Loaders (JCB, FURUKAWA, KAWASAKi, CAT), Forklifts (TCM, ETC)
                     </article>
                     <?php
                 } else {
                     ?>
                     <article>
-                        We also have a trading division for construction equipment.
+                        We also have a sales division for construction equipment.
                         We have been selling used construction machinery for the past 30 Years in The Kingdom Of Saudi Arabia and this is what we love doing.
-                        All our machines are inspected thoroughly on arrival & departure to make sure you get the quality you deserve.
+                        All our machines are inspected thoroughly on arrival& departure to make sure you get the quality you deserve.
                     </article>
                     <?php
                 }
@@ -94,14 +92,14 @@
                                 <div class="division_type">
                                     <?php echo $product->product_service_type; ?>
                                 </div>
-<!--                                <div class="rental_tag_price">
-                                    <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
-                                    <?php
-                                    if (!empty($product->price) && $product->price != 0) {
-                                        echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
-                                    }
-                                    ?>
-                                </div>-->
+                                <!--                                <div class="rental_tag_price">
+                                <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
+                                <?php
+                                if (!empty($product->price) && $product->price != 0) {
+                                    echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
+                                }
+                                ?>
+                                                                </div>-->
                             </div> 
                             <?php
                         } else {
