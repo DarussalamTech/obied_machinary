@@ -240,6 +240,9 @@ class DTUploadedFile extends CUploadedFile {
             case 'jpg':
                 imagejpeg($tmp_img, "$pathToThumbs" . DIRECTORY_SEPARATOR . $name);
                 break;
+            case 'JPG':
+                imagejpeg($tmp_img, "$pathToThumbs" . DIRECTORY_SEPARATOR . $name);
+                break;
             case 'gif':
                 imagegif($tmp_img, "$pathToThumbs" . DIRECTORY_SEPARATOR . $name);
                 break;

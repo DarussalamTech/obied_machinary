@@ -20,18 +20,18 @@ foreach ($new_arrivals as $new) {
         <div class="kbox" style ="margin:4px;"> 
             <?php
             //echo CHtml::link(CHtml::image($new_img[0]['image_large'], '', array('class' => 'productimage')), $new_img[0]['image_large'], array("rel" => 'lightbox[_default]'));
-            echo CHtml::link(CHtml::image($new_img[0]['image_large'], '', array('class' => 'productimage')), Yii::app()->createUrl('/site/productDetailBox', array('product_id' => $new->id, 'category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
+            echo CHtml::link(CHtml::image($new_img[0]['image_large'], '', array('class' => 'productimage')), Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
             ?>
             <?php
             echo "<div style='font-weight:bold'>";
             //echo CHtml::link((strlen($new->product_name) > 20) ? substr($new->product_name, 0, 20) . '...' : $new->product_name, Yii::app()->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $new->slug)));
-            echo CHtml::link((strlen($new->product_name) > 20) ? substr($new->product_name, 0, 20) . '...' : $new->product_name, Yii::app()->createUrl('/site/productDetailBox', array('product_id' => $new->id, 'category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
+            echo CHtml::link((strlen($new->product_name) > 20) ? substr($new->product_name, 0, 20) . '...' : $new->product_name, Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
 
             echo "</div>";
             ?>
             <div class="productdescript">
                 <?php
-                echo CHtml::link((strlen($new->product_description) > 53) ? substr($new->product_description, 0, 53) . ' ...' : $new->product_description, Yii::app()->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $new->slug)));
+                echo CHtml::link((strlen($new->product_description) > 53) ? substr($new->product_description, 0, 53) . ' ...' : $new->product_description, Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
                 ?>
             </div>
 
@@ -44,14 +44,14 @@ foreach ($new_arrivals as $new) {
                     <div class="division_type">
                         <?php echo $new->product_service_type; ?>
                     </div>
-<!--                    <div class="rental_tag_price">
-                        <?php echo!empty($new->price) ? round($new->price) : ""; ?> USD
-                        <?php
-                        if (!empty($new->price) && $new->price != 0) {
-                            echo!empty($new->price_per_variable) ? "P&nbsp/&nbsp" . $new->price_per_variable : "";
-                        }
-                        ?>
-                    </div>-->
+                    <!--                    <div class="rental_tag_price">
+                    <?php echo!empty($new->price) ? round($new->price) : ""; ?> USD
+                    <?php
+                    if (!empty($new->price) && $new->price != 0) {
+                        echo!empty($new->price_per_variable) ? "P&nbsp/&nbsp" . $new->price_per_variable : "";
+                    }
+                    ?>
+                                        </div>-->
                 </div> 
                 <?php
             } else {

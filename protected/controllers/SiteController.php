@@ -102,8 +102,9 @@ class SiteController extends Controller {
         $this->render('/site/productDetail', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
     }
 
-    public function actionProductDetailBox($product_id) {
+    public function actionProductDetailBox($slug) {
 
+        $product_id = $this->getRequestIDFromSlug($slug);
         $product_detail = Products::model()->findByPk($product_id);
         $pro_cat_id = $product_detail->category->id;
         // $this->render('/site/productDetailBox', array('product_detail' => $product_detail, 'cat_id' => $pro_cat_id));
