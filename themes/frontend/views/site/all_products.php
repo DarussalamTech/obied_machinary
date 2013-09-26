@@ -63,17 +63,17 @@
                     <div class="kbox"> 
                         <?php
                         //echo isset($p_images[0]) ? CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug))) : "";
-                        echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $this->createUrl('/site/productDetailBox', array('product_id' => $product->id, 'category' => $category_url, 'slug' => $product->slug)), array("class" => 'product_detail'));
+                        echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $this->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $product->slug)), array("class" => 'product_detail'));
                         ?>
 
                         <?php
                         echo "<div style='font-weight:bold'>";
-                        echo CHtml::link((strlen($product->product_name) > 20) ? substr($product->product_name, 0, 20) . '...' : $product->product_name, $this->createUrl('/site/productDetailBox', array('product_id' => $product->id, 'category' => $category_url, 'slug' => $product->slug)), array("class" => 'product_detail'));
+                        echo CHtml::link((strlen($product->product_name) > 20) ? substr($product->product_name, 0, 20) . '...' : $product->product_name, $this->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $product->slug)), array("class" => 'product_detail'));
                         echo "</div>";
                         ?>
                         <div class="productdescript">
                             <?php
-                            echo CHtml::link((strlen($product->product_description) > 53) ? substr($product->product_description, 0, 53) . ' ...' : $product->product_description, $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug)));
+                            echo CHtml::link((strlen($product->product_description) > 53) ? substr($product->product_description, 0, 53) . ' ...' : $product->product_description, $this->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $product->slug)), array("class" => "product_detail"));
                             ?>
                         </div>
 

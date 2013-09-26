@@ -17,11 +17,11 @@
 }
 .product_detail {
     margin-left: 48px;
-       font-size: 14px;
+    font-size: 14px;
 }
 .product_detail p{
     margin: 2px 0px 0px 21px;
- 
+
 
 }
 .product_name {
@@ -29,4 +29,22 @@
 }
 .div_data span {
     text-align: justify;
+}
+.div_image img{
+    border-radius: 5px 5px 5px 5px;
+    border:1px solid #2C2C2C;
+}
+.div_row_image{
+    width:99%;
+    text-align: center;
+    cursor: pointer;
+}
+.wait{
+    display: none;
+    z-index: 1;
+    position: fixed;
+    margin: 95px 0 0 117px;
+}
+.wait img{
+     border:1px;
 }

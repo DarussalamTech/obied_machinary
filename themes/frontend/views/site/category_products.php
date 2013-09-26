@@ -57,13 +57,13 @@
 
                     <div class="kbox"> 
                         <?php
-                        echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $this->createUrl('/site/productDetailBox', array('product_id' => $product->id, 'category' => $category_url, 'slug' => $product->slug)), array("class" => 'product_detail'));
+                        echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $this->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $product->slug)), array("class" => 'product_detail'));
                         //echo CHtml::link(CHtml::image($p_images[0]['image_large'], '', array('class' => 'productimage')), $p_images[0]['image_large'], array("rel" => 'lightbox[_default]'),array('class'));
                         ?>
 
                         <?php
                         echo "<div style='font-weight:bold'>";
-                        echo CHtml::link((strlen($product->product_name) > 20) ? substr($product->product_name, 0, 20) . '...' : $product->product_name, $this->createUrl('/site/productDetailBox', array('product_id' => $product->id, 'category' => $category_url, 'slug' => $product->slug)), array("class" => "product_detail"));
+                        echo CHtml::link((strlen($product->product_name) > 20) ? substr($product->product_name, 0, 20) . '...' : $product->product_name, $this->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $product->slug)), array("class" => "product_detail"));
                         echo "</div>";
                         ?>
                         <?php
@@ -79,7 +79,7 @@
                         ?>
                         <div class="productdescript">
                             <?php
-                            echo CHtml::link((strlen($product->product_description) > 53) ? substr($product->product_description, 0, 53) . ' ...' : $product->product_description, $this->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $product->slug)));
+                            echo CHtml::link((strlen($product->product_description) > 53) ? substr($product->product_description, 0, 53) . ' ...' : $product->product_description, $this->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $product->slug)), array("class" => "product_detail"));
                             ?>
                         </div>
 
@@ -92,14 +92,14 @@
                                 <div class="division_type">
                                     <?php echo $product->product_service_type; ?>
                                 </div>
-<!--                                <div class="rental_tag_price">
-                                    <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
-                                    <?php
-                                    if (!empty($product->price) && $product->price != 0) {
-                                        echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
-                                    }
-                                    ?>
-                                </div>-->
+                                <!--                                <div class="rental_tag_price">
+                                <?php echo!empty($product->price) ? round($product->price) : ""; ?> USD
+                                <?php
+                                if (!empty($product->price) && $product->price != 0) {
+                                    echo!empty($product->price_per_variable) ? "P&nbsp/&nbsp" . $product->price_per_variable : "";
+                                }
+                                ?>
+                                                                </div>-->
                             </div> 
                             <?php
                         } else {

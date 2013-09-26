@@ -7,7 +7,7 @@
      */
     var slider_timings = <?php echo!empty(Yii::app()->params['slider_time']) ? Yii::app()->params['slider_time'] : 3; ?>;
     jQuery(document).ready(function() {
-        dtech.makeSlider();
+        // dtech.makeSlider();
 
 //            jQuery(".ten columns, li").children().each(function() {
 //                jQuery('.ten columns, li').children().hover(function(){
@@ -79,7 +79,26 @@
         <div class="banner_part">
             <div class="banner_main_part">
                 <div class="twelve columns">
-                    <div id="banner" style="display:block;height: 343px">
+                    <div id="banner" style="height: 329px">
+                        <?php
+                        $this->widget('application.extensions.seqimage.SeqImage', array(
+                            'widthImage' => 938,
+                            'timeDelay' => 3500,
+                            'timeDelayInitial' => 3500,
+                            //'heightImage' => 360,
+                            'slides' => array(
+                                array(
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/slider_1.jpg'),
+                                // 'link' => array('url' => 'mypage', 'htmlOptions' => array('class' => 'main_banner_img'))
+                                ),
+                                array(
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/slider_2.jpg'),
+                                ),
+                                array(
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/slider_1.jpg'),
+                                ),))
+                        );
+                        ?>
                         <!--                        <div class="banner_dots" style='position: absolute'>
                         
                                                     <a id="cs-button-coin-1" class="cs-button-coin cs-active" href="javascript:void(0)">1</a>
@@ -87,17 +106,18 @@
                                                     <a id="cs-button-coin-3" class="cs-button-coin" href="javascript:void(0)">3</a>
                         
                                                 </div>-->
-                        <div id="banner_slider_1" class="banner_slider">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_1.jpg" class="main_banner_img" />
-                        </div>
-                        <div id="banner_slider_2" class="banner_slider" style="display:none">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_2.jpg" class="main_banner_img" />
-                        </div>
-                        <div id="banner_slider_3" class="banner_slider" style="display:none">
-                            <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_1.jpg" class="main_banner_img" />
-                        </div>
+                        <!--                        <div id="banner_slider_1" class="banner_slider">
+                                                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_1.jpg" class="main_banner_img" />
+                                                </div>
+                                                <div id="banner_slider_2" class="banner_slider" style="display:none">
+                                                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_2.jpg" class="main_banner_img" />
+                                                </div>
+                                                <div id="banner_slider_3" class="banner_slider" style="display:none">
+                                                    <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/slider/slider_1.jpg" class="main_banner_img" />
+                                                </div>-->
 
                     </div>
+
                 </div>
                 <div class="row">
                     <div class="eight columns">
