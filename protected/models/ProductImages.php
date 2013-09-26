@@ -162,7 +162,15 @@ class ProductImages extends OMActiveRecord {
             $this->image_url['image_large'] = Yii::app()->baseUrl . "/uploads/product/" . $this->product->primaryKey;
             $this->image_url['image_large'].= "/product_images/" . $this->id . "/" . $this->image_large;
         } else {
-            $this->image_url['image_large'] = Yii::app()->baseUrl . "/images/product_images/noimages.jpeg";
+            $this->image_url['image_large'] = Yii::app()->baseUrl . "/images/noimage.jpg";
+        }
+
+        if (!empty($this->image_detail)) {
+
+            $this->image_url['image_detail'] = Yii::app()->baseUrl . "/uploads/product/" . $this->product->primaryKey;
+            $this->image_url['image_detail'].= "/product_images/" . $this->id . "/" . $this->image_detail;
+        } else {
+            $this->image_url['image_detail'] = Yii::app()->baseUrl . "/images/noimage.jpg";
         }
 
         if (!empty($this->image_small)) {
@@ -170,7 +178,7 @@ class ProductImages extends OMActiveRecord {
             $this->image_url['image_small'] = Yii::app()->baseUrl . "/uploads/product/" . $this->product->primaryKey;
             $this->image_url['image_small'].= "/product_images/" . $this->id . "/" . $this->image_small;
         } else {
-            $this->image_url['image_small'] = Yii::app()->baseUrl . "/images/product_images/noimages.jpeg";
+            $this->image_url['image_small'] = Yii::app()->baseUrl . "/images/noimage.jpg";
         }
 
 
