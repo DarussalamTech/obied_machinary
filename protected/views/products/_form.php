@@ -48,8 +48,7 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
         <?php echo $form->textField($model, 'price', array('size' => 50, 'maxlength' => 50, 'style' => 'width:100px')); ?>
         <span id="Products_per_variable" style="display: none;">
             <?php
-            echo "Per&nbsp&nbsp" . $form->dropDownList($model, 'price_per_variable', array('Day' => 'Day', 'Month' => 'Month','Year'=>'Year'), 
-                    array('prompt' => 'Select', 'style' => 'width:74px;'));
+            echo "Per&nbsp&nbsp" . $form->dropDownList($model, 'price_per_variable', array('Day' => 'Day', 'Month' => 'Month', 'Year' => 'Year'), array('prompt' => 'Select', 'style' => 'width:74px;'));
             ?>
         </span>
     </div>
@@ -65,10 +64,18 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/js/f
     </div>
     <div class="row">
         <?php echo $form->labelEx($model, 'year'); ?>
-        <?php $years = array("1999" => "1999", "2000" => "2000", "2001" => "2001", 2002 => 2002, 2003 => 2003, 2004 => 2004, 2005 => 2005, 2006 => 2006, 2007 => 2007, 2008 => 2008, 2009 => 2009, 2010 => 2010, 2011 => 2011, 2012 => 2012, 2013 => 2013); ?>
-        <?php echo $form->dropDownList($model, 'year', $years); ?>
+        <?php echo $form->dropDownList($model, 'year', array('prompt' => 'Select Year')); ?>
     </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
 
+            for (i = new Date().getFullYear(); i > 1960; i--)
+            {
+                jQuery('#Products_year').append(jQuery('<option />').val(i).html(i));
+            }
+        })
+
+    </script>
 
     <div class="row">
         <?php echo $form->labelEx($model, 'product_overview'); ?>

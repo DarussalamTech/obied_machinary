@@ -44,6 +44,7 @@ $this->widget('zii.widgets.CDetailView', array(
         'product_name',
         'product_description',
         'product_overview',
+        'year',
         'slug',
     ),
 ));

@@ -53,6 +53,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
         'product_service_type',
         'product_name',
         'price',
+        'year',
         'product_description',
         'product_overview',
         array(
