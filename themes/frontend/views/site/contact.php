@@ -29,17 +29,14 @@
 
                         <h2>CONTACT US</h2>
                         <h3>Office</h3>
-                        <p>P.O. Box 61140,</p>
-                        <p>Jebel Ali Free Zone,</p>
-                        <p>Dubai, United Arab Emirates</p>
-                        <p><span>Tel:</span> + 971 4 8817541 / 8816305</p>
-                        <p><span>Fax:</span> + 971 4 8817551 </p>
-                        <p><span>Email:</span> sales@bigequipmentuae.com</p>
-                        <h3>Contact Persons</h3>
-                        <p>Mr. Muhammad Shahin +971-50-6983543</p>
-                        <p>Mr. A. Qayyum Bhatti +971-50-7956991</p>
-                        <p>Mr. Shahid Mughal +971-50-2887459</p>
-                        <p>Mr. Muhammad Shehzad +971-50-4745828</p>
+                        <p>P.O. Box 89056,</p>
+                        <p>Malaz, Shara Siteen,</p>
+                        <p>Riyadh, Saudi Arabia</p>
+                        <p><span>Tel:</span> + 966-114765659</p>
+                        <p><span>Fax:</span> + 966-11476187 </p>
+                        <h3>Contact Persons</h3><p></p>
+                        <p>Mr Khalid Bhatti: +966-505442998</p>
+                        <p>Mr Fahad Bhatti: +966-506516724 </p>
 
 
                         <table>
