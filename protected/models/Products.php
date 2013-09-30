@@ -23,6 +23,8 @@
  */
 class Products extends OMActiveRecord {
 
+    public $no_image;
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -37,6 +39,11 @@ class Products extends OMActiveRecord {
      */
     public function tableName() {
         return 'products';
+    }
+
+    public function __construct($scenario = 'insert') {
+        $this->no_image = Yii::app()->baseUrl . "/images/noimage.jpg";
+        parent::__construct($scenario);
     }
 
     /**
@@ -252,7 +259,17 @@ class Products extends OMActiveRecord {
             }
         }
 
-        return $images;
+
+        if (!empty($images)) {
+            return $images;
+        } else {
+            $images[] = array(
+                'image_large' => $this->no_image,
+                'image_detail' => $this->no_image,
+                'image_small' => $this->no_image,
+            );
+            return $images;
+        }
     }
 
     public function getImageAll() {
@@ -266,7 +283,16 @@ class Products extends OMActiveRecord {
             );
         }
 
-        return $images;
+        if (!empty($images)) {
+            return $images;
+        } else {
+            $images[] = array(
+                'image_large' => $this->no_image,
+                'image_detail' => $this->no_image,
+                'image_small' => $this->no_image,
+            );
+            return $images;
+        }
     }
 
     /**
