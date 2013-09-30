@@ -8,8 +8,8 @@
 
     <center>
         <h1 style="text-align:center; font-size:14px; color:#089AD4; 
-            color:#089AD4;">30 experience-rich years of rock-solid reputation <br />
-            in the industry of heavy machinery and construction <br />equipment. That’s what Obeid Machinery is about.
+            color:#089AD4;">30 experience-rich years of rock-solid reputation 
+            in the industry of heavy machinery <br />and construction equipment. That’s what Obeid Machinery is about.
         </h1>
     </center>
 
@@ -19,25 +19,25 @@
         echo $email['Body'];
         ?>
     </p>
-
     <p style="color:#575757; font-size:13px;">If we can be of any further assistance, please let us know.</p><br />
-    <span style="color:#575757; font-size:13px; font-weight:bold;">Darussalam Publishers &amp; Distributors</span><br />
+    <span style="color:#575757; font-size:13px; font-weight:bold;">Obied Machinery</span><br />
     <span style="color:#575757; font-size:13px;">
 
         <span style="color:#575757; font-size:13px;"> Office
-            P.O. Box 61140,
-            Jebel Ali Free Zone,</span><br />
-        <span style="color:#575757; font-size:13px;"> Dubai, United Arab Emirates</span><br />
-        Tel: + 971 4 8817541 / 8816305<br />
-        Fax: + 971 4 8817551
-        Email: sales@bigequipmentuae.com
-    </span><br />
+            P.O. Box 89056,
+            Malaz, Shara Siteen,
 
-    <span style="color:#575757; font-size:13px;">
-        <a href="<?php echo Yii::app()->request->hostInfo . Yii::app()->baseUrl ?>" style="color:#39F;">
-            <?php echo Yii::app()->request->hostInfo . Yii::app()->baseUrl; ?>
-        </a>
+            Riyadh, Saudi Arabia</span><br />
+        Tel: + 966-114765659<br />
+
+        Fax: + 966-11476187
     </span><br />
+    <span style="color:#575757; font-size:13px; font-weight:bold;">Contact Persons</span><br />
+    <span style="color:#575757; font-size:13px;"> Mr Khalid Bhatti: +966-505442998</span><br />
+    <span style="color:#575757; font-size:13px;"> Mr Fahad Bhatti: +966-506516724</span><br />
+
+
+
     <span style="color:#575757; font-size:13px;">
 
         <?php
