@@ -8,6 +8,12 @@ class DTPager extends CLinkPager {
 
     public $ajax = false;
     public $jsMethod = "";
+    public $cssFile;
+
+    public function registerClientScript() {
+        if ($this->cssFile !== false)
+            self::registerCssFile(Yii::app()->theme->baseUrl . '/css/pagination.css');
+    }
 
     /**
      * only in case when u have to append extra param
