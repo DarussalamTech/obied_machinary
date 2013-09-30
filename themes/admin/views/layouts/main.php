@@ -84,6 +84,8 @@
                                     //array('label' => 'Change Password', 'url' => $this->createUrl('/user/changePassword'), 'visible' => (Yii::app()->user->isGuest) ? 0 : 1, 'itemOptions' => array('class' => '')),
                                     //array('label' => 'Configuration', 'url' => $this->createUrl('/configurations/general', array('m' => 'Misc', 'type' => 'general')), 'visible' => (Yii::app()->user->isSuperuser) ? 1 : 0, 'itemOptions' => array('class' => '')),
                                     //array('label' => 'Configuration', 'url' => $this->createUrl('/configurations/load', array('m' => 'Misc', 'type' => 'other')), 'visible' => (Yii::app()->user->isSuperuser) ? 0 : 1, 'itemOptions' => array('class' => '')),
+                                    //array('label' => 'Configuration', 'url' => array('/confMisc/load',array("m"=>"Misc")), 'visible' => (Yii::app()->user->isGuest) ? 0 : 1, 'itemOptions' => array('class' => 'logout border-none')),
+                                    array('label' => 'Configurations', 'url' => $this->createUrl('/confMisc/load', array("m" => "Misc")), 'visible' => (Yii::app()->user->isGuest) ? 0 : 1, 'itemOptions' => array('class' => '')),
                                     array('label' => 'Change Password', 'url' => array('/users/changePass'), 'visible' => (Yii::app()->user->isGuest) ? 0 : 1, 'itemOptions' => array('class' => 'logout border-none')),
                                     array('label' => 'Logout', 'url' => array('/site/logout'), 'visible' => (Yii::app()->user->isGuest) ? 0 : 1, 'itemOptions' => array('class' => 'logout border-none')),
                                     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => (Yii::app()->user->isGuest) ? 1 : 0, 'itemOptions' => array('class' => 'logout border-none')),
@@ -94,7 +96,6 @@
                         <div class="clear"></div>
                     </div>
                     <?php
-            
                     //&& Yii::app()->user->type=="admin"
                     if (!empty(Yii::app()->user->id)):
                         $m = new ProDropDown();

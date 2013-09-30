@@ -114,9 +114,11 @@ div.kbox div.trading_price {
     border-radius: 0 0 3px 3px;
 }
 .trading_tag_price{
-    margin: -19px 0px 0px 121px;
-    font-size: 14px;
-    color: yellow;
+     color: yellow;
+    font-size: 15px;
+    line-height: 16px;
+    margin: -59px 0 0 117px;
+    text-transform: none;
 }
 .rental_tag_price{
     text-transform:none;
@@ -126,9 +128,11 @@ div.kbox div.trading_price {
     color: yellow;
 }
 .division_type{
-    text-transform:none;
     font-size: 22px;
-    margin:7px 109px 1px 9px;
+    margin: 7px 0 30px 11px;
+    text-transform: none;
+    width: 89px;
+    text-align: left;
 }
 .productdescript a{
     color: #2C2C2C;
@@ -150,10 +154,10 @@ div.kbox div.trading_price {
 
 }
 .contact_us_contact p{
-     line-height: 12px;
+    line-height: 12px;
 }
 .division h3{
-   color:#2C2C2C;
+    color:#2C2C2C;
 }
 
 .banner_text h1{
@@ -166,6 +170,29 @@ div.kbox div.trading_price {
 .about_listing a:hover {
     color:#2C2C2C;
 }
+.banner_text p{
+    font-size : 17px;
+    color:#2C2C2C;
+    font-style: italic;
+}
+.left_index_service p
+{
+    font-size : 17px;
+    color:#2C2C2C;
+}
+.center_about_service p{
+    font-size : 17px;
+}
+.division img{
+    height: 232px;
+    margin-bottom: 13px;
+    width: 100%;
+    border: 1px solid #596929;
+    border-radius: 5px 5px 5px 5px;
+}
+
+
+
 
 
 

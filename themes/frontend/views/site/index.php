@@ -27,7 +27,7 @@
                     <div class="division">
                         <h3>Rental Division</h3>
                         <?php
-                        echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/rental_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Rental')));
+                        echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/trading_new.jpg"), $this->createUrl('/site/division', array('type' => 'Rental')));
                         ?>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                     <div class="division">
                         <h3>Sales Division</h3>
                         <?php
-                        echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/trading_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Sales')));
+                        echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/rental_new1.jpg"), $this->createUrl('/site/division', array('type' => 'Sales')));
                         ?>
                     </div>
                 </div>
