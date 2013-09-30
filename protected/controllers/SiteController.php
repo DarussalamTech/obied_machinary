@@ -192,7 +192,6 @@ class SiteController extends Controller {
                 $email['Body'] = $this->renderPartial('/common/_email_template', array('email' => $email), true, false);
 
                 $this->sendEmail2($email);
-                //die($this->sendEmail2($email).'sent');
                 Yii::app()->user->setFlash('contact', 'Thank you ! for your feedback ');
                 $this->redirect($this->createUrl('/site/contact'));
             }
