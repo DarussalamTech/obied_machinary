@@ -35,7 +35,7 @@ class ConfMiscController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update','load'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -161,6 +161,45 @@ class ConfMiscController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+    
+    
+    
+    /**
+     * Load Configuration
+     * 
+     * @param <string> $m (Model name without Conf)
+     * @param <int> $id
+     */
+    public function actionLoad($m, $id = 0, $module = '')
+    {
+        /* Complete Model name */
+        $model_name = 'Conf' . $m;
+//        echo $model_name;die;   
+
+        /* For add new or update */
+        $model = new $model_name;
+
+        if ($id != 0)
+        {
+            $model = $model->findByPk($id);
+        }
+//        echo $model->confViewName;
+//        exit;
+        /* Perform ajax validation */
+//        $this->performAjaxValidation($model);
+
+        /* if form is posted */
+        if (isset($_POST[$model_name]))
+        {
+            /* Assign attributes */
+            $model->attributes = $_POST[$model_name];
+            /* Save record */
+            if ($model->save())
+                $this->redirect(array('load', 'm' => $m, 'module' => $module));
+        }
+
+        $this->render($model->confViewName, array('model' => $model, 'm' => $m, 'module' => $module));
     }
 
 }

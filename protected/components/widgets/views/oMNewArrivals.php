@@ -59,10 +59,10 @@ foreach ($new_arrivals as $new) {
                 ?>
                 <div class="<?php echo $css_class; ?>"> 
                     <div class="division_type">
-                        <?php echo $new->product_service_type; ?>
+                        <?php echo "For Sale"; ?>
                     </div>
                     <div class="trading_tag_price">
-                        <?php echo!empty($new->price) ? round($new->price) : ""; ?> USD
+                        <?php echo 'Price On Request'; ?> 
                     </div>
                 </div> 
                 <?php
