@@ -72,7 +72,7 @@ class ColorBox extends CWidget
      * @param String $class_name
      * @param Array $colorBoxOptions 
      */
-    public function generate($class_name = "", $colorBoxOptions = array("iframe"=>true,"width"=>"800px","height"=>"600px",'opacity'=>0.7))
+    public function generate($class_name = "", $colorBoxOptions = array("iframe"=>true,"width"=>"800px","height"=>"648px",'opacity'=>0.7))
     {
         self::registerScripts();
         if (!empty($class_name))
