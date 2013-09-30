@@ -233,36 +233,35 @@ class Controller extends CController {
 
             $mailer->FromName = (isset($email['FromName']) && !empty($email['FromName']) ? $email['FromName'] : Yii::app()->name); //Yii::app()->user->name;
 
-
-            $mailer->IsHTML(true);
             if (Yii::app()->params['smtp'] == 1) {
                 $mailer->IsSMTP();
+
                 $mailer->SMTPAuth = true;
                 $mailer->SMTPSecure = Yii::app()->params['mailSecuity'];
-
+                $mailer->SMTPDebug = 0;
                 $mailer->Host = Yii::app()->params['mailHost'];
                 $mailer->Port = Yii::app()->params['mailPort'];
                 $mailer->Username = Yii::app()->params['mailUsername'];
                 $mailer->Password = Yii::app()->params['mailPassword'];
+                //CVarDumper::dump($mailer,10,true);
             }
 
-            $headers = "From: " . Yii::app()->name . " " . $email['From'] . "\r\n";
-            $headers .= "Reply-To: " . $email['From'] . "\r\n";
+            $mailer->IsHTML(true);
 
             $mailer->AddAddress($email['To']);
-
-            $mailer->addCustomHeader($headers);
-
             $mailer->From = $email['From'];
             $mailer->Subject = $email['Subject'];
             $mailer->Body = $email['Body'];
 
 
 
-
             $mailer->Send();
             $mailer->ClearAddresses();
-            $mailer->ClearCustomHeaders();
+
+
+
+            //$mailer->Send();
+            //$mailer->ClearAddresses();
         }
         return true;
     }
