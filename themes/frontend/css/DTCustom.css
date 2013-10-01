@@ -114,7 +114,7 @@ div.kbox div.trading_price {
     border-radius: 0 0 3px 3px;
 }
 .trading_tag_price{
-     color: yellow;
+    color: yellow;
     font-size: 15px;
     line-height: 16px;
     margin: -59px 0 0 117px;
@@ -190,6 +190,12 @@ div.kbox div.trading_price {
     border: 1px solid #596929;
     border-radius: 5px 5px 5px 5px;
 }
+.left_footer{
+    /*     for temprary purpose when there is no socials...*/
+    display: none; 
+   
+}
+
 
 
 
