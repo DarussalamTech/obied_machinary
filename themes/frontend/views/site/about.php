@@ -35,20 +35,50 @@
                     <article>Seoul, Korea</article>
                 </div>
                 <div class="center_about_part">
-                    <h3>We specializes in trading</h3>
-                    <article>Mobile cranes</article>
-                    <article>Other earth moving equipment</article>
-                    <p>These are available for trading as well as rental purpose. (This will confuse the customers as the machines available for rent are not for sale and vice versa)</p>
-                    <h4>We hold strong beliefs and work towards making them a reality. Our vision &amp; mission statements clarify our philosophy, which is simple and focused:</h4>
+
+
                 </div>
+
+
+                <div class="center_about_part">
+                    <h3>Our Divisions</h3>
+                    <article>We are specialize in trading Mobile cranes, crawler cranse,
+                        Other earth moving equipment</article>
+                        <div class="divsion_div">
+                            <div class='fulltext_division'>
+                                <p>These are available for trading as well as rental purpose. (This will confuse the
+                                    customers as the machines available for rent are not for sale and vice versa)</p>
+                                <p>We hold strong beliefs and work towards making them a reality. Our vision &amp; 
+                                    mission statements clarify our philosophy, which is simple and focused:</p>
+                            </div>
+                            <a class="readmore" href="#">Read More..</a>
+                        </div>
+                </div>
+
+
+
+
+
                 <div class="lower_about_part">
-                    <p>We hold strong beliefs and work towards making them a reality.</p>
-                    <p>Our vision &amp; mission statements clarify our philosophy, which is simple and focused:</p>
-                    <h4>Vision:</h4>
-                    <p>TO BE THE TOP PRIORITY FOR THOSE SEEKING HEAVY MACHINERY</p>
-                    <h4>Mission:</h4>
-                    <p>TO PROVIDE BEST QUALITY SERVICE, MAXIMUM CUSTOMER SATISFACTION &amp; BUILD LONG-TERM BOND WITH OUR WORTHY CUSTOMERS</p>
-                    <p>Our aim is to provide you the highest level of service, ensure your maximum satisfaction with our service and we want to build long-term relationship with you. We do not believe in making one-time sales. We believe in converting business deals into relationships.</p>
+                    <h3>Our Vission and Vision</h3>
+                    <article>We hold strong beliefs and work towards making them a reality.</article>
+                    <div class="vision_div">
+                        <div class='fulltext_vision'>
+                            <article>Our vision &amp; mission statements clarify our philosophy, which is simple and focused:</article>
+                            <h4>Vision:</h4>
+                            <p>TO BE THE TOP PRIORITY FOR THOSE SEEKING HEAVY MACHINERY</p>
+                            <h4>Mission:</h4>
+                            <p>TO PROVIDE BEST QUALITY SERVICE, MAXIMUM CUSTOMER SATISFACTION &amp; BUILD LONG-TERM BOND WITH OUR WORTHY CUSTOMERS</p>
+                            <p>Our aim is to provide you the highest level of service, ensure your maximum satisfaction with our service and we want
+                                to build long-term relationship with you. We do not believe in making one-time sales. We believe in converting business deals into relationships.</p>
+
+                        </div>
+                        <a class="readmore" href="#">Read More..</a>
+                    </div>
+
+
+
+
                 </div>
             </div>
         </div>
@@ -66,3 +96,20 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.fulltext_vision').hide();
+        jQuery('.fulltext_division').hide();
+
+        jQuery('.vision_div .readmore').click(function(event) {
+            event.preventDefault();
+            jQuery(this).parent().find('.fulltext_vision').slideToggle('slow');
+            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+        });
+        jQuery('.divsion_div .readmore').click(function(event) {
+            event.preventDefault();
+            jQuery(this).parent().find('.fulltext_division').slideToggle('slow');
+            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+        });
+    });
+</script>

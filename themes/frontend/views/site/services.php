@@ -34,7 +34,7 @@
                             <div class="division">
                                 <h3 style="font-style:normal">Rental Division</h3>
                                 <?php
-                                echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/rental_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Rental')));
+                                echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/rental_new1.jpg", '', array('style' => 'height:157px')), $this->createUrl('/site/division', array('type' => 'Rental')));
                                 ?>
                             </div>
                         </div>
@@ -42,43 +42,57 @@
                             <div class="division">
                                 <h3 style="font-style:normal">Sales Division</h3>
                                 <?php
-                                echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/trading_division_03.jpg"), $this->createUrl('/site/division', array('type' => 'Sales')));
+                                echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . "/images/trading_new.jpg", '', array('style' => 'height:157px')), $this->createUrl('/site/division', array('type' => 'Sales')));
                                 ?>
                             </div>
                         </div>
                     </div>
-                    <p>Our services include:</p>
-                    <p>Trading of used construction equipment</p>
-                    <p>Rental facility of any equipment required</p>
-                    <p>On-site maintenance of our machines <span>(please specify that this is only for the rental equipment)</span></p>
-                    <p>On-site check-ups of our machines <span>(please specify that this is only for the rental equipment)</span></p>
+                    <h3>Our services include:</h3>
+                    <ul>
+                        <li>Trading of used construction equipment</li>
+                        <li>Rental facility of any equipment required</li>
+                    </ul>
+
                     <h3>Rental Division</h3>
-                    <p>Our Rental division can provide you any equipment you are looking for, within a short period of time. With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines. </p>
-                    <p>We specialize in the following equipment:</p>
-                    <p>- Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag)</p>
-                    <p>- Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)</p>
-                    <p>- Loaders (JCB, FURUKAWA, KAWASAKi, CAT)</p>
-                    <p>- Forklifts (TCM, ETC)</p>
+                    <p>Our Rental division can provide you any equipment you are looking for, within a short period of time.</p>
+                    <div class="rental_div">
+                        <div class='fulltext_renttal'>
+                            <p> With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines. </p>
+                            <p>We specialize in the following equipment:</p>
+                            <li>Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag)</li>
+                            <li>Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)</li>
+                            <li>Loaders (JCB, FURUKAWA, KAWASAKi, CAT)</li>
+                            <li>Forklifts (TCM, ETC)</li>
+                        </div>
+                        <a class="readmore" href="#">Read More..</a>
+                    </div>
+
+
                     <h3>Sales Division</h3>
-                    <p>We also have a trading division for construction equipment.</p>
-                    <p>We have been selling used construction machinery for the past 30 Years in The Kingdom Of Saudi Arabia and this is what we love doing.</p>
-                    <p>All our machines are inspected thoroughly on arrival &amp; departure to make sure you get the quality you deserve.</p>
-                    <p>We specialize in the following equipment: </p>
-                    <h4>1)	Cranes</h4>
-                    <li>Rough terrain</li>
-                    <li>Truck Mounted</li>
-                    <li>All-Terrain</li>
-                    <h4>2)	Excavators</h4>
-                    <li>Wheel Excavators</li>
-                    <li>Track Excavators</li>
-                    <li>Mini Excavators </li>
-                    <h4>3)	Loaders </h4>
-                    <li>Wheel Loaders</li>
-                    <li>JCB Loaders</li>
-                    <h4>4)	Road Pavement Equipment</h4>
-                    <h4>5)	Trucks</h4>
-                    <h4>6)	Man Lifts</h4>
-                    <p>And here’s the best part: Apart from the listed equipment we can arrange any equipment that you are looking for, within the time frame you assign us. And we deliver it to wherever you want!</p>
+                    <p>We also have a trading division for construction equipment.And here’s the best part: Apart from the listed equipment we can arrange any equipment that you are
+                        looking for, within the time frame you assign us. And we deliver it to wherever you want!</p>
+                    <div class="sale_div">
+                        <div class='fulltext_sale'>
+                            <p>We have been selling used construction machinery for the past 30 Years in The Kingdom Of Saudi Arabia and this is what we love doing.
+                                All our machines are inspected thoroughly on arrival &amp; departure to make sure you get the quality you deserve.
+                                We specialize in the following equipment: </p>
+                            <h4>1)Cranes</h4>
+                            <li>Rough terrain</li>
+                            <li>Truck Mounted</li>
+                            <li>All-Terrain</li>
+                            <h4>2)	Excavators</h4>
+                            <li>Wheel Excavators</li>
+                            <li>Track Excavators</li>
+                            <li>Mini Excavators </li>
+                            <h4>3)	Loaders </h4>
+                            <li>Wheel Loaders</li>
+                            <li>JCB Loaders</li>
+                            <h4>4)	Road Pavement Equipment</h4>
+                            <h4>5)	Trucks</h4>
+                            <h4>6)	Man Lifts</h4>
+                        </div>
+                        <a class="readmore" href="#">Read More..</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,3 +110,20 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(document).ready(function() {
+        jQuery('.fulltext_renttal').hide();
+        jQuery('.fulltext_sale').hide();
+
+        jQuery('.rental_div .readmore').click(function(event) {
+            event.preventDefault();
+            jQuery(this).parent().find('.fulltext_renttal').slideToggle('slow');
+            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+        });
+        jQuery('.sale_div .readmore').click(function(event) {
+            event.preventDefault();
+            jQuery(this).parent().find('.fulltext_sale').slideToggle('slow');
+            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+        });
+    });
+</script>

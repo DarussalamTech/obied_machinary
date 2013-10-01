@@ -5,7 +5,7 @@
             <div class="three columns">
                 <div class="under_truck">
                     <?php
-                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes', 'style' => 'height:170px')), $this->createUrl('/site/categoryProducts', array('cat_slug' => $child->slug)), array('title' => $child->category_name));
+                    echo CHtml::link(CHtml::image($child->show_image, '', array('calss' => 'crawel_cranes')), $this->createUrl('/site/categoryProducts', array('cat_slug' => $child->slug)), array('title' => $child->category_name));
                     ?>
                     <h1>
                         <i><?php echo $child->category_name; ?></i>

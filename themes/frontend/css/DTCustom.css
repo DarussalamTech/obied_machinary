@@ -42,6 +42,7 @@
 }
 .active{
     background-color: #F9CA22;
+    color: black !important;
 
 }
 
@@ -49,12 +50,12 @@
 
 div.kbox {
     background-color: #DDDDDD;
-    border: 1px solid #596929;
-    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #A2A2A2;
+
     box-shadow: 0 0 1px #999999;
 
     float: left;
-    height: 290px;
+    height: 270px;
     margin: 8px 8px;
     position: relative;
     text-align: center;
@@ -65,8 +66,8 @@ div.kbox {
 
 div.kbox img.productimage {
     border: medium none;
-    border-radius: 5px 5px 0 0;
-    height: 181px;
+
+    height: 168px;
     position: relative;
     width: 198px;
     border-bottom:1px solid #999999;
@@ -81,41 +82,44 @@ div.kbox div.productdescript {
     margin: 0;
     text-decoration: none;
     width: 194px;
+    height: 27px;
 }
 
 div.kbox div.rental_price {
-    background-color: #336600;
+    background-color: #828282;
     color: white;
     font-family: Arial,Helvetica,sans-serif;
     height: 39px;
-    position: absolute;
+    margin-left: -1px;
+    margin-top: 5px;
     text-align: center;
-    top: 249px;
+    float: left;
     display: block;
     font-size: 19px;
     font-weight: bold;
     text-transform: uppercase;
-    width: 198px;
-    border-radius: 0 0 3px 3px;
+    width: 200px;
+
 }
 div.kbox div.trading_price {
     background-color: #003333;
     color: white;
     font-family: Arial,Helvetica,sans-serif;
     height: 39px;
-    position: absolute;
+    margin-left: -1px;
+    margin-top: 5px;
     text-align: center;
-    top: 249px;
+    float: left;
     display: block;
     font-size: 19px;
     font-weight: bold;
     text-transform: uppercase;
-    width: 198px;
-    border-radius: 0 0 3px 3px;
+    width: 200px;
+
 }
 .trading_tag_price{
-    color: yellow;
-    font-size: 15px;
+    color: white;
+    font-size: 13px;
     line-height: 16px;
     margin: -59px 0 0 117px;
     text-transform: none;
@@ -141,6 +145,10 @@ div.kbox div.trading_price {
     color: #2C2C2C;
 
 }
+.onhover a:hover{
+    color: #2C2C2C !important;
+
+}
 .productdescript a:hover{
     color: #2C2C2C;
 }
@@ -153,11 +161,11 @@ div.kbox div.trading_price {
     margin:9px 0px 2px 91px;
 
 }
-.contact_us_contact p{
-    line-height: 12px;
-}
+
 .division h3{
-    color:#2C2C2C;
+    color: #2C2C2C;
+    font-size: 19px;
+    margin-top: 7px;
 }
 
 .banner_text h1{
@@ -166,37 +174,75 @@ div.kbox div.trading_price {
 }
 .banner_text p{
     position: relative;
+    width: 90%;
 }
 .about_listing a:hover {
-    color:#2C2C2C;
+    color:#FFFFFF;
 }
 .banner_text p{
-    font-size : 17px;
+    font-size : 14px;
     color:#2C2C2C;
     font-style: italic;
 }
 .left_index_service p
 {
-    font-size : 17px;
+    font-size : 14px;
     color:#2C2C2C;
 }
+.center_about_service{
+    margin: 0 10px 0 14px;
+}
 .center_about_service p{
-    font-size : 17px;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
 }
 .division img{
-    height: 232px;
+    height: 187px;
     margin-bottom: 13px;
     width: 100%;
-    border: 1px solid #596929;
-    border-radius: 5px 5px 5px 5px;
+
 }
 .left_footer{
     /*     for temprary purpose when there is no socials...*/
     display: none; 
-   
+
 }
+.right_index_service h4{
+    padding: 3px !important;
+}
+.column, .columns{
+    margin: 0 !important;
+}
+.about_listing{
 
-
+}
+.about_listing{
+    margin: 3px 0 0 !important;
+}
+.row .three.columns{
+    width: 24.404% !important;
+}
+.right_index_service{
+    background:none !important;
+    width: 95%;
+}
+.right_index_service h4{
+    margin-left: 3px !important;
+} 
+.division{
+    margin-right:10px;
+    margin-top: 26px;
+}
+.about_upper_part li{
+    list-style: circle;
+}
+.readmore{
+    font-size : 14px;
+    color:blue;
+    font-style: italic;
+}
 
 
 
