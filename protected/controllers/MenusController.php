@@ -45,6 +45,10 @@ class MenusController extends Controller {
                     'installMenus', 'generateData', 'json'),
                 'users' => array('*'),
             ),
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array('rebuildAssets'),
+                'users' => array('@'),
+            ),
             array('deny', // deny all users
                 'users' => array('*'),
             ),
@@ -269,6 +273,53 @@ class MenusController extends Controller {
 
             if (!$model->save()) {
                 CVarDumper::dump($model->getErrors(), 10, true);
+            }
+        }
+    }
+
+    /*
+     * function to remove assets data
+     * 
+     * 
+     */
+
+    public function actionRebuildAssets() {
+        $this->deleteDir();
+    }
+
+    /**
+     * for linux
+     */
+    public function deleteDir() {
+
+        $basePath = Yii::app()->basePath;
+
+        if (strstr($basePath, "protected")) {
+            $basePath = realPath($basePath . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR);
+        }
+
+        $assets_path = $basePath . DIRECTORY_SEPARATOR . "assets" . DIRECTORY_SEPARATOR;
+
+        if (stristr(PHP_OS, 'Linux')) {
+
+
+
+            if (is_dir($assets_path) && $handle = opendir($assets_path)) {
+
+
+                /* This is the correct way to loop over the directory. */
+                while (($file = readdir($handle)) !== false) {
+
+                    if ($file != "." && $file != "..") {
+
+                        echo $assets_path . $file;
+                        echo "<br/>";
+                        exec('rm -rf ' . $assets_path . $file);
+                    }
+                }
+
+
+                closedir($handle);
             }
         }
     }
