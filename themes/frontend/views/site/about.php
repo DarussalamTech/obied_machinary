@@ -26,33 +26,39 @@
             <div class="center_about_service">
                 <div class="about_upper_part">
                     <h2>ABOUT OBEID MACHINERY</h2>
-                    <p>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about.</p>
-                    <p>We started our operations in 1985 by trading used equipment all over Middle East and Asia.</p>
+                    <p>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. 
+                        That’s what Obeid Machinery is about.
+                        We started our operations in 1985 by trading used equipment all over Middle East and Asia.</p>
                     <p>Today, in response to the growing demand, we have established Affiliated Offices, such that we cover the globe, to provide a wide range of services and supply specialized equipment to meet the exact requirements of customers within the time frame.</p>
                     <section>Our office locations are:</section>
                     <article>Houston, U.S.</article>
                     <article>Dubai, (U.A.E)</article>
                     <article>Seoul, Korea</article>
                 </div>
-                <div class="center_about_part">
 
-
-                </div>
 
 
                 <div class="center_about_part">
                     <h3>Our Divisions</h3>
-                    <article>We are specialize in trading Mobile cranes, crawler cranse,
-                        Other earth moving equipment</article>
-                        <div class="divsion_div">
-                            <div class='fulltext_division'>
-                                <p>These are available for trading as well as rental purpose. (This will confuse the
-                                    customers as the machines available for rent are not for sale and vice versa)</p>
-                                <p>We hold strong beliefs and work towards making them a reality. Our vision &amp; 
-                                    mission statements clarify our philosophy, which is simple and focused:</p>
-                            </div>
-                            <a class="readmore" href="#">Read More..</a>
+                    <article>Our aim is to provide you the highest level of service, ensure your maximum satisfaction with our
+                        service and we want to build long-term relationship with you.
+                        We do not believe in making one-time sales. We believe in converting business deals into relationships.</article>
+                    <article>We specialize in trading</article>
+                    <p> 1) Mobile cranes</p>
+                    <p>2) Other earth moving equipment</p>
+                    <div class="divsion_div">
+                        <div class='fulltext_division'>
+                            <p>These are available for trading as well as rental purpose.
+                                We hold strong beliefs and work towards making them a reality.
+                                Our vision & mission statements clarify our philosophy, which is simple and focused:</p>
+                            <p>
+                                Obeid Machinery is a name synonymous to quality, trust and result.
+                                You will realize that Obeid Machinery is a bond that is further
+                                nurtured and nourished after each transaction.
+                            </p>
                         </div>
+                        <a class="readmore" href="#">Read More..</a>
+                    </div>
                 </div>
 
 
@@ -60,17 +66,21 @@
 
 
                 <div class="lower_about_part">
-                    <h3>Our Vission and Vision</h3>
-                    <article>We hold strong beliefs and work towards making them a reality.</article>
+                    <h3>Our Vision and Mission</h3>
+                    <article>We hold strong beliefs and work towards making them a reality.
+                        We have experience of 30- years in this industry and counting. It has helped
+                        us understand the actual needs of our customers.  We assure you that you will
+                        be satisfied with our services.</article>
                     <div class="vision_div">
                         <div class='fulltext_vision'>
                             <article>Our vision &amp; mission statements clarify our philosophy, which is simple and focused:</article>
                             <h4>Vision:</h4>
-                            <p>TO BE THE TOP PRIORITY FOR THOSE SEEKING HEAVY MACHINERY</p>
+                            <section>TO BE THE TOP PRIORITY FOR THOSE SEEKING HEAVY MACHINERY</section>
                             <h4>Mission:</h4>
-                            <p>TO PROVIDE BEST QUALITY SERVICE, MAXIMUM CUSTOMER SATISFACTION &amp; BUILD LONG-TERM BOND WITH OUR WORTHY CUSTOMERS</p>
+                            <section>TO PROVIDE BEST QUALITY SERVICE, MAXIMUM CUSTOMER SATISFACTION &amp;   ` BUILD LONG-TERM BOND WITH OUR WORTHY CUSTOMERS</section>
                             <p>Our aim is to provide you the highest level of service, ensure your maximum satisfaction with our service and we want
-                                to build long-term relationship with you. We do not believe in making one-time sales. We believe in converting business deals into relationships.</p>
+                                to build long-term relationship with you. We do not believe in making one-time sales.
+                                We believe in converting business deals into relationships.</p>
 
                         </div>
                         <a class="readmore" href="#">Read More..</a>
