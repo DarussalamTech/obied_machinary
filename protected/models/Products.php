@@ -249,17 +249,8 @@ class Products extends OMActiveRecord {
                     'image_small' => $img->image_url['image_small'],
                 );
                 break;
-            } else {
-                $images[] = array('id' => $img->id,
-                    'image_large' => $img->image_url['image_large'],
-                    'image_detail' => $img->image_url['image_detail'],
-                    'image_small' => $img->image_url['image_small'],
-                );
-                break;
             }
         }
-
-
         if (!empty($images)) {
             return $images;
         } else {

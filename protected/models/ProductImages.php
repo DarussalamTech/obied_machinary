@@ -194,6 +194,7 @@ class ProductImages extends OMActiveRecord {
 
 
         $this->setUploadVars();
+        $this->updateAllToUndefault();
         return parent::beforeSave();
     }
 
@@ -245,6 +246,19 @@ class ProductImages extends OMActiveRecord {
             DTUploadedFile::createThumbs($upload_path . $this->image_large, $upload_path, 130, str_replace(" ", "_", "small_" . $this->image_large));
             DTUploadedFile::createThumbs($upload_path . $this->image_large, $upload_path, 180, str_replace(" ", "_", "detail_" . $this->image_large));
             //$this->deleteldImage();
+        }
+    }
+
+    /**
+     *  before saving all the records needs
+     *  to be undefault
+     */
+    public function updateAllToUndefault() {
+        if (!empty($this->product_id)) {
+            $connection = Yii::app()->db;
+            $sql = "UPDATE " . $this->tableName() . " t SET t.is_default=0 WHERE t.product_id ='" . $this->product_id . "' ";
+            $command = $connection->createCommand($sql);
+            $command->execute();
         }
     }
 
