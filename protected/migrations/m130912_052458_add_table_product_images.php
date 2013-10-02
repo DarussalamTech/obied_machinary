@@ -6,7 +6,7 @@
  * Author:ubd
  */
 
-class m130912_052458_add_table_product_images extends OMDbMigration {
+class m130912_052458_add_table_product_images extends ItstDbMigration {
 
     public function up() {
 

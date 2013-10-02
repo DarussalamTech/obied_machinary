@@ -6,7 +6,7 @@
  * Author:ubd
  */
 
-class m130912_052431_add_table_category extends OMDbMigration {
+class m130912_052431_add_table_category extends ItstDbMigration {
 
     public function up() {
         $table = 'categories';

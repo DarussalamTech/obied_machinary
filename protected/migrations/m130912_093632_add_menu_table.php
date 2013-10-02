@@ -1,6 +1,6 @@
 <?php
 
-class m130912_093632_add_menu_table extends OMDbMigration {
+class m130912_093632_add_menu_table extends ItstDbMigration {
 
     public function up() {
         $table = "menus";

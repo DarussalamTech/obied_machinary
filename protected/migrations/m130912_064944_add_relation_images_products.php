@@ -1,6 +1,6 @@
 <?php
 
-class m130912_064944_add_relation_images_products extends OMDbMigration {
+class m130912_064944_add_relation_images_products extends ItstDbMigration {
 
     public function up() {
         $table = "product_images";

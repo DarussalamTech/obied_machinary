@@ -6,7 +6,7 @@
  * Author:ubd
  */
 
-class m130912_042608_add_table_user extends OMDbMigration {
+class m130912_042608_add_table_user extends ItstDbMigration {
 
     public function up() {
 

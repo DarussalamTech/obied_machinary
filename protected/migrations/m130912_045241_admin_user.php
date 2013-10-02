@@ -6,7 +6,7 @@
  * Author:ubd
  */
 
-class m130912_045241_admin_user extends OMDbMigration {
+class m130912_045241_admin_user extends ItstDbMigration {
 
     public function up() {
         $table = "users";

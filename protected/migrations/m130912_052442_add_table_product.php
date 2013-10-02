@@ -6,7 +6,7 @@
  * Author:ubd
  */
 
-class m130912_052442_add_table_product extends OMDbMigration {
+class m130912_052442_add_table_product extends ItstDbMigration {
 
     public function up() {
         $table = 'products';

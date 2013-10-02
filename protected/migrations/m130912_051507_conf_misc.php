@@ -8,7 +8,7 @@
  * Author:ubd
  */
 
-class m130912_051507_conf_misc extends OMDbMigration {
+class m130912_051507_conf_misc extends ItstDbMigration {
 
     public function up() {
         $table = "conf_misc";
