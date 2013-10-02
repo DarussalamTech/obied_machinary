@@ -237,11 +237,35 @@ div.kbox div.trading_price {
 }
 .about_upper_part li{
     list-style: circle;
+    font-size: 14px;
 }
 .readmore{
     font-size : 14px;
-    color:blue;
+    color:#CO3D20;
     font-style: italic;
+}
+.center_about_service article{
+    text-align: justify;
+}
+.center_about_part{
+    padding: 0 !important;
+}
+.center_about_service section{
+    text-align: justify;
+}
+.sale_div ol{
+      margin-left: 0;
+    text-align: left;
+    
+}
+.sale_div ol li{
+    list-style: decimal;
+}
+.sale_div ol ul li{
+    list-style: circle;
+}
+.big_hook{
+    margin-left: -50px;
 }
 
 
