@@ -58,13 +58,15 @@
             </div>
 
             <div id="header" class="menu">
-                <div id="logo">
-
+                <div id="logo" style="margin-left: 690px;width: 80px">
+                    <?php
+                    echo CHtml::link(CHtml::image(Yii::app()->theme->baseUrl . '/images/obeid_machinery_logo_03.png', '', array('height' => '89px')), Yii::app()->createUrl('/site/index'));
+                    ?>
                 </div>
                 <div id="afterLogo" class="menu">
                     <!-- header -->
                     <div id="profile_menu">
-                        <div class="left_float">
+                        <div class="left_float" style="margin:87px 0 0 -127px">
                             <h1>
                                 <?php
                                 echo CHtml::link(CHtml::encode(Yii::app()->name), Yii::app()->homeUrl);
