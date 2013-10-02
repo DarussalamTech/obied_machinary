@@ -48,9 +48,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
     'columns' => array(
         array(
             'name' => "category_id",
-            'value' => 'isset($data->category)?$data->category->category_name:""'
+            'value' => 'isset($data->category)?$data->category->category_name:""',
+            'htmlOptions' => array('style' => 'width:100px')
         ),
-        'product_service_type',
+        array(
+            'name' => "product_service_type",
+            'value' => 'isset($data->product_service_type)?$data->product_service_type:""',
+            'htmlOptions' => array('style' => 'text-align:center')
+        ),
         'product_name',
         'price',
         'year',
