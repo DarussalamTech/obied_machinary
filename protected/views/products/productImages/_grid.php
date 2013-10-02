@@ -1,20 +1,19 @@
 <?php
 $relationName = "productImages";
-$mName="ProductImages";
+$mName = "ProductImages";
 ?>
 
 <div class="<?php echo $relationName; ?> child" style="<?php echo 'display:' . (isset($_POST[$mName]) ? 'block' : 'none'); ?>">
     <?php
-    
     $config = array(
         'criteria' => array(
-           'condition' => 'product_id=' . $model->primaryKey,
+            'condition' => 'product_id=' . $model->primaryKey,
         )
     );
     $mNameobj = new $mName;
     $mName_provider = new CActiveDataProvider($mName, $config);
     $this->widget('zii.widgets.grid.CGridView', array(
-        'id' => $mName.'-grid',
+        'id' => $mName . '-grid',
         'dataProvider' => $mName_provider,
         'columns' => array(
             array(
@@ -22,17 +21,16 @@ $mName="ProductImages";
                 'value' => 'CHtml::link($data->image_small,$data->image_url["image_large"],array("rel" => "lightbox[_default]"))',
                 "type" => "raw",
             ),
-           array(
+            array(
                 'name' => 'image_large',
-                'value'=>'$data->image_large',
-                "type"=>"raw",
+                'value' => '$data->image_large',
+                "type" => "raw",
             ),
-           array(
+            array(
                 'name' => 'is_default',
-                'value'=>'$data->is_default',
-                "type"=>"raw",
+                'value' => '$data->is_default==1?"Yes":"No"',
+                "type" => "raw",
             ),
-           
             array
                 (
                 'class' => 'CButtonColumn',
@@ -62,7 +60,7 @@ $mName="ProductImages";
                     ),
                     'delete' => array(
                         'label' => 'Delete',
-                        'url' => 'Yii::app()->controller->createUrl("deleteChildByAjax",array("id" => $data->primaryKey, "mName" => "'.$mName.'"))',
+                        'url' => 'Yii::app()->controller->createUrl("deleteChildByAjax",array("id" => $data->primaryKey, "mName" => "' . $mName . '"))',
                     ),
                 ),
             ),
@@ -70,7 +68,7 @@ $mName="ProductImages";
     ));
     ?>
 </div>
-<?php
-$this->widget('ext.lyiightbox.LyiightBox2', array(
-));
-?>
+    <?php
+    $this->widget('ext.lyiightbox.LyiightBox2', array(
+    ));
+    ?>
