@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="nine columns">
-            <div class="center_about_service">
-                <div class="about_upper_part">
+            <div class="center_about_service" style="margin: 0 10px 0 24px">
+               
                     <h2>OBEID PARTNERS</h2>
                     <p>30 experience-rich years of rock-solid reputation in the industry of heavy machinery and construction equipment. That’s what Obeid Machinery is about. We started our operations in 1985 by trading used equipment all over Middle East and Asia.
                     </p>
@@ -107,4 +107,3 @@
             </div>
         </div>
     </div>
-</div>
