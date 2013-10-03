@@ -13,7 +13,7 @@
     font-size: 14px;
 }
 .truck_images{
-    margin: 30px 48px 0px;
+    margin: 30px 28px 0px;
 }
 .about_listing a{
     color:#F9CA22;
@@ -285,5 +285,9 @@ div.kbox div.trading_price {
 }
 .left_contact{
      width:35%;
+}
+.under_truck img{
+    margin: 0 14px;
+    
 }
 
