@@ -57,15 +57,16 @@
                                 nurtured and nourished after each transaction.
                             </p>
                         </div>
-                        <a class="readmore" href="#">Read More..</a>
+                        <div class="my_read_more">
+                            <a class="readmore" href="#">
+                                <span>Read More</span>
+                                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', '', array('up_image' => Yii::app()->theme->baseUrl . '/images/up_image.png')); ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-
-
-
-
-                <div class="lower_about_part">
+                <div class="lower_about_part" style='border-bottom: 1px solid #BBBBBB'>
                     <h3>Our Vision and Mission</h3>
                     <article>We hold strong beliefs and work towards making them a reality.
                         We have experience of 30- years in this industry and counting. It has helped
@@ -83,7 +84,12 @@
                                 We believe in converting business deals into relationships.</p>
 
                         </div>
-                        <a class="readmore" href="#">Read More..</a>
+                        <div class="my_read_more">
+                            <a class="readmore" href="#">
+                                <span>Read More</span>
+                                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', '', array('up_image' => Yii::app()->theme->baseUrl . '/images/up_image.png')); ?>
+                            </a>
+                        </div>
                     </div>
 
 
@@ -111,15 +117,25 @@
         jQuery('.fulltext_vision').hide();
         jQuery('.fulltext_division').hide();
 
-        jQuery('.vision_div .readmore').click(function(event) {
+        jQuery('.vision_div .my_read_more .readmore').click(function(event) {
             event.preventDefault();
-            jQuery(this).parent().find('.fulltext_vision').slideToggle('slow');
-            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+            jQuery(this).parent().parent().find('.fulltext_vision').slideToggle('slow');
+            jQuery(this).children().text(jQuery(this).children().text() == 'Close DetailClose Detail' ? 'Read More' : 'Close Detail');
+            jQuery('.vision_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.vision_div .my_read_more .readmore img')).attr("up_image"));
+            if (jQuery(this).children().text() == 'Read MoreRead More')
+            {
+                jQuery('.vision_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("read_more"));
+            }
         });
-        jQuery('.divsion_div .readmore').click(function(event) {
+        jQuery('.divsion_div .my_read_more .readmore').click(function(event) {
             event.preventDefault();
-            jQuery(this).parent().find('.fulltext_division').slideToggle('slow');
-            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+            jQuery(this).parent().parent().find('.fulltext_division').slideToggle('slow');
+            jQuery(this).children().text(jQuery(this).children().text() == 'Close DetailClose Detail' ? 'Read More' : 'Close Detail');
+            jQuery('.divsion_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.divsion_div .my_read_more .readmore img')).attr("up_image"));
+            if (jQuery(this).children().text() == 'Read MoreRead More')
+            {
+                jQuery('.divsion_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("read_more"));
+            }
         });
     });
 </script>

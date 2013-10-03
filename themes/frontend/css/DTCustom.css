@@ -241,7 +241,7 @@ div.kbox div.trading_price {
 }
 .readmore{
     font-size : 14px;
-    color:#CO3D20;
+    color:#888888;
     font-style: italic;
 }
 .center_about_service article{
@@ -254,9 +254,9 @@ div.kbox div.trading_price {
     text-align: justify;
 }
 .sale_div ol{
-      margin-left: 0;
+    margin-left: 0;
     text-align: left;
-    
+
 }
 .sale_div ol li{
     list-style: decimal;
@@ -284,10 +284,33 @@ div.kbox div.trading_price {
     width:65%;
 }
 .left_contact{
-     width:35%;
+    width:35%;
 }
 .under_truck img{
     margin: 0 14px;
-    
-}
+    position: absolute;
 
+}
+.my_read_more {
+    color: #888888;
+}
+.my_read_more span {
+    margin-left:310px;
+    display: inline
+}
+.my_read_more img{
+    margin-right:1px; 
+    margin-bottom:-5px
+}
+.my_sale {
+     border-bottom: 1px solid #BBBBBB;
+}
+.my_rental {
+     border-bottom: 1px solid #BBBBBB;
+}
+.my_read_more a:hover{
+   color: #888888;
+}
+.under_footer a{
+    color: #888888 !important;
+}

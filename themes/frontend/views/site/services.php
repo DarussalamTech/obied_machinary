@@ -54,60 +54,84 @@
                         <li>Rental facility of any equipment required</li>
                     </ul>
 
-                    <h3>Rental Division</h3>
-                    <p>Our Rental division can provide you any equipment you are looking for, within a short period of time.</p>
-                    <div class="rental_div">
-                        <div class='fulltext_renttal'>
-                            <p> With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines. </p>
-                            <p>We specialize in the following equipment:</p>
-                            <li>Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag)</li>
-                            <li>Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)</li>
-                            <li>Loaders (JCB, FURUKAWA, KAWASAKi, CAT)</li>
-                            <li>Forklifts (TCM, ETC)</li>
+
+
+                    <div class='my_rental'>
+
+
+                        <h3>Rental Division</h3>
+                        <p>Our Rental division can provide you any equipment you are looking for, within a short period of time.</p>
+                        <div class="rental_div">
+                            <div class='fulltext_renttal'>
+                                <p> With our skilled operators and mechanics we can also provide on-site maintenance or check-ups of our machines. </p>
+                                <p>We specialize in the following equipment:</p>
+                                <li>Cranes ( Kato, Tadano, Sany, Lorain, Terex, Demag)</li>
+                                <li>Excavators (CAT, Kobelco, Komatsu, Soosan, Hyundai)</li>
+                                <li>Loaders (JCB, FURUKAWA, KAWASAKi, CAT)</li>
+                                <li>Forklifts (TCM, ETC)</li>
+                            </div>
+                            <div class="my_read_more">
+                                <a class="readmore" href="#">
+                                    <span>Read More</span>
+                                    <?php
+                                    echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', '', array('up_image' => Yii::app()->theme->baseUrl . '/images/up_image.png',
+                                        'read_more' => Yii::app()->theme->baseUrl . '/images/read_more.png'));
+                                    ?>
+                                </a>
+                            </div>
                         </div>
-                        <a class="readmore" href="#">Read More..</a>
                     </div>
 
+                    <div class='my_sale'>
+                        <h3>Sales Division</h3>
+                        <p>We also have a trading division for construction equipment. And here’s the best part: Apart from the 
+                            listed equipment we can arrange any equipment that you are
+                            looking for, within the time frame you assign us. And we deliver it to wherever you want!</p>
+                        <div class="sale_div">
+                            <div class='fulltext_sale'>
+                                <p>We also have a trading division for construction equipment.We have been 
+                                    selling used construction machinery for the past 30
+                                    Years in The Kingdom Of Saudi Arabia and this is what we love doing.
+                                    All our machines are inspected thoroughly on arrival &amp; departure 
+                                    to make sure you get the quality you deserve.
+                                    We specialize in the following equipment: </p>
+                                <ol>
+                                    <li><h4>Cranes</h4>
+                                        <ul>
+                                            <li>Rough terrain</li>
+                                            <li>Truck Mounted</li>
+                                            <li>All-Terrain</li>
+                                        </ul>
+                                    </li>
+                                    <li><h4>Excavators</h4>
+                                        <ul>
+                                            <li>Wheel Excavators</li>
+                                            <li>Track Excavators</li>
+                                            <li>Mini Excavators </li>
+                                        </ul>
+                                    </li>
+                                    <li><h4>Loaders</h4>
+                                        <ul>
+                                            <li>Wheel Loaders</li>
+                                            <li>JCB Loaders</li>
+                                        </ul>
+                                    </li>
+                                    <li><h4>Road Pavement Equipment</h4></li>
+                                    <li><h4>Trucks</h4></li>
+                                    <li><h4>Man Lifts</h4></li>
+                                </ol>
 
-                    <h3>Sales Division</h3>
-                    <p>We also have a trading division for construction equipment. And here’s the best part: Apart from the 
-                        listed equipment we can arrange any equipment that you are
-                        looking for, within the time frame you assign us. And we deliver it to wherever you want!</p>
-                    <div class="sale_div">
-                        <div class='fulltext_sale'>
-                            <p>We also have a trading division for construction equipment.We have been 
-                                selling used construction machinery for the past 30
-                                Years in The Kingdom Of Saudi Arabia and this is what we love doing.
-                                All our machines are inspected thoroughly on arrival &amp; departure 
-                                to make sure you get the quality you deserve.
-                                We specialize in the following equipment: </p>
-                            <ol>
-                                <li><h4>Cranes</h4>
-                                    <ul>
-                                        <li>Rough terrain</li>
-                                        <li>Truck Mounted</li>
-                                        <li>All-Terrain</li>
-                                    </ul>
-                                </li>
-                                <li><h4>Excavators</h4>
-                                    <ul>
-                                        <li>Wheel Excavators</li>
-                                        <li>Track Excavators</li>
-                                        <li>Mini Excavators </li>
-                                    </ul>
-                                </li>
-                                <li><h4>Loaders</h4>
-                                    <ul>
-                                        <li>Wheel Loaders</li>
-                                        <li>JCB Loaders</li>
-                                    </ul>
-                                </li>
-                                <li><h4>Road Pavement Equipment</h4></li>
-                                <li><h4>Trucks</h4></li>
-                                <li><h4>Man Lifts</h4></li>
-                            </ol>
+                            </div>
+                            <div class="my_read_more">
+                                <a class="readmore" href="#">
+                                    <span>Read More</span>
+                                    <?php
+                                    echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', '', array('up_image' => Yii::app()->theme->baseUrl . '/images/up_image.png',
+                                        'read_more' => Yii::app()->theme->baseUrl . '/images/read_more.png'));
+                                    ?>
+                                </a>
+                            </div>
                         </div>
-                        <a class="readmore" href="#">Read More..</a>
                     </div>
                 </div>
             </div>
@@ -131,15 +155,25 @@
         jQuery('.fulltext_renttal').hide();
         jQuery('.fulltext_sale').hide();
 
-        jQuery('.rental_div .readmore').click(function(event) {
+        jQuery('.rental_div .my_read_more .readmore').click(function(event) {
             event.preventDefault();
-            jQuery(this).parent().find('.fulltext_renttal').slideToggle('slow');
-            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+            jQuery(this).parent().parent().find('.fulltext_renttal').slideToggle('slow');
+            jQuery(this).children().text(jQuery(this).children().text() == 'Close DetailClose Detail' ? 'Read More' : 'Close Detail');
+            jQuery('.rental_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.rental_div .my_read_more .readmore img')).attr("up_image"));
+            if (jQuery(this).children().text() == 'Read MoreRead More')
+            {
+                jQuery('.rental_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("read_more"));
+            }
         });
-        jQuery('.sale_div .readmore').click(function(event) {
+        jQuery('.sale_div .my_read_more .readmore').click(function(event) {
             event.preventDefault();
-            jQuery(this).parent().find('.fulltext_sale').slideToggle('slow');
-            jQuery(this).text(jQuery(this).text() == 'Close' ? 'More Detials' : 'Close');
+            jQuery(this).parent().parent().find('.fulltext_sale').slideToggle('slow');
+            jQuery(this).children().text(jQuery(this).children().text() == 'Close DetailClose Detail' ? 'Read More' : 'Close Detail');
+            jQuery('.sale_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("up_image"));
+            if (jQuery(this).children().text() == 'Read MoreRead More')
+            {
+                jQuery('.sale_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("read_more"));
+            }
         });
     });
 </script>
