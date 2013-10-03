@@ -267,17 +267,23 @@ div.kbox div.trading_price {
 .big_hook{
     margin-left: -50px;
 }
-.contact_us_contact input[type="text"]{
-    width: 85%;
-}
-.contact_us_contact textarea{
-    width: 85%;
-}
+
+
 
 .contact_us_contact  textarea.error {
     border: 1px solid #FF0000;
 }
 .banner_main_part{
     width: 100%;
+}
+.contact_us_contact table{
+    width: 85%;
+    float: left;
+}
+.right_contact{
+    width:65%;
+}
+.left_contact{
+     width:35%;
 }
 
