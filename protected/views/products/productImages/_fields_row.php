@@ -3,7 +3,7 @@
 if (!isset($display)) {
     $display = 'none';
 }
-$mName = "ProductImage";
+$mName = "ProductImages";
 $relationName = "productImages";
 ?>
 <div class="grid_fields" style="display:<?php echo $display; ?>">
