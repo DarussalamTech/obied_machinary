@@ -26,7 +26,7 @@
         <div class="six columns">
 
             <div class="center_about_service">
-                <div class="about_upper_part">
+                <div class="about_upper_part" style="border-bottom: none">
                     <h2>Cranes Wanted</h2>
                     <p> Purchasing inappropriate equipment is a business decision with several repercussions along with the obvious shocks.
                         Choosing dealers and suppliers from the cluttered market often proves to be a hassle. </p>
