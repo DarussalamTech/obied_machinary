@@ -20,12 +20,12 @@ foreach ($new_arrivals as $new) {
         <div class="kbox" style ="margin:0px 0 0 4px;"> 
             <?php
             //echo CHtml::link(CHtml::image($new_img[0]['image_large'], '', array('class' => 'productimage')), $new_img[0]['image_large'], array("rel" => 'lightbox[_default]'));
-            echo CHtml::link(CHtml::image($new_img[0]['image_large'], '', array('class' => 'productimage')), Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
+            echo CHtml::link(CHtml::image($new_img[0]['image_large'], '', array('class' => 'productimage','title'=>$new->product_name)), Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
             ?>
             <?php
             echo "<div class='onhover' style='font-weight:bold'>";
             //echo CHtml::link((strlen($new->product_name) > 20) ? substr($new->product_name, 0, 20) . '...' : $new->product_name, Yii::app()->createUrl('/site/productDetail', array('category' => $category_url, 'slug' => $new->slug)));
-            echo CHtml::link((strlen($new->product_name) > 20) ? substr($new->product_name, 0, 20) . '...' : $new->product_name, Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
+            echo CHtml::link((strlen($new->product_name) > 20) ? substr($new->product_name, 0, 15) . '...' : $new->product_name, Yii::app()->createUrl('/site/productDetailBox', array('category' => $category_url, 'slug' => $new->slug)), array("class" => 'product_detail'));
 
             echo "</div>";
             ?>
