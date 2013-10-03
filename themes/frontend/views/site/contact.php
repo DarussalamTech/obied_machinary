@@ -56,6 +56,10 @@
 
                                     echo "* These fields cannot be empty";
                                 endif;
+
+                                if (!Yii::app()->user->hasFlash('contact') && !($model->hasErrors())):
+                                    echo ' * Fields are Required';
+                                endif;
                                 ?>
                                 <?php if (Yii::app()->user->hasFlash('contact')): ?>
 
@@ -123,7 +127,7 @@
                             </tr>
                             <tr>
                                 <td class="left_contact">
-                                    <?php //echo CHtml::submitButton('Send', array('class' => 'send_btn')); ?>
+                                    <?php //echo CHtml::submitButton('Send', array('class' => 'send_btn'));  ?>
                                 </td><br>
                             <td class="right_contact"  style='padding-top:7px'>
                                 <?php echo CHtml::submitButton('Send', array('class' => 'send_btn')); ?>
