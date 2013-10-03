@@ -70,7 +70,7 @@
 
 
                     <h3>Sales Division</h3>
-                    <p>We also have a trading division for construction equipment.And here’s the best part: Apart from the 
+                    <p>We also have a trading division for construction equipment. And here’s the best part: Apart from the 
                         listed equipment we can arrange any equipment that you are
                         looking for, within the time frame you assign us. And we deliver it to wherever you want!</p>
                     <div class="sale_div">
