@@ -123,7 +123,8 @@
                     <div class="eight columns">
                         <div class="banner_text">
                             <h1>ABOUT OBEID MACHINERY</h1>
-                            <p><i>Obeid Machinery is a name synonymous to quality, trust and result. You will realize that Obeid Machinery is a bondthat is furthernurtured and nourished after each transaction.</i></p>
+                            <p><i>Obeid Machinery is a name synonymous to quality, trust and result.
+                                    You will realize that Obeid Machinery is a bond that is further nurtured and nourished after each transaction. </i></p>
                         </div>
                     </div>
                     <div class="four columns">
