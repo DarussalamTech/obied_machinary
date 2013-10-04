@@ -20,7 +20,7 @@
  */
 class Categories extends OMActiveRecord {
 
-    public $no_image = "", $show_image ,$slug;
+    public $no_image = "", $show_image, $slug, $old_image;
 
     /**
      * Returns the static model of the specified AR class.
@@ -96,9 +96,9 @@ class Categories extends OMActiveRecord {
 
     public function afterFind() {
         $this->setCategoryImagePaths();
-        
-        $this->setSlug();
 
+        $this->setSlug();
+        $this->old_image = $this->category_image;
         return parent::afterFind();
     }
 
@@ -181,9 +181,31 @@ class Categories extends OMActiveRecord {
      */
     public function setSlug() {
 
-        $this->slug = trim($this->category_name).'-' . "-" . $this->primaryKey;
+        $this->slug = trim($this->category_name) . '-' . "-" . $this->primaryKey;
         $this->slug = str_replace(" ", "-", $this->slug);
         $this->slug = str_replace(Yii::app()->params['notallowdCharactorsUrl'], '', $this->slug);
+    }
+
+    /**
+     * delete old image when we needed
+     */
+    public function deleteExistingImage() {
+
+        if (!empty($this->category_images) && $this->old_image != $this->category_images) {
+            die('her');
+            $path = Yii::app()->basePath . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;
+            $path.= "uploads" . DIRECTORY_SEPARATOR . "category_images" . DIRECTORY_SEPARATOR . $this->primaryKey . DIRECTORY_SEPARATOR;
+            DTUploadedFile::deleteExistingFile($path . str_replace(" ", "_", $this->old_image));
+        }
+    }
+
+    public function beforeDelete() {
+        $path = Yii::app()->basePath . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;
+        $path.= "uploads" . DIRECTORY_SEPARATOR . "category_images" . DIRECTORY_SEPARATOR . $this->primaryKey . DIRECTORY_SEPARATOR;
+        DTUploadedFile::deleteExistingFile($path . str_replace(" ", "_", $this->old_image));
+
+
+        return parent::beforeDelete();
     }
 
 }
