@@ -18,6 +18,11 @@ class ProductImagesController extends Controller {
         );
     }
 
+    /*
+     * This function will call before any action
+     * call of this controller
+     * it assign theme to admin
+     */
     public function beforeAction($action) {
         Yii::app()->theme = 'admin';
         return parent::beforeAction($action);

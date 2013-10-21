@@ -94,6 +94,10 @@ class Categories extends OMActiveRecord {
         );
     }
 
+    
+    /*
+     * System methos of Yii
+     */
     public function afterFind() {
         $this->setCategoryImagePaths();
 
@@ -198,6 +202,11 @@ class Categories extends OMActiveRecord {
             DTUploadedFile::deleteExistingFile($path . str_replace(" ", "_", $this->old_image));
         }
     }
+    
+    /*
+     * System function of yii
+     * 
+     */
 
     public function beforeDelete() {
         $path = Yii::app()->basePath . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR;

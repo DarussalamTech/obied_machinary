@@ -69,6 +69,10 @@ class CategoriesController extends Controller {
 
         $this->handlingSavingCategory(0);
     }
+    /*
+     * handling parent category 
+     * with parent system
+     */
 
     public function handlingSavingCategory($parent_id = "") {
 
@@ -114,12 +118,15 @@ class CategoriesController extends Controller {
         $this->updateCategory($id);
     }
 
+    /*
+     * UPdate parent category
+     */
     public function actionUpdateParent($id) {
         $this->updateCategory($id);
     }
 
     /**
-     * 
+     * UPdate parent category
      */
     public function updateCategory($id) {
         $model = $this->loadModel($id);

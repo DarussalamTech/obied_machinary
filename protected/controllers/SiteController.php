@@ -21,6 +21,9 @@ class SiteController extends Controller {
         );
     }
 
+    /*
+     * Default action called before any action
+     */
     public function beforeAction($action) {
         Yii::app()->theme = 'frontend';
         return parent::beforeAction($action);

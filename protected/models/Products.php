@@ -263,6 +263,10 @@ class Products extends OMActiveRecord {
         }
     }
 
+    /**
+     *  get all product  images for some code
+     * @return type 
+     */
     public function getImageAll() {
         $images = array();
         foreach ($this->productImages as $img) {
