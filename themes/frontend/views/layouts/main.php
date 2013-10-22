@@ -1,5 +1,34 @@
 <!DOCTYPE html>
 <html>
+
+
+    <!--        
+       
+      Powered By:
+
+
+                   00000000000000            
+                   000000000000000
+                   0000         0000
+                   0000           0000
+                   0000             0000         
+                   0000              0000
+                   0000              0000
+                   0000              0000  000000000000000    000000000      0000000      00       00
+                   0000              0000  000000000000000    000000000     000000000     00       00  
+                   0000              0000        00           00           00        0    00       00 
+                   0000              0000        00           00           00             00       00  
+                   0000             0000  0000   00           0000000      00             00000000000
+                   0000            0000          00           00           00             00       00 
+                   0000           0000           00           00           00       0     00       00 
+                   0000000000000000              00           000000000     000000000     00       00
+                   00000000000000                00           000000000      0000000      00       00 
+                                                                            
+                                                                                                     (Authors:AA/UB)  
+       
+ 
+    -->
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/style.css" rel="stylesheet" type="text/css" />
@@ -130,7 +159,7 @@ Or concatenate and minify into a single file
 <script src="js/libs/ui/jquery.validation.js"></script>
 <script src="js/libs/gumby.init.js"></script>-->
 
-<script src="<?php //echo Yii::app()->theme->baseUrl;                  ?>/js/libs/gumby.min.js"></script> 
+<script src="<?php //echo Yii::app()->theme->baseUrl;                     ?>/js/libs/gumby.min.js"></script> 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/plugins.js"></script>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/main.js"></script>
 
