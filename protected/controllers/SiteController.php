@@ -10,7 +10,7 @@ class SiteController extends Controller {
             // captcha action renders the CAPTCHA image displayed on the contact page
             'captcha' => array(
                 'class' => 'CCaptchaAction',
-                'backColor' => 0xEDEDED,
+                'backColor' => 0xF1F1F1,
                 'foreColor' => 0x2f251c,
             ),
             // page action renders "static" pages stored under 'protected/views/site/pages'
@@ -24,6 +24,7 @@ class SiteController extends Controller {
     /*
      * Default action called before any action
      */
+
     public function beforeAction($action) {
         Yii::app()->theme = 'frontend';
         return parent::beforeAction($action);
@@ -195,7 +196,7 @@ class SiteController extends Controller {
                 $email['Body'] = $this->renderPartial('/common/_email_template', array('email' => $email), true, false);
 
                 $this->sendEmail2($email);
-                Yii::app()->user->setFlash('contact', 'Thank you ! for your feedback ');
+                Yii::app()->user->setFlash('contact', "Thank you for contacting us, We'll get back to you soon");
                 $this->redirect($this->createUrl('/site/contact'));
             }
         }
