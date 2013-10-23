@@ -125,7 +125,12 @@
         </div>
     </div>
 </div>
-<?php
-//$this->widget('ext.lyiightbox.LyiightBox2', array(
-//));
-?>
+<script type="text/javascript" language="javascript">
+//<!--Disabling right click on widget-->
+    jQuery(document).ready(function()
+    {
+        jQuery(".kbox").bind('contextmenu', function(e) {
+            return false;
+        });
+    });
+</script>

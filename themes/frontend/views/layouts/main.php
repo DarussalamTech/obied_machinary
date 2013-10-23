@@ -115,7 +115,7 @@
             </footer>
         </div>
         <div class="under_footer">
-            Design &amp; Developed by : <?php echo CHtml::link("DTECH Systems.", 'http://www.dtechsystems.com.uk'); ?> 
+            Design &amp; Developed by : <?php echo CHtml::link("DTECH Systems.", 'http://www.dtechsystems.co.uk'); ?> 
         </div>
     </div>
 </div>

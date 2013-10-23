@@ -60,7 +60,7 @@
                         <div class="my_read_more">
                             <a class="readmore" href="#">
                                 <span>Read More</span>
-                                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', '', array('up_image' => Yii::app()->theme->baseUrl . '/images/up_image.png')); ?>
+                                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', ''); ?>
                             </a>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                         <div class="my_read_more">
                             <a class="readmore" href="#">
                                 <span>Read More</span>
-                                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', '', array('up_image' => Yii::app()->theme->baseUrl . '/images/up_image.png')); ?>
+                                <?php echo CHtml::image(Yii::app()->theme->baseUrl . '/images/read_more.png', ''); ?>
                             </a>
                         </div>
                     </div>
@@ -121,21 +121,36 @@
             event.preventDefault();
             jQuery(this).parent().parent().find('.fulltext_vision').slideToggle('slow');
             jQuery(this).children().text(jQuery(this).children().text() == 'Close DetailClose Detail' ? 'Read More' : 'Close Detail');
-            jQuery('.vision_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.vision_div .my_read_more .readmore img')).attr("up_image"));
             if (jQuery(this).children().text() == 'Read MoreRead More')
             {
-                jQuery('.vision_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("read_more"));
+                jQuery('.vision_div .my_read_more .readmore img').css("-moz-transform", "rotate(-360deg)")
+            }
+            else
+            {
+                jQuery('.vision_div .my_read_more .readmore img').css("-moz-transform", "rotate(-180deg)")
             }
         });
         jQuery('.divsion_div .my_read_more .readmore').click(function(event) {
             event.preventDefault();
             jQuery(this).parent().parent().find('.fulltext_division').slideToggle('slow');
             jQuery(this).children().text(jQuery(this).children().text() == 'Close DetailClose Detail' ? 'Read More' : 'Close Detail');
-            jQuery('.divsion_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.divsion_div .my_read_more .readmore img')).attr("up_image"));
             if (jQuery(this).children().text() == 'Read MoreRead More')
             {
-                jQuery('.divsion_div .my_read_more .readmore img').attr('src', jQuery(jQuery('.sale_div .my_read_more .readmore img')).attr("read_more"));
+                jQuery('.divsion_div .my_read_more .readmore img').css("-moz-transform", "rotate(-360deg)")
             }
+            else
+            {
+                jQuery('.divsion_div .my_read_more .readmore img').css("-moz-transform", "rotate(-180deg)")
+            }
+        });
+    });
+</script>
+<script type="text/javascript" language="javascript">
+//<!--Disabling right click on widget-->
+    jQuery(document).ready(function()
+    {
+        jQuery(".kbox").bind('contextmenu', function(e) {
+            return false;
         });
     });
 </script>
