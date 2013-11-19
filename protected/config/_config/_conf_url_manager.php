@@ -8,7 +8,7 @@
  */
 $url_manager = array(
     'urlFormat' => 'path',
-    'showScriptName' => true,
+    'showScriptName' => false,
     'rules' => array(
         //*****************************For Front End url Configuration****************************************/
         '' => '/site/index',
