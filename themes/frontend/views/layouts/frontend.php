@@ -88,15 +88,23 @@
                             //'heightImage' => 360,
                             'slides' => array(
                                 array(
-                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/slider_1.jpg'),
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/1.png'),
                                 // 'link' => array('url' => 'mypage', 'htmlOptions' => array('class' => 'main_banner_img'))
                                 ),
                                 array(
-                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/slider_2.jpg'),
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/2.png'),
                                 ),
                                 array(
-                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/slider_1.jpg'),
-                                ),))
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/3.1.png'),
+                                ),
+                                array(
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/4.png'),
+                                ),
+                                array(
+                                    'image' => array('src' => Yii::app()->theme->baseUrl . '/images/slider/5.png'),
+                                ),
+                                
+                                ))
                         );
                         ?>
                         <!--                        <div class="banner_dots" style='position: absolute'>

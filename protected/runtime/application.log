@@ -4031,3 +4031,20 @@ Stack trace:
 REQUEST_URI=/om/index.php/site/clients
 HTTP_REFERER=http://localhost/om/index.php/site/services
 ---
+2014/03/13 14:13:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/admin/images/main-container-bottom-shadow.png".' in /var/www/obied/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/obied/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/admin/im...')
+#1 /var/www/obied/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/obied/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/obied/themes/admin/images/main-container-bottom-shadow.png
+HTTP_REFERER=http://localhost/obied/themes/admin/css/login_style.css
+---
+2014/03/13 14:19:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.png".' in /var/www/obied/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/obied/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.png')
+#1 /var/www/obied/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/obied/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/obied/favicon.png
+---
